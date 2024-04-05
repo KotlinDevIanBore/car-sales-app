@@ -1,80 +1,35 @@
+/* eslint-disable no-undef */
 import "./App.css";
 
-import discoveryImage from "./car-pictures/discovery-front.jpg"
-
-function CarGrid() {
+function CarGrid(props) {
+    console.log (`Here ${props.cars}`)
     return (
         <div>
-            <div>
-            <div>
-                <nav className="top-navigation"> Navigation Bar</nav>
+            <nav className="top-navigation"> Navigation Bar</nav>
+      
+      <div className="grid">
 
-                <div className="grid">
-                    <div className="car-container div-1">
-                        <img
-                            className="car-image"
-                            src={discoveryImage}
-                            alt=""
-                        />
-                        <div className="car-name">LandRover Discovery</div>
-                        <div className="car-price">5000000</div>
-                    </div>
+          {
+            props.cars.map((car)=> (
+
+                <div className="car-container div-2">
+                    <img
+                        className="car-image"
+                        src={car.image}
+                        alt=""
+                    />
+                    <div className="car-name">{car.name}</div>
+                    <div className="car-price">{car.price}</div>
                 </div>
-            </div>
-        </div>
-        <div>
-            <div>
-                <nav className="top-navigation"> Navigation Bar</nav>
+            ))
+          }  
 
-                <div className="grid">
-                    <div className="car-container div-1">
-                        <img
-                            className="car-image"
-                            src={discoveryImage}
-                            alt=""
-                        />
-                        <div className="car-name">LandRover Discovery</div>
-                        <div className="car-price">5000000</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div>
-                <nav className="top-navigation"> Navigation Bar</nav>
-
-                <div className="grid">
-                    <div className="car-container div-1">
-                        <img
-                            className="car-image"
-                            src={discoveryImage}
-                            alt=""
-                        />
-                        <div className="car-name">LandRover Discovery</div>
-                        <div className="car-price">5000000</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div>
-                <nav className="top-navigation"> Navigation Bar</nav>
-
-                <div className="grid">
-                    <div className="car-container div-1">
-                        <img
-                            className="car-image"
-                            src={discoveryImage}
-                            alt=""
-                        />
-                        <div className="car-name">LandRover Discovery</div>
-                        <div className="car-price">5000000</div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         </div>
+        </div>
+
+
+    
         
     );
 }
