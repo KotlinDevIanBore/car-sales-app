@@ -1,7 +1,7 @@
 .grid{
   display: flex;
   flex-direction: row;
-  flex: 1 1 1 ;
+  flex: 1 1 1 1 ;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 10px;
@@ -9,7 +9,7 @@
 
 .car-container{
   height: 400px;
-  width: 500px;
+  width: 400px;
   margin-bottom: 30px;
 
 }
@@ -20,4 +20,10 @@
 .div-2{
   background-color: rgb(151, 101, 101);
 
+}
+.top-navigation{
+  background-color: rgb(236, 74, 101);
+  height: 40px;
+  padding: 10px;
+  width: auto;
 }
