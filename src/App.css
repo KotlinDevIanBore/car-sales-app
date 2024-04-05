@@ -4,7 +4,9 @@
   flex: 1 1 1 1 ;
   flex-wrap: wrap;
   justify-content: space-between;
+  justify-content: space-around;
   padding: 10px;
+  margin-top: 70px;
 }
 
 .car-container{
@@ -13,17 +15,21 @@
   margin-bottom: 30px;
 
 }
-.div-1{
-  background-color: aquamarine;
 
-}
-.div-2{
-  background-color: rgb(151, 101, 101);
-
-}
 .top-navigation{
   background-color: rgb(236, 74, 101);
+  position: absolute;
+  position: fixed;
+  top: 0px;
   height: 40px;
   padding: 10px;
-  width: auto;
+  width: 100%;
+  z-index: 100;
+  opacity: 0.1;
+  
+}
+
+.car-image{
+  width: 100%;
+  
 }
