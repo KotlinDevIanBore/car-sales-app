@@ -19,9 +19,22 @@
 
 
 }
-car-container:hover {
-  background-color: #f9f9f9;
-  transform: scale(1.02);
+
+
+
+  .car-container:active {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 600px;
+    width: 600px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow */
+    background-color: rgba(218, 211, 211, 0.953);
+    z-index: 1000; /* Ensure the enlarged image appears on top of other content */
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, background-color 0.3s ease; /* Add transition to active state */
+
 }
 
 .top-navigation{
@@ -32,7 +45,7 @@ car-container:hover {
   height: 40px;
   padding: 10px;
   width: 100%;
-  z-index: 100;
+  z-index: 1050;
   opacity: 0.1;
   
 }
@@ -42,7 +55,8 @@ car-container:hover {
   
 }
 car-image :hover{
-  opacity: 0;
+  transform: scale(1.1); /* Increase the scale to 1.1 or any desired value */
+
   
 }
 .car-name, .car-price {
@@ -52,4 +66,7 @@ car-image :hover{
   margin-top: 10px;
   letter-spacing: 3px;
 }
+.car-name :hover{
+  color: blue;
 
+}
