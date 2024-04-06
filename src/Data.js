@@ -1,5 +1,6 @@
 const CARS = [
   {
+    id:"1",
     name: "LandRover Discovery",
     image: [
       {URL: require("./car-pictures/discovery-front.jpg")},
@@ -15,7 +16,9 @@ const CARS = [
     ],
     price: "ksh 5000000",
   },
-  {
+  { 
+    id:"2",
+
     name: "Toyota crown",
     image: [
       {URL: require("./car-pictures/Toyota-Crown.jpg")},
@@ -32,6 +35,8 @@ const CARS = [
     price: "ksh 1999999",
   },
   {
+    id:"3",
+
     name: "Audi q7",
     image: [
       { URL: require("./car-pictures/q7-image.jpeg") },
@@ -49,6 +54,8 @@ const CARS = [
   },
 
   {
+    id:"4",
+
     name: "LandCruiser Prado",
     image: [
       { URL: require("./car-pictures/prado-image.jpg") },
@@ -66,6 +73,8 @@ const CARS = [
   },
 
   {
+    id:"5",
+
     name: "Lexus RX 450h",
     image: [
       { URL: require("./car-pictures/rx-image.jpeg") },
@@ -82,6 +91,8 @@ const CARS = [
     price: "ksh 5000000",
   },
   {
+    id:"6",
+
     name: "Range rover Evoque",
     image: [
       { URL: require("./car-pictures/evoque-image.jpg") },
@@ -98,6 +109,8 @@ const CARS = [
     price: "ksh 5000000",
   },
   {
+    id:"7",
+
     name: "Mercedes E350",
     image: [
       { URL: require("./car-pictures/e350-image.jpg") },
@@ -114,6 +127,8 @@ const CARS = [
     price: "ksh 5000000",
   },
   {
+    id:"8",
+
     name: "Axela",
     image: [
       { URL: require("./car-pictures/axela-image.jpg") },
@@ -130,6 +145,8 @@ const CARS = [
     price: "ksh 5000000",
   },
   {
+    id:"9",
+
     name: "Forester",
     image: [
       { URL: require("./car-pictures/forester.jpg") },
