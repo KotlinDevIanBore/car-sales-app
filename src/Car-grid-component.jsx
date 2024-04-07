@@ -1,5 +1,8 @@
 import "./App.css";
 import { useState } from "react";
+import { Button } from 'carbon-components-react';
+
+
 
 function CarGrid(props) {
   const [carArray, SetCar] = useState(props.cars);
@@ -72,9 +75,9 @@ function CarGrid(props) {
 
                 <div className="car-name">{car.name}</div>
                 <div className="car-price">{car.price}</div>
-                <button data-button-id={car.id} className="change-Image">
-                  Add to Cart
-                </button>
+                
+                <Button className="add-to-cart-button" kind="tertiary">Add to Cart</Button>
+
               </div>
             </div>
           );

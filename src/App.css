@@ -90,18 +90,16 @@ car-image :hover{
   z-index: 1000000; /* Ensure it's above other content */
 }
 .forward-arrow {
-  position: absolute;
-  top: 50%;
-  left: 70%;
-  transform: translate(-50%, -70%);
-  width: 30px; /* Adjust width as needed */
-  height: 30px; /* Adjust height as needed */
+  margin-left: 50px;
+  margin-top: 150px;
   opacity: 0;
-  transition: opacity 0.3s ease; /* Add transition */
+  height: 30px;
+  width: 30px;
 }
 
+
 .forward-arrow:hover {
-  opacity: 0;
+  opacity: 1;
   
 }
 
@@ -132,4 +130,13 @@ car-image :hover{
 }
 .back-arrow:hover{
   opacity: 1;
+}
+.add-to-cart-button {
+  
+  margin-left: 100px;
+  margin-bottom: 10px;
+}
+
+.add-to-cart-button:hover {
+  background-color: #45a049; /* Darker Green */
 }
