@@ -2,6 +2,7 @@ const CARS = [
   {
     id:"1",
     name: "LandRover Discovery",
+    imageIndex: "0", // Added imageIndex property with empty string value
     image: [
       {URL: require("./car-pictures/discovery-front.jpg")},
       {URL: require("./car-pictures/discovery-fronty.jpg")},
@@ -18,8 +19,8 @@ const CARS = [
   },
   { 
     id:"2",
-
-    name: "Toyota crown",
+    name: "Toyota Crown",
+    imageIndex: "0", // Added imageIndex property with empty string value
     image: [
       {URL: require("./car-pictures/Toyota-Crown.jpg")},
       {URL: require("./car-pictures/crown2.jpg")},
@@ -36,8 +37,8 @@ const CARS = [
   },
   {
     id:"3",
-
-    name: "Audi q7",
+    name: "Audi Q7",
+    imageIndex: "0", // Added imageIndex property with empty string value
     image: [
       { URL: require("./car-pictures/q7-image.jpeg") },
       { URL: require("./car-pictures/audi2.jpeg") },
@@ -52,11 +53,10 @@ const CARS = [
     ],
     price: "ksh 5000000",
   },
-
   {
     id:"4",
-
     name: "LandCruiser Prado",
+    imageIndex: "0", // Added imageIndex property with empty string value
     image: [
       { URL: require("./car-pictures/prado-image.jpg") },
       { URL: require("./car-pictures/prado2.jpg") },
@@ -71,11 +71,10 @@ const CARS = [
     ],
     price: "ksh 5000000",
   },
-
   {
     id:"5",
-
     name: "Lexus RX 450h",
+    imageIndex: "0", // Added imageIndex property with empty string value
     image: [
       { URL: require("./car-pictures/rx-image.jpeg") },
       { URL: require("./car-pictures/RX2.jpeg") },
@@ -92,8 +91,8 @@ const CARS = [
   },
   {
     id:"6",
-
-    name: "Range rover Evoque",
+    name: "Range Rover Evoque",
+    imageIndex: "0", // Added imageIndex property with empty string value
     image: [
       { URL: require("./car-pictures/evoque-image.jpg") },
       { URL: require("./car-pictures/evoque2.jpg") },
@@ -110,8 +109,8 @@ const CARS = [
   },
   {
     id:"7",
-
-    name: "Mercedes E350",
+    name: "Mercedes E 350",
+    imageIndex: "0", // Added imageIndex property with empty string value
     image: [
       { URL: require("./car-pictures/e350-image.jpg") },
       { URL: require("./car-pictures/e3502.jpg") },
@@ -128,8 +127,8 @@ const CARS = [
   },
   {
     id:"8",
-
     name: "Axela",
+    imageIndex: "0", // Added imageIndex property with empty string value
     image: [
       { URL: require("./car-pictures/axela-image.jpg") },
       { URL: require("./car-pictures/axela2.jpg") },
@@ -146,8 +145,8 @@ const CARS = [
   },
   {
     id:"9",
-
     name: "Forester",
+    imageIndex: "0", // Added imageIndex property with empty string value
     image: [
       { URL: require("./car-pictures/forester.jpg") },
       { URL: require("./car-pictures/forester2.jpg") },
@@ -161,8 +160,7 @@ const CARS = [
       { URL: require("./car-pictures/forester10.jpg") },
     ],
     price: "ksh 1999999",
-  },
-  
+  }
 ];
 
 export default CARS;
