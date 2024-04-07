@@ -17,7 +17,7 @@ function CarGrid(props) {
             const newIndex = prevIndex + direction;
             return (newIndex + car.image.length) % car.image.length;
           });
-        return { ...car, imageIndex: imageIndex.toString() }; // Update the imageIndex property
+        return { ...car, imageIndex: newIndex.toString() }; // Update the imageIndex property
       } else {
         return car;
       }
@@ -76,7 +76,7 @@ function CarGrid(props) {
                 <div className="car-name">{car.name}</div>
                 <div className="car-price">{car.price}</div>
                 
-                <Button className="add-to-cart-button" kind="tertiary">Add to Cart</Button>
+                <Button  kind="tertiary">Add to Cart</Button>
 
               </div>
             </div>
