@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import { Button } from 'carbon-components-react';
+// import { Button } from 'carbon-components-react';
 
 
 
@@ -17,7 +17,7 @@ function CarGrid(props) {
             const newIndex = prevIndex + direction;
             return (newIndex + car.image.length) % car.image.length;
           });
-        return { ...car, imageIndex: newIndex.toString() }; // Update the imageIndex property
+        return { ...car, imageIndex: imageIndex.toString() }; // Update the imageIndex property
       } else {
         return car;
       }
@@ -76,7 +76,7 @@ function CarGrid(props) {
                 <div className="car-name">{car.name}</div>
                 <div className="car-price">{car.price}</div>
                 
-                <Button  kind="tertiary">Add to Cart</Button>
+                <button className="add-to-cart-button">Add to Cart</button>
 
               </div>
             </div>
