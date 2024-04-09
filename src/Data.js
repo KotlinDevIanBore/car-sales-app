@@ -168,7 +168,63 @@ const CARS = [
       { URL: require("./car-pictures/forester10.jpg") },
     ],
     price: "ksh 1,999,999",
-  }
+  },
+  { 
+    id:"2",
+    name: "Toyota Crown",
+    imageIndex: "0", // Added imageIndex property with empty string value
+    image: [
+      {URL: require("./car-pictures/crown2.jpg")},
+      {URL: require("./car-pictures/Toyota-Crown.jpg")},
+
+      {URL: require("./car-pictures/crown3.jpg")},
+      {URL: require("./car-pictures/crown4.jpg")},
+      {URL: require("./car-pictures/crown5.jpg")},
+      {URL: require("./car-pictures/crown6.jpg")},
+      {URL: require("./car-pictures/crown7.jpg")},
+      {URL: require("./car-pictures/crown8.jpg")},
+      {URL: require("./car-pictures/crown9.jpg")},
+      {URL: require("./car-pictures/crown10.jpg")},
+    ],
+    price: "ksh 1,999,999",
+  },
+  {
+    id:"3",
+    name: "Audi Q7",
+    imageIndex: "0", // Added imageIndex property with empty string value
+    image: [
+      { URL: require("./car-pictures/audi9.jpeg") },
+
+      { URL: require("./car-pictures/q7-image.jpeg") },
+      { URL: require("./car-pictures/audi2.jpeg") },
+      { URL: require("./car-pictures/audi3.jpeg") },
+      { URL: require("./car-pictures/audi4.jpeg") },
+      { URL: require("./car-pictures/audi5.jpeg") },
+      { URL: require("./car-pictures/audi6.jpeg") },
+      { URL: require("./car-pictures/audi7.jpeg") },
+      { URL: require("./car-pictures/audi8.jpeg") },
+      { URL: require("./car-pictures/audi10.jpeg") },
+    ],
+    price: "ksh 5,449,000",
+  },
+  {
+    id:"4",
+    name: "LandCruiser Prado",
+    imageIndex: "0", // Added imageIndex property with empty string value
+    image: [
+      { URL: require("./car-pictures/prado-image.jpg") },
+      { URL: require("./car-pictures/prado2.jpg") },
+      { URL: require("./car-pictures/prado3.jpg") },
+      { URL: require("./car-pictures/prado4.jpg") },
+      { URL: require("./car-pictures/prado5.jpg") },
+      { URL: require("./car-pictures/prado6.jpg") },
+      { URL: require("./car-pictures/prado7.jpg") },
+      { URL: require("./car-pictures/prado8.jpg") },
+      { URL: require("./car-pictures/prado9.jpg") },
+      { URL: require("./car-pictures/prado10.jpg") },
+    ],
+    price: "ksh 1,999,000",
+  },
 ];
 
 export default CARS;

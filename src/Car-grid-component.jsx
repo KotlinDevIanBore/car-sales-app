@@ -1,5 +1,6 @@
 import "./App.css";
-import { useState } from "react";
+import { useState,useEffect,useRef} from "react";
+
 // import { Button } from 'carbon-components-react';
 
 
@@ -8,6 +9,7 @@ function CarGrid(props) {
   const [carArray, SetCar] = useState(props.cars);
 
   const [imageIndex, SetIndex] = useState(0);
+  const carGridRef= useRef()
 
   function changeImageIndex(buttonId, direction) {
     console.log(`Button id: ${buttonId}`);
@@ -26,7 +28,7 @@ function CarGrid(props) {
   }
 
   return (
-    <div>
+    <div ref={carGridRef}>
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
@@ -76,13 +78,14 @@ function CarGrid(props) {
                 <div className="car-name">{car.name}</div>
                 <div className="car-price">{car.price}</div>
                 
-                <button className="add-to-cart-button">Add to Cart</button>
+                <button  className="add-to-cart-button">Add to Cart</button>
 
               </div>
             </div>
           );
         })}
       </div>
+      <button>Home</button>
     </div>
   );
 }

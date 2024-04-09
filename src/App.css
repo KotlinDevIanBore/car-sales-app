@@ -1,3 +1,26 @@
+html, body {
+  overflow:hidden;
+overflow: scroll;  height: 100%;
+}
+
+.scroll-home-page::-webkit-scrollbar {
+  width: 0; /* Set the width to 0 */
+}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  width: 0; /* Set the width to 0 */
+}
+
+
+.scroll-home-page{
+  overflow: auto;
+}
+.car-grid-scroll{
+  overflow-y: scroll;
+
+  height: 110%;
+
+}
+
 .grid{
   display: flex;
   flex-direction: row;
@@ -125,5 +148,7 @@ opacity: 1;
 }
 
 .add-to-cart-button:hover {
-  background-color: #45a049; /* Darker Green */
+  background-color: #364a72; /* Darker Green */
+  opacity: 1;
+
 }

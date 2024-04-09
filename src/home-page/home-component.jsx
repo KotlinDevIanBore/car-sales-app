@@ -5,7 +5,7 @@ import sportsCar from "./home-page-images/audi-image.jpg";
 import IMAGES from "./images-array";
 import { useState, useEffect, useRef } from "react";
 
-function HomePage() {
+function HomePage(props) {
   const [scrollIndex, setScrollIndex] = useState(1);
   const homePageRef = useRef(null); // Create a ref
 
@@ -22,8 +22,10 @@ function HomePage() {
   
 
   return (
-    <div ref={homePageRef} className="  home-component">
-      <div className="home-page">
+    <div ref={homePageRef} className="  home-component"       
+    >
+      <div 
+      className="home-page">
         <div className="home-image-container">
             <div className="search-bar-container">
                 <input type="text" className="search-bar" placeholder=" Search Your Dream Car Here "></input>
@@ -33,7 +35,7 @@ function HomePage() {
               <img
                 className="home-image"
                 src={image["URL" + scrollIndex]}
-                onClick={()=>{scrollImage()}}
+                onClick={()=>{scrollImage('works')}}
               ></img>
             );
           })}
