@@ -70,12 +70,13 @@ car-image :hover{
   
 }
 .car-name, .car-price {
+  color: #364a72;
   font-family: Arial, sans-serif;
   font-size: 16px;
-  font-weight: bold;
+  font-weight:200;
   margin-top: 10px;
   letter-spacing: 3px;
-  opacity: 0;
+  /* opacity: 0; */
 }
 .car-name :hover{
 opacity: 1;

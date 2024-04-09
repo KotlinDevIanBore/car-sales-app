@@ -85,7 +85,7 @@ function CarGrid(props) {
           );
         })}
       </div>
-      <button>Home</button>
+      <button onClick={()=>{props.sayHi('Hello')}}>Home</button>
     </div>
   );
 }

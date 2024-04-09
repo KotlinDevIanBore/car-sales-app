@@ -6,10 +6,22 @@ import { useState, useEffect, useRef, forwardRef } from "react";
 
 
 
+
 function App(props) {
 
  const  cargridref= useRef()
+ const homepageRef= useRef()
+ function sayHi(greeting){
+  console.log(`Ian says${greeting}`)
+  handleClickHome()
 
+ }
+
+ function handleClickHome (){
+
+  (homepageRef.current).scrollIntoView({behavior: 'smooth',block:'start'})
+
+ }
  
 
  function handleClick (){
@@ -22,13 +34,13 @@ function App(props) {
   return (
     <div>
       
-      <div className="scroll-home-page" onScroll={()=>{handleClick()}} onClick={()=>{handleClick()}}>
+      <div className="scroll-home-page" ref={homepageRef} onScroll={()=>{handleClick()}} onClick={()=>{handleClick()}}>
         <HomePage />
       </div>
 
       <div ref={cargridref} className="car-grid-scroll" >
         
-        <CarGrid cars={CARS} />
+        <CarGrid cars={CARS} sayHi={sayHi} />
       </div>
     </div>
   );
