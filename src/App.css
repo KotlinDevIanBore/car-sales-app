@@ -70,7 +70,8 @@ car-image :hover{
   
 }
 .car-name, .car-price {
-  color: #364a72;
+  color:rgb(7, 142, 142);
+
   font-family: Arial, sans-serif;
   font-size: 16px;
   font-weight:200;
@@ -98,6 +99,7 @@ opacity: 1;
   top: 10px; /* Adjust the position */
   right: 10px; /* Adjust the position */
   z-index: 1000000; /* Ensure it's above other content */
+  /* background-color: blue; */
 }
 .forward-arrow {
   margin-left: 50px;
@@ -121,6 +123,18 @@ opacity: 1;
   'GRAD' 0,
   'opsz' 24
 }
+
+.middle-arrow-container{
+  position: absolute; /* Position relative to .car-container */
+  width: auto;
+  height: 95%;
+  top: 10px; /* Adjust the position */
+  left:92px; /* Adjust the position */
+  right:92px;
+  z-index: 10000000; /* Ensure it's above other content */
+  /* background-color: red; */
+
+}
 .back-arrow-container{
   position: absolute; /* Position relative to .car-container */
   width: 20%;
@@ -128,7 +142,7 @@ opacity: 1;
   top: 10px; /* Adjust the position */
   left: 10px; /* Adjust the position */
   z-index: 1000000; /* Ensure it's above other content */
-  /* background-color: red; */
+  /* background-color:blue; */
 
 }
 .back-arrow{
@@ -151,5 +165,16 @@ opacity: 1;
 .add-to-cart-button:hover {
   background-color: #364a72; /* Darker Green */
   opacity: 1;
+
+}
+.home-button{
+  border:rgb(21, 0, 255);
+  margin-left: 600px;
+  color: #364a72;
+}
+
+.home-button :hover{
+  border: solid;
+  border-color:rgb(7, 142, 142);
 
 }

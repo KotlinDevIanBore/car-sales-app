@@ -1,5 +1,7 @@
 import "./App.css";
 import { useState,useEffect,useRef} from "react";
+import { Link } from 'react-router-dom';
+
 
 // import { Button } from 'carbon-components-react';
 
@@ -66,6 +68,13 @@ function CarGrid(props) {
                       navigate_next
                     </span>
                   </div>
+                  <Link to="/view-car-component.jsx" target="_blank">
+    <div className="middle-arrow-container">
+    </div>
+</Link>
+
+                  
+
                   <div className="back-arrow-container" onClick={() => {
                       changeImageIndex(car.id,-1);
                     }}>
@@ -85,7 +94,7 @@ function CarGrid(props) {
           );
         })}
       </div>
-      <button onClick={()=>{props.sayHi('Hello')}}>Home</button>
+      <button className="home-button" onClick={()=>{props.sayHi('Hello')}}>Home</button>
     </div>
   );
 }

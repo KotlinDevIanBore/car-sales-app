@@ -1,0 +1,11 @@
+.display-car-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; /* Make it occupy the entire viewport height */
+  width: 100vw; /* Make it occupy the entire viewport width */
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
