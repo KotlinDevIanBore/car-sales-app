@@ -11,7 +11,7 @@ import {Route, Routes} from "react-router-dom"
 
 function App(props) {
 
-const [name, setName]= useState('error')
+const [car, GetCarfromGrid]= useState('error')
  const  cargridref= useRef()
  const homepageRef= useRef()
  function sayHi(greeting){
@@ -39,7 +39,9 @@ const [name, setName]= useState('error')
   return (
     <div>
       <div>
-      <div className="scroll-home-page" ref={homepageRef} onScroll={()=>{handleClick()}} onClick={()=>{handleClick()}}>
+      <div className="scroll-home-page" ref={homepageRef} onScroll={()=>{handleClick()}}
+       onClick={()=>{handleClick()}}
+       >
 
         <Routes>
         <Route path="/" element={<HomePage />} />
@@ -55,7 +57,7 @@ const [name, setName]= useState('error')
 
         <Routes>
 
-        <Route path="/" element={<CarGrid cars={CARS} sayHi={sayHi} setName={setName} />} />
+        <Route path="/" element={<CarGrid cars={CARS} sayHi={sayHi} GetCarfromGrid={GetCarfromGrid} />} />
 
 
 
@@ -70,7 +72,7 @@ const [name, setName]= useState('error')
       </div>
       <Routes>
       {/* <Route path={`/view-car/${name}`} element={<DisplayCar />} /> */}
-      <Route path='/view-car' element={<DisplayCar name={name} />} />
+      <Route path='/view-car' element={<DisplayCar car={car} />} />
       {/* <Route path='/' element={<DisplayCar name={name} />} /> */}
 
 

@@ -68,7 +68,7 @@ function CarGrid(props) {
                   <Link 
                   // to={`/view-car/${car.name} `} 
                   to={`/view-car`} 
-                  onClick={()=>{props.setName(car.name); console.log('works')}}
+                  onClick={()=>{props.GetCarfromGrid(car); console.log('works')}}
 
                   // target="_blank"
                   >
