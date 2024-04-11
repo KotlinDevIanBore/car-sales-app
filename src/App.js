@@ -3,15 +3,15 @@ import "./App.css";
 import CARS from "./Data.js";
 import HomePage from "./home-page/home-component.jsx";
 import DisplayCar from "./view-car-component/view-car-component.jsx";
-import { useState, useEffect, useRef, forwardRef } from "react";
+import { useState, useEffect, useRef} from "react";
 import {Route, Routes} from "react-router-dom"
-
 
 
 
 
 function App(props) {
 
+const [name, setName]= useState('error')
  const  cargridref= useRef()
  const homepageRef= useRef()
  function sayHi(greeting){
@@ -19,6 +19,8 @@ function App(props) {
   handleClickHome()
 
  }
+
+ 
 
  function handleClickHome (){
 
@@ -53,7 +55,7 @@ function App(props) {
 
         <Routes>
 
-        <Route path="/" element={<CarGrid cars={CARS} sayHi={sayHi} />} />
+        <Route path="/" element={<CarGrid cars={CARS} sayHi={sayHi} setName={setName} />} />
 
 
 
@@ -67,7 +69,12 @@ function App(props) {
 
       </div>
       <Routes>
-  <Route path="/view-car-component.jsx" element={<DisplayCar />} />
+      {/* <Route path={`/view-car/${name}`} element={<DisplayCar />} /> */}
+      <Route path='/view-car' element={<DisplayCar name={name} />} />
+      {/* <Route path='/' element={<DisplayCar name={name} />} /> */}
+
+
+
 </Routes>
 
       

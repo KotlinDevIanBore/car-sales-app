@@ -1,26 +1,23 @@
 import "./App.css";
-import { useState,useEffect,useRef} from "react";
-import { Link } from 'react-router-dom';
-
+import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 // import { Button } from 'carbon-components-react';
-
-
 
 function CarGrid(props) {
   const [carArray, SetCar] = useState(props.cars);
 
   const [imageIndex, SetIndex] = useState(0);
-  const carGridRef= useRef()
+  const carGridRef = useRef();
 
   function changeImageIndex(buttonId, direction) {
     console.log(`Button id: ${buttonId}`);
     const updatedCars = props.cars.map((car) => {
       if (car.id === buttonId) {
         SetIndex((prevIndex) => {
-            const newIndex = prevIndex + direction;
-            return (newIndex + car.image.length) % car.image.length;
-          });
+          const newIndex = prevIndex + direction;
+          return (newIndex + car.image.length) % car.image.length;
+        });
         return { ...car, imageIndex: imageIndex.toString() }; // Update the imageIndex property
       } else {
         return car;
@@ -60,7 +57,7 @@ function CarGrid(props) {
                   <div
                     className="forward-arrow-container"
                     onClick={() => {
-                      changeImageIndex(car.id,1);
+                      changeImageIndex(car.id, 1);
                     }}
                   >
                     {" "}
@@ -68,16 +65,21 @@ function CarGrid(props) {
                       navigate_next
                     </span>
                   </div>
-                  <Link to="/view-car-component.jsx" target="_blank">
-    <div className="middle-arrow-container">
-    </div>
-</Link>
+                  <Link 
+                  // to={`/view-car/${car.name} `} 
+                  to={`/view-car`} 
+                  onClick={()=>{props.setName(car.name); console.log('works')}}
 
-                  
-
-                  <div className="back-arrow-container" onClick={() => {
-                      changeImageIndex(car.id,-1);
-                    }}>
+                  // target="_blank"
+                  >
+                    <div className="middle-arrow-container" ></div>
+                  </Link>
+                  <div
+                    className="back-arrow-container"
+                    onClick={() => {
+                      changeImageIndex(car.id, -1);
+                    }}
+                  >
                     <span class="material-symbols-outlined back-arrow">
                       navigate_before
                     </span>
@@ -86,15 +88,21 @@ function CarGrid(props) {
 
                 <div className="car-name">{car.name}</div>
                 <div className="car-price">{car.price}</div>
-                
-                <button  className="add-to-cart-button">Add to Cart</button>
 
+                <button className="add-to-cart-button">Add to Cart</button>
               </div>
             </div>
           );
         })}
       </div>
-      <button className="home-button" onClick={()=>{props.sayHi('Hello')}}>Home</button>
+      <button
+        className="home-button"
+        onClick={() => {
+          props.sayHi("Hello");
+        }}
+      >
+        Home
+      </button>
     </div>
   );
 }

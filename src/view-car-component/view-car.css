@@ -1,11 +1,27 @@
 .display-car-page {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh; /* Make it occupy the entire viewport height */
-  width: 100vw; /* Make it occupy the entire viewport width */
-  background-color: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
+  background-color: white;
 }
+.image-info-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-content: space-around;
+  padding: 20px;
+
+}
+.info-container{
+  width: 600px;
+  height: 900px;
+  background-color: rgb(255, 240, 250);
+
+}
+.image-container{
+  width: 700px;
+  height: 700px;
+}
+.hero-image{
+  height: 100%;
+  width: 100%;
+}
+
