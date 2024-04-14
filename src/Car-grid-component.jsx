@@ -5,14 +5,18 @@ import { Link } from "react-router-dom";
 // import { Button } from 'carbon-components-react';
 
 function CarGrid(props) {
-  const [carArray, SetCar] = useState(props.cars);
+  const [carArray, SetCar] = useState(props.carArray);
+  
 
   const [imageIndex, SetIndex] = useState(0);
   const carGridRef = useRef();
+  console.log("CarGrid component is rendering...");
+
+  
 
   function changeImageIndex(buttonId, direction) {
     console.log(`Button id: ${buttonId}`);
-    const updatedCars = props.cars.map((car) => {
+    const updatedCars = props.carArray.map((car) => {
       if (car.id === buttonId) {
         SetIndex((prevIndex) => {
           const newIndex = prevIndex + direction;
@@ -25,6 +29,7 @@ function CarGrid(props) {
     });
     SetCar(updatedCars);
   }
+  
 
   return (
     <div ref={carGridRef}>
@@ -43,7 +48,6 @@ function CarGrid(props) {
           return (
             <div>
               <div
-                data-card-id={car.id}
                 className="car-container div-2"
                 key={car.name}
               >
@@ -61,7 +65,7 @@ function CarGrid(props) {
                     }}
                   >
                     {" "}
-                    <span class="material-symbols-outlined forward-arrow">
+                    <span className="material-symbols-outlined forward-arrow">
                       navigate_next
                     </span>
                   </div>
@@ -103,6 +107,22 @@ function CarGrid(props) {
       >
         Home
       </button>
+      <Link 
+      to={'/add-car'} 
+      // target="_blank"
+      >
+      <button>
+        Edit Page
+      </button>
+      
+      </Link>
+
+      {/* <button onClick={()=>{
+        AddCar()
+      }}>
+        AddCar
+      </button> */}
+      
     </div>
   );
 }

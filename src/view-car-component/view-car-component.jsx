@@ -66,25 +66,13 @@ function DisplayCar(props) {
           </button>
         </div>
         <div className="info-container">
-        <ol class="gradient-list">
-          
-    <li>{props.car.name}</li>
-    <li>Aenean tincidunt elit at ipsum cursus, vitae interdum nulla suscipit.</li>
-    <li>Curabitur in orci vel risus facilisis accumsan.</li>
-    <li>Morbi eleifend tortor lacinia sapien sagittis, quis pellentesque felis egestas.</li>
-    <li>Aenean viverra dui quis leo lacinia fringilla.</li>
-    <li>Sed varius lectus ac condimentum egestas.</li>
-    <li>Maecenas faucibus lorem nec lorem posuere, a rhoncus velit porttitor.</li>
-    <li>Proin porta arcu ac elit malesuada pulvinar.</li>
-    <li>Phasellus vitae felis sit amet mi gravida volutpat.</li>
-    <li>Curabitur vulputate urna non efficitur interdum.</li>
-    <li>{props.car.price}</li>
-    <li>{props.car.availability}</li>
-    <li>{props.car.location}</li>
-   
-    
-    
-  </ol>
+          <ol class="gradient-list">
+            <li>{props.car.brand}</li>
+            <li>{props.car.name}</li>
+            <li>{props.car.price}</li>
+            <li>{props.car.availability}</li>
+            <li>Location:{props.car.location}</li>
+          </ol>
         </div>
       </div>
     </div>

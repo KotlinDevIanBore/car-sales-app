@@ -1,7 +1,8 @@
 const CARS = [
   {
     id: "1",
-    name: "LandRover Discovery",
+    brand: "LandRover",
+    name: "Discovery",
     imageIndex: "0",
     image: [
       { URL: require("./car-pictures/discovery-fronty.jpg") },
@@ -21,7 +22,8 @@ const CARS = [
   },
   {
     id: "2",
-    name: "Toyota Crown",
+    brand: "Toyota",
+    name: "Crown",
     imageIndex: "0",
     image: [
       { URL: require("./car-pictures/crown2.jpg") },
@@ -41,7 +43,8 @@ const CARS = [
   },
   {
     id: "3",
-    name: "Audi Q7",
+    brand: "Audi",
+    name: "Q7",
     imageIndex: "0",
     image: [
       { URL: require("./car-pictures/audi9.jpeg") },
@@ -61,7 +64,8 @@ const CARS = [
   },
   {
     id: "4",
-    name: "LandCruiser Prado",
+    brand: "LandCruiser",
+    name: "Prado",
     imageIndex: "0",
     image: [
       { URL: require("./car-pictures/prado-image.jpg") },
@@ -81,7 +85,8 @@ const CARS = [
   },
   {
     id: "5",
-    name: "Lexus RX 450h",
+    brand: "Lexus",
+    name: "RX 450h",
     imageIndex: "0",
     image: [
       { URL: require("./car-pictures/RX2.jpeg") },
@@ -101,7 +106,8 @@ const CARS = [
   },
   {
     id: "6",
-    name: "Range Rover Evoque",
+    brand: "Range Rover",
+    name: "Evoque",
     imageIndex: "0",
     image: [
       { URL: require("./car-pictures/evoque2.jpg") },
@@ -121,7 +127,8 @@ const CARS = [
   },
   {
     id: "7",
-    name: "Mercedes E 350",
+    brand: "Mercedes",
+    name: "E 350",
     imageIndex: "0",
     image: [
       { URL: require("./car-pictures/e3502.jpg") },
@@ -141,6 +148,7 @@ const CARS = [
   },
   {
     id: "8",
+    brand: "Mazda",
     name: "Axela",
     imageIndex: "0",
     image: [
@@ -161,7 +169,8 @@ const CARS = [
   },
   {
     id: "9",
-    name: "Subaru Forester",
+    brand: "Subaru",
+    name: "Forester",
     imageIndex: "0",
     image: [
       { URL: require("./car-pictures/forester2.jpg") },

@@ -15,7 +15,7 @@
   width: 600px;
   height: 900px;
   background-color: #fff0fa;
-  margin-top: 0px;
+  margin-top: 30px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -101,31 +101,6 @@ ol.gradient-list > li {
   padding: 1rem 1rem 1rem 3rem;
   position: relative;
 }
-
-ol.gradient-list > li::before,
-ol.gradient-list > li::after {
-  background: linear-gradient(135deg, #83e4e2 0%, #a2ed56 100%);
-  border-radius: 1rem 1rem 0 1rem;
-  content: '';
-  height: 3rem;
-  left: -1rem;
-  overflow: hidden;
-  position: absolute;
-  top: -1rem;
-  width: 3rem;
-}
-
-ol.gradient-list > li::before {
-  align-items: flex-end;
-  content: counter(gradient-counter);
-  color: #1d1f20;
-  display: flex;
-  font: 900 1.5em/1 'Montserrat';
-  justify-content: flex-end;
-  padding: 0.125em 0.25em;
-  z-index: 1;
-}
-/* Add this CSS to reset default list styles */
 .info-container ol,
 .info-container ul {
   margin: 0;
