@@ -1,4 +1,4 @@
-import CarGrid from "./Car-grid-component";
+import CarGrid from "./car-grid-component/Car-grid-component.jsx";
 import "./App.css";
 import CARS from "./Data.js";
 import HomePage from "./home-page/home-component.jsx";
@@ -18,18 +18,19 @@ function App(props) {
     brand: "Subaru",
     name: "Forester",
     imageIndex: "0",
-    image: [
-      { URL: require("./car-pictures/forester2.jpg") },
-      { URL: require("./car-pictures/forester.jpg") },
-      { URL: require("./car-pictures/forester3.jpg") },
-      { URL: require("./car-pictures/forester4.jpg") },
-      { URL: require("./car-pictures/forester5.jpg") },
-      { URL: require("./car-pictures/forester6.jpg") },
-      { URL: require("./car-pictures/forester7.jpg") },
-      { URL: require("./car-pictures/forester8.jpg") },
-      { URL: require("./car-pictures/forester9.jpg") },
-      { URL: require("./car-pictures/forester10.jpg") },
-    ],
+    image: require("./car-pictures/forester2.jpg") ,
+    // image: [
+    //   { URL: require("./car-pictures/forester2.jpg") },
+    //   { URL: require("./car-pictures/forester.jpg") },
+    //   { URL: require("./car-pictures/forester3.jpg") },
+    //   { URL: require("./car-pictures/forester4.jpg") },
+    //   { URL: require("./car-pictures/forester5.jpg") },
+    //   { URL: require("./car-pictures/forester6.jpg") },
+    //   { URL: require("./car-pictures/forester7.jpg") },
+    //   { URL: require("./car-pictures/forester8.jpg") },
+    //   { URL: require("./car-pictures/forester9.jpg") },
+    //   { URL: require("./car-pictures/forester10.jpg") },
+    // ],
     price: "ksh 1,999,999",
     availability: "available",
     location: "Nairobi",
@@ -42,16 +43,11 @@ function App(props) {
       brand: values.brand,
       name: values.name,
       price: values.price,
-      image: [{ URL: values.imageURL }, ...Car.image.slice(1)],
+      image: values.imageURL 
     };
-
-    console.log (`values :${values}`)
-
 
     SetCar((prevcarArray) => [...prevcarArray, newCar]);
 
-
-    console.log(`Car array works, here is thenew Car array ${JSON.stringify(carArray)} `);
   }
 
   function sayHi(greeting) {

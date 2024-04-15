@@ -2,6 +2,9 @@
 
 .display-car-page {
   background-color: white;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
 }
 
 .image-info-container {
@@ -11,9 +14,10 @@
   padding: 20px;
 }
 
+
 .info-container {
   width: 600px;
-  height: 900px;
+  max-height: 1069px;
   background-color: #fff0fa;
   margin-top: 30px;
   display: flex;
@@ -21,17 +25,24 @@
   flex-direction: column;
   overflow: scroll;
   margin-left: 10px;
+  
+
 }
 
 .image-container {
   position: relative;
   width: 100%;
-  height: 700px;
+  /* height: 700px; */
+
+  max-height: 1069px;
+
 }
 
 .hero-image {
   height: 100%;
   width: 100%;
+  max-width: 1426px;
+  max-height: 1069px;
 }
 
 .change-image-forward-div {

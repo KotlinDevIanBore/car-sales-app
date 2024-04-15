@@ -1,6 +1,12 @@
+/* Default styles */
+
 html, body {
+  display: flex;
+  justify-content: center;
+
   overflow:hidden;
-overflow: scroll;  height: 100%;
+  overflow: scroll;
+  height: 100%;
 }
 
 .scroll-home-page::-webkit-scrollbar {
@@ -10,44 +16,20 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   width: 0; /* Set the width to 0 */
 }
 
-
-.scroll-home-page{
+.scroll-home-page {
   overflow: auto;
 }
-.car-grid-scroll{
+
+.car-grid-scroll {
   overflow-y: scroll;
-
   height: 110%;
-
-}
-
-.grid{
-  display: flex;
-  flex-direction: row;
-  flex: 1 1 1 1 ;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  justify-content: space-around;
-  padding: 10px;
-  margin-top: 70px;
-}
-
-.car-container{
-  height: 400px;
-  width: 400px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease;
-
-
-
 }
 
 
 
-   
 
-.top-navigation{
+
+.top-navigation {
   background-color: rgb(236, 74, 101);
   position: absolute;
   position: fixed;
@@ -57,124 +39,5 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   width: 100%;
   z-index: 1050;
   opacity: 0;
-  
 }
 
-.car-image{
-  width: 100%;
-  
-}
-car-image :hover{
-  transform: scale(1.1); /* Increase the scale to 1.1 or any desired value */
-
-  
-}
-.car-name, .car-price {
-  color:rgb(7, 142, 142);
-
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-weight:200;
-  margin-top: 10px;
-  letter-spacing: 3px;
-  /* opacity: 0; */
-}
-.car-name :hover{
-opacity: 1;
-}
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
-}
-.arrow-image-container{
-  position: relative;
-}
-.forward-arrow-container {
-  position: absolute; /* Position relative to .car-container */
-  width: 20%;
-  height: 95%;
-  top: 10px; /* Adjust the position */
-  right: 10px; /* Adjust the position */
-  z-index: 1000000; /* Ensure it's above other content */
-  /* background-color: blue; */
-}
-.forward-arrow {
-  margin-left: 50px;
-  margin-top: 150px;
-  opacity: 0;
-  height: 30px;
-  width: 30px;
-}
-
-
-.forward-arrow:hover {
-  opacity: 1;
-  
-}
-
-
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
-}
-
-.middle-arrow-container{
-  position: absolute; /* Position relative to .car-container */
-  width: auto;
-  height: 95%;
-  top: 10px; /* Adjust the position */
-  left:92px; /* Adjust the position */
-  right:92px;
-  z-index: 10000000; /* Ensure it's above other content */
-  /* background-color: red; */
-
-}
-.back-arrow-container{
-  position: absolute; /* Position relative to .car-container */
-  width: 20%;
-  height: 95%;
-  top: 10px; /* Adjust the position */
-  left: 10px; /* Adjust the position */
-  z-index: 1000000; /* Ensure it's above other content */
-  /* background-color:blue; */
-
-}
-.back-arrow{
-  margin-right: 50px;
-  margin-top: 150px;
-  opacity: 0;
-  height: 30px;
-  width: 30px;
-}
-.back-arrow:hover{
-  opacity: 1;
-}
-.add-to-cart-button {
-  
-  margin-left: 100px;
-  margin-bottom: 10px;
-  opacity: 0;
-}
-
-.add-to-cart-button:hover {
-  background-color: #364a72; /* Darker Green */
-  opacity: 1;
-
-}
-.home-button{
-  border:rgb(21, 0, 255);
-  margin-left: 600px;
-  color: #364a72;
-}
-
-.home-button :hover{
-  border: solid;
-  border-color:rgb(7, 142, 142);
-
-}
