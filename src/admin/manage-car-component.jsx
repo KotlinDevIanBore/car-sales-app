@@ -66,7 +66,7 @@ const [selectedFile, setselectedFile]= useState (null);
           <input
             className="input"
             type="file"
-            value={selectedFile}
+            // value={selectedFile}
             onChange={handleFileChange}
           />
         </div>
@@ -74,7 +74,7 @@ const [selectedFile, setselectedFile]= useState (null);
         {/* Add more input fields here */}
         <button
           onClick={() => {
-            // props.AddCar({ ...values, file: selectedFile });
+            props.AddCar({ ...values, file: selectedFile });
           }}
           className="add-car-button"
           type="submit"
