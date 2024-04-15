@@ -112,7 +112,7 @@ function CarGrid(props) {
       // target="_blank"
       >
       <button>
-        Edit Page
+        Manage Cars
       </button>
       
       </Link>
