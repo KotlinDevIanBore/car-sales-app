@@ -12,6 +12,7 @@ function App(props) {
   const cargridref = useRef();
   const homepageRef = useRef();
   const [carArray, SetCar] = useState(CARS);
+  console.log (props)
 
   const Car = {
     id: "9",
@@ -37,13 +38,13 @@ function App(props) {
   };
 
   function AddCar(values) {
+    alert (`123`)
     const newCar = {
       ...Car,
       id: carArray.length + 1,
       brand: values.brand,
       name: values.name,
-      price: values.price,
-      image: values.imageURL 
+      price: values.price
     };
 
     SetCar((prevcarArray) => [...prevcarArray, newCar]);

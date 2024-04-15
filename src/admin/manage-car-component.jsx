@@ -6,8 +6,9 @@ function ManageCars(props) {
     brand: "",
     name: "",
     price: "",
-    imageURL:""
+  
   });
+const [selectedFile, setselectedFile]= useState (null);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -16,6 +17,10 @@ function ManageCars(props) {
       [name]: value,
     }));
   }
+  const handleFileChange = (event) => {
+    setselectedFile(event.target.files[0]);
+    console.log (event.target.files[0])
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -24,7 +29,7 @@ function ManageCars(props) {
   }
   return (
     <div>
-      <form className="form" onChange={handleChange} onSubmit={handleSubmit}>
+      <form className="form"  onSubmit={handleSubmit}>
         <div className="input-container">
           <input
             className="input"
@@ -32,7 +37,7 @@ function ManageCars(props) {
             type="text"
             name="brand"
             value={values.brand}
-            // onChange={handleChange}
+            onChange={handleChange}
           />
         </div>
 
@@ -43,7 +48,7 @@ function ManageCars(props) {
             type="text"
             name="name"
             value={values.name}
-            // onChange={handleChange}
+            onChange={handleChange}
           />
         </div>
         
@@ -54,24 +59,22 @@ function ManageCars(props) {
             type="text"
             name="price"
             value={values.price}
-            // onChange={handleChange}
+            onChange={handleChange}
           />
         </div>
         <div className="input-container">
           <input
             className="input"
-            placeholder="imageURL"
-            type="text"
-            name="imageURL"
-            value={values.imageURL}
-            // onChange={handleChange}
+            type="file"
+            value={selectedFile}
+            onChange={handleFileChange}
           />
         </div>
 
         {/* Add more input fields here */}
         <button
           onClick={() => {
-            props.AddCar(values);
+            // props.AddCar({ ...values, file: selectedFile });
           }}
           className="add-car-button"
           type="submit"
