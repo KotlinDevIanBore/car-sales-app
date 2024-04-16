@@ -12,14 +12,15 @@ function App(props) {
   const cargridref = useRef();
   const homepageRef = useRef();
   const [carArray, SetCar] = useState(CARS);
-  console.log (props)
 
   const Car = {
     id: "9",
     brand: "Subaru",
     name: "Forester",
     imageIndex: "0",
-    image: require("./car-pictures/forester2.jpg") ,
+    // image: [{URL: require("") }],
+
+    image: [{URL: require("./car-pictures/forester2.jpg") }],
     // image: [
     //   { URL: require("./car-pictures/forester2.jpg") },
     //   { URL: require("./car-pictures/forester.jpg") },
@@ -38,21 +39,31 @@ function App(props) {
   };
 
   function AddCar(values) {
-    alert (`123`)
+
+    if (!values.imageURLs) {
+      alert ('Error')
+      return; // or handle the case where imageURL is undefined
+    }
+    alert(values.imageURLs)
+
+    alert (JSON.stringify(values));
+    const images =  values.imageURLs.map(url=>({URL:url}))
     const newCar = {
       ...Car,
       id: carArray.length + 1,
       brand: values.brand,
       name: values.name,
-      price: values.price
+      price: values.price,
+      image:images,
+      // image: [{URL:values.imageURL}]
     };
 
     SetCar((prevcarArray) => [...prevcarArray, newCar]);
+    localStorage.setItem ('carArray', JSON.stringify(carArray))
 
   }
 
   function sayHi(greeting) {
-    console.log(`Ian says${greeting}`);
     handleClickHome();
   }
 

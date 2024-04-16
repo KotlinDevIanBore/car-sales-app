@@ -1,35 +1,56 @@
 import "./manage-car-component.css";
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
 
 function ManageCars(props) {
   const [values, setValues] = useState({
     brand: "",
     name: "",
     price: "",
-  
   });
-const [selectedFile, setselectedFile]= useState (null);
+  // const [selectedFile, setselectedFile] = useState(null);
+  const [imageURL, setimageURL] = useState([]);
+  const [imageURLs, setimageURLs] = useState([]);
+
+  
 
   function handleChange(e) {
     const { name, value } = e.target;
-    setValues((prevValues) => ({
+    setValues(prevValues => ({
       ...prevValues,
       [name]: value,
     }));
+
+    
   }
-  const handleFileChange = (event) => {
-    setselectedFile(event.target.files[0]);
-    console.log (event.target.files[0])
+
+  const handleFileChange = event => {
+    const files = event.target.files;
+    const URLs = Array.from(files).map(file => ({
+      URL: URL.createObjectURL(file),
+    }));
+
+    setimageURL((prevURLs)=>[...prevURLs,...URLs]);
+
+
+    // setselectedFile(event.target.files);
+    console.log(event.target.files[0]);
+    
+      setimageURLs(imageURL.map(item => item.URL));
+    
   };
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("Form submitted with values:", values);
-    console.log("Form submitted with value of car:", values.brand);
+    setValues ({brand:"",name:"", price:""})
+    // setselectedFile(null)
+    setimageURL ([])
+    setimageURLs([]);
+
   }
+
   return (
     <div>
-      <form className="form"  onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <div className="input-container">
           <input
             className="input"
@@ -51,7 +72,7 @@ const [selectedFile, setselectedFile]= useState (null);
             onChange={handleChange}
           />
         </div>
-        
+
         <div className="input-container">
           <input
             className="input"
@@ -65,16 +86,15 @@ const [selectedFile, setselectedFile]= useState (null);
         <div className="input-container">
           <input
             className="input"
+            multiple
             type="file"
-            // value={selectedFile}
             onChange={handleFileChange}
           />
         </div>
 
-        {/* Add more input fields here */}
         <button
           onClick={() => {
-            props.AddCar({ ...values, file: selectedFile });
+            props.AddCar({ ...values, imageURLs: imageURLs });
           }}
           className="add-car-button"
           type="submit"
@@ -85,4 +105,5 @@ const [selectedFile, setselectedFile]= useState (null);
     </div>
   );
 }
+
 export default ManageCars;

@@ -87,10 +87,12 @@ home-image-container{
 
     
   }
-  @media screen and (min-width:3500px) and  (min-height:1900px) {
+  @media screen and (min-width:3500px)  {
     .home-component{
         margin-bottom: 50px;
-        height: 1904px;
+        /* height: 1904px; */
+        height: 2500px;
+        background-color: rgb(255, 240, 254);
 
         
     
@@ -100,6 +102,8 @@ home-image-container{
         width: 100%;
         display: flex;
         justify-content: center;
+        background-color: rgb(255, 240, 254);
+
 
     
     }
@@ -111,10 +115,12 @@ home-image-container{
         height: auto;
         width: 100%;
         max-width: 1200px;
+        background-color: rgb(255, 240, 254);
+
     }
     
     .home-image{
-        height: 1500px;
+        height: 1600px;
         width: 100%;
         max-width: 2000px;
     

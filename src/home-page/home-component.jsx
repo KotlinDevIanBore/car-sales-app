@@ -7,7 +7,7 @@ import { useState, useEffect, useRef } from "react";
 
 function HomePage(props) {
   const [scrollIndex, setScrollIndex] = useState(1);
-  const homePageRef = useRef(null); // Create a ref
+  // const homePageRef = useRef(null); // Create a ref
 
   function scrollImage() {
     setScrollIndex((prevIndex) => {
@@ -22,7 +22,9 @@ function HomePage(props) {
   
 
   return (
-    <div ref={homePageRef} className="  home-component"       
+    <div 
+    // ref={homePageRef} 
+    className="  home-component"       
     >
       <div 
       className="home-page">

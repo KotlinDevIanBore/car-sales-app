@@ -1,4 +1,4 @@
-import "./car-grid-component.css"
+import "./car-grid-component.css";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
@@ -6,16 +6,11 @@ import { Link } from "react-router-dom";
 
 function CarGrid(props) {
   const [carArray, SetCar] = useState(props.carArray);
-  
 
   const [imageIndex, SetIndex] = useState(0);
   const carGridRef = useRef();
-  console.log("CarGrid component is rendering...");
-
-  
 
   function changeImageIndex(buttonId, direction) {
-    console.log(`Button id: ${buttonId}`);
     const updatedCars = props.carArray.map((car) => {
       if (car.id === buttonId) {
         SetIndex((prevIndex) => {
@@ -29,7 +24,7 @@ function CarGrid(props) {
     });
     SetCar(updatedCars);
   }
-  
+  const storedCars = JSON.parse(localStorage.getItem("carArray"));
 
   return (
     <div ref={carGridRef}>
@@ -47,10 +42,7 @@ function CarGrid(props) {
         {carArray.map((car) => {
           return (
             <div>
-              <div
-                className="car-container div-2"
-                key={car.name}
-              >
+              <div className="car-container div-2" key={car.name}>
                 <div className="arrow-image-container">
                   {" "}
                   <img
@@ -69,14 +61,17 @@ function CarGrid(props) {
                       navigate_next
                     </span>
                   </div>
-                  <Link 
-                  // to={`/view-car/${car.name} `} 
-                  to={`/view-car`} 
-                  onClick={()=>{props.GetCarfromGrid(car); console.log('works')}}
+                  <Link
+                    // to={`/view-car/${car.name} `}
+                    to={`/view-car`}
+                    onClick={() => {
+                      props.GetCarfromGrid(car);
+                      console.log("works");
+                    }}
 
-                  // target="_blank"
+                    // target="_blank"
                   >
-                    <div className="middle-arrow-container" ></div>
+                    <div className="middle-arrow-container"></div>
                   </Link>
                   <div
                     className="back-arrow-container"
@@ -90,7 +85,9 @@ function CarGrid(props) {
                   </div>
                 </div>
 
-                <div className="car-name">{car.name}</div>
+                <div className="car-name">
+                   {car.brand} {car.name}
+                </div>
                 <div className="car-price">{car.price}</div>
 
                 <button className="add-to-cart-button">Add to Cart</button>
@@ -107,14 +104,11 @@ function CarGrid(props) {
       >
         Home
       </button>
-      <Link 
-      to={'/add-car'} 
-      // target="_blank"
+      <Link
+        to={"/add-car"}
+        // target="_blank"
       >
-      <button>
-        Manage Cars
-      </button>
-      
+        <button>Manage Cars</button>
       </Link>
 
       {/* <button onClick={()=>{
@@ -122,7 +116,6 @@ function CarGrid(props) {
       }}>
         AddCar
       </button> */}
-      
     </div>
   );
 }
