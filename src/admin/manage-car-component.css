@@ -15,6 +15,9 @@
   width: 100%;
 
  }
+ .add-car-button{
+  background-color: green;
+ }
  @media screen and  (min-width:3500px){
 
   .input-container,.add-car-button {

@@ -26,6 +26,14 @@ function CarGrid(props) {
   }
   const storedCars = JSON.parse(localStorage.getItem("carArray"));
 
+  useEffect(() => {
+    if (storedCars) {
+      SetCar(storedCars);
+    }
+  }, [localStorage.getItem("carArray")]);
+  
+  
+
   return (
     <div ref={carGridRef}>
       <link
@@ -86,7 +94,7 @@ function CarGrid(props) {
                 </div>
 
                 <div className="car-name">
-                   {car.brand} {car.name}
+                  {car.brand} {car.name}
                 </div>
                 <div className="car-price">{car.price}</div>
 
@@ -110,12 +118,6 @@ function CarGrid(props) {
       >
         <button>Manage Cars</button>
       </Link>
-
-      {/* <button onClick={()=>{
-        AddCar()
-      }}>
-        AddCar
-      </button> */}
     </div>
   );
 }

@@ -11,46 +11,40 @@ function ManageCars(props) {
   const [imageURL, setimageURL] = useState([]);
   const [imageURLs, setimageURLs] = useState([]);
 
-  
-
   function handleChange(e) {
     const { name, value } = e.target;
-    setValues(prevValues => ({
+    setValues((prevValues) => ({
       ...prevValues,
       [name]: value,
     }));
-
-    
   }
 
-  const handleFileChange = event => {
+  const handleFileChange = (event) => {
     const files = event.target.files;
-    const URLs = Array.from(files).map(file => ({
+    const URLs = Array.from(files).map((file) => ({
       URL: URL.createObjectURL(file),
     }));
 
-    setimageURL((prevURLs)=>[...prevURLs,...URLs]);
-
+    setimageURL((prevURLs) => [...prevURLs, ...URLs]);
 
     // setselectedFile(event.target.files);
     console.log(event.target.files[0]);
-    
-      setimageURLs(imageURL.map(item => item.URL));
-    
+
+    setimageURLs(imageURL.map((item) => item.URL));
   };
 
   function handleSubmit(e) {
     e.preventDefault();
-    setValues ({brand:"",name:"", price:""})
+    // const confirmSubmission= window.confirm ('Add this car')
+    setValues({ brand: "", name: "", price: "" });
     // setselectedFile(null)
-    setimageURL ([])
+    setimageURL([]);
     setimageURLs([]);
-
   }
 
   return (
     <div>
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="form"  onSubmit={handleSubmit}>
         <div className="input-container">
           <input
             className="input"
