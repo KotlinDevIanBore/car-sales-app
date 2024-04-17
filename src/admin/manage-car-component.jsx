@@ -1,5 +1,5 @@
 import "./manage-car-component.css";
-import { useState, useEffect } from "react";
+import { useState, useMemo } from "react";
 
 function ManageCars(props) {
   const [values, setValues] = useState({
@@ -13,6 +13,10 @@ function ManageCars(props) {
 
   function handleChange(e) {
     const { name, value } = e.target;
+
+    
+
+
     setValues((prevValues) => ({
       ...prevValues,
       [name]: value,

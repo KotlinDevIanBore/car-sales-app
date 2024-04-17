@@ -1,15 +1,24 @@
 import "./car-grid-component.css";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef , memo } from "react";
 import { Link } from "react-router-dom";
 
 // import { Button } from 'carbon-components-react';
 
 function CarGrid(props) {
+
+  
+
   const [carArray, SetCar] = useState(props.carArray);
+
+
+
 
   const [imageIndex, SetIndex] = useState(0);
   const carGridRef = useRef();
+  const storedCars = JSON.parse(localStorage.getItem("carArray"));
 
+
+ 
   function changeImageIndex(buttonId, direction) {
     const updatedCars = props.carArray.map((car) => {
       if (car.id === buttonId) {
@@ -24,11 +33,13 @@ function CarGrid(props) {
     });
     SetCar(updatedCars);
   }
-  const storedCars = JSON.parse(localStorage.getItem("carArray"));
+
+
 
   useEffect(() => {
     if (storedCars) {
       SetCar(storedCars);
+      console.log(storedCars)
     }
   }, [localStorage.getItem("carArray")]);
   
@@ -122,4 +133,7 @@ function CarGrid(props) {
   );
 }
 
-export default CarGrid;
+const MemoizedCarGrid = memo(CarGrid)
+
+// export default CarGrid;
+export default MemoizedCarGrid;

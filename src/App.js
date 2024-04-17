@@ -1,4 +1,6 @@
-import CarGrid from "./car-grid-component/Car-grid-component.jsx";
+// import CarGrid from "./car-grid-component/Car-grid-component.jsx";
+import MemoizedCarGrid from "./car-grid-component/Car-grid-component.jsx";
+
 import "./App.css";
 import CARS from "./Data.js";
 import HomePage from "./home-page/home-component.jsx";
@@ -109,7 +111,7 @@ function App(props) {
             <Route
               path="/"
               element={
-                <CarGrid
+                <MemoizedCarGrid
                   sayHi={sayHi}
                   GetCarfromGrid={GetCarfromGrid}
                   carArray={carArray}
