@@ -17,6 +17,7 @@
  }
  .add-car-button{
   background-color: green;
+  height: 10%;
  }
  @media screen and  (min-width:3500px){
 

@@ -17,6 +17,16 @@ function CarGrid(props) {
   const carGridRef = useRef();
   const storedCars = JSON.parse(localStorage.getItem("carArray"));
 
+  const [notes] = useState([
+    {
+      title: "First note",
+      description: "This is my first note",
+      done: false
+    }
+]);
+
+console.log(notes)
+
 
  
   function changeImageIndex(buttonId, direction) {

@@ -53,7 +53,6 @@ function App(props) {
       alert("Error");
       return; // or handle the case where imageURL is undefined
     }
-    alert(values.imageURLs);
 
     alert(JSON.stringify(values));
     const images = values.imageURLs.map((url) => ({ URL: url }));
@@ -120,13 +119,10 @@ function App(props) {
             />
           </Routes>
 
-          {/* <CarGrid cars={CARS} sayHi={sayHi} /> */}
         </div>
       </div>
       <Routes>
-        {/* <Route path={`/view-car/${name}`} element={<DisplayCar />} /> */}
         <Route path="/view-car" element={<DisplayCar car={car} />} />
-        {/* <Route path='/' element={<DisplayCar name={name} />} /> */}
       </Routes>
 
       <Routes>
