@@ -1,21 +1,21 @@
 import "./car-grid-component.css";
 import { useState, useEffect, useRef , memo } from "react";
 import { Link } from "react-router-dom";
+import fetchData from './car-grid-component-resource'
 
-// import { Button } from 'carbon-components-react';
 
 function CarGrid(props) {
 
   
 
-  const [carArray, SetCar] = useState(props.carArray);
+  const [carArray, SetCar] = useState(null);
 
 
-
-
+  
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [imageIndex, SetIndex] = useState(0);
   const carGridRef = useRef();
-  const storedCars = JSON.parse(localStorage.getItem("carArray"));
 
   const [notes] = useState([
     {
@@ -25,6 +25,25 @@ function CarGrid(props) {
     }
 ]);
 
+  useEffect(() => {
+    const loadCars = async () => {
+      try {
+        const fetchedCars = await fetchData();
+        SetCar(fetchedCars);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+
+      }
+    };
+
+    loadCars();
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error fetching data: {error.message}</div>;
+  
 console.log(notes)
 
 
@@ -36,7 +55,7 @@ console.log(notes)
           const newIndex = prevIndex + direction;
           return (newIndex + car.image.length) % car.image.length;
         });
-        return { ...car, imageIndex: imageIndex.toString() }; // Update the imageIndex property
+        return { ...car, imageIndex: imageIndex.toString() }; 
       } else {
         return car;
       }
@@ -44,14 +63,6 @@ console.log(notes)
     SetCar(updatedCars);
   }
 
-
-
-  useEffect(() => {
-    if (storedCars) {
-      SetCar(storedCars);
-      console.log(storedCars)
-    }
-  }, [localStorage.getItem("carArray")]);
   
   
 
@@ -76,9 +87,14 @@ console.log(notes)
                   {" "}
                   <img
                     className="car-image"
-                    src={car.image[car.imageIndex].URL} // Accessing URL property
+
+
+                    src={(car.image[imageIndex].URL)}
+
                     alt=""
                   />
+                  
+
                   <div
                     className="forward-arrow-container"
                     onClick={() => {

@@ -1,21 +1,19 @@
 import "./manage-car-component.css";
-import { useState, useMemo } from "react";
+import { useContext } from "react";
+import { CarContext } from "./manage-car-context";
 
 function ManageCars(props) {
-  const [values, setValues] = useState({
-    brand: "",
-    name: "",
-    price: "",
-  });
-  // const [selectedFile, setselectedFile] = useState(null);
-  const [imageURL, setimageURL] = useState([]);
-  const [imageURLs, setimageURLs] = useState([]);
+  const {
+    values,
+    setValues,
+    handleFormData,
+    uploadedFile,
+    setUploadedFile,
+    handleFileData,
+  } = useContext(CarContext);
 
   function handleChange(e) {
     const { name, value } = e.target;
-
-    
-
 
     setValues((prevValues) => ({
       ...prevValues,
@@ -24,31 +22,36 @@ function ManageCars(props) {
   }
 
   const handleFileChange = (event) => {
-    const files = event.target.files;
-    const URLs = Array.from(files).map((file) => ({
-      URL: URL.createObjectURL(file),
-    }));
-
-    setimageURL((prevURLs) => [...prevURLs, ...URLs]);
-
-    // setselectedFile(event.target.files);
-    console.log(event.target.files[0]);
-
-    setimageURLs(imageURL.map((item) => item.URL));
+    const files = Array.from (event.target.files) ;
+    setUploadedFile((prevFiles) => [...prevFiles, ...files]);
   };
 
   function handleSubmit(e) {
     e.preventDefault();
-    // const confirmSubmission= window.confirm ('Add this car')
-    setValues({ brand: "", name: "", price: "" });
-    // setselectedFile(null)
-    setimageURL([]);
-    setimageURLs([]);
-  }
+    setValues({
+      brand: "",
+      name: "",
+      price: "",
+      availability: "",
+      location: "",
+    });
 
+
+    const formData = {
+      brand: values.brand,
+      name: values.name,
+      price: values.price,
+      availability: values.availability,
+      location: values.location,
+    };
+
+    handleFormData(formData);
+
+    handleFileData(uploadedFile);
+  }
   return (
     <div>
-      <form className="form"  onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <div className="input-container">
           <input
             className="input"
@@ -84,6 +87,27 @@ function ManageCars(props) {
         <div className="input-container">
           <input
             className="input"
+            placeholder="availabilty"
+            type="text"
+            name="availability"
+            value={values.availability}
+             onChange={handleChange}
+          />
+        </div>
+        <div className="input-container">
+          <input
+            className="input"
+            placeholder="location"
+            type="text"
+            name="location"
+            value={values.location}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="input-container">
+          <input
+            className="input"
             multiple
             type="file"
             onChange={handleFileChange}
@@ -91,9 +115,8 @@ function ManageCars(props) {
         </div>
 
         <button
-          onClick={() => {
-            props.AddCar({ ...values, imageURLs: imageURLs });
-          }}
+         
+          onClick={handleSubmit}
           className="add-car-button"
           type="submit"
         >
@@ -105,3 +128,5 @@ function ManageCars(props) {
 }
 
 export default ManageCars;
+
+

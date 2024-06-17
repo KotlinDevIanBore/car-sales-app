@@ -9,7 +9,7 @@
     margin-top: 70px;
     flex-flow: row wrap;
     /* background-color: red; */
-    width: 2000px;
+    width: 100%;
   }
   .car-container {
     height: 400px;

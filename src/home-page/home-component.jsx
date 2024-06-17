@@ -19,25 +19,28 @@ function HomePage(props) {
     });
   }
 
-  
-
   return (
-    <div 
-    // ref={homePageRef} 
-    className="  home-component"       
+    <div
+      // ref={homePageRef}
+      className="  home-component"
     >
-      <div 
-      className="home-page">
+      <div className="home-page">
         <div className="home-image-container">
-            <div className="search-bar-container">
-                <input type="text" className="search-bar" placeholder=" Search Your Dream Car Here "></input>
-            </div>
+          <div className="search-bar-container">
+            <input
+              type="text"
+              className="search-bar"
+              placeholder=" Search Your Dream Car Here "
+            ></input>
+          </div>
           {IMAGES.map((image) => {
             return (
               <img
                 className="home-image"
                 src={image["URL" + scrollIndex]}
-                onClick={()=>{scrollImage('works')}}
+                onClick={() => {
+                  scrollImage("works");
+                }}
               ></img>
             );
           })}
