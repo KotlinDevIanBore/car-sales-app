@@ -51,6 +51,8 @@ export const CarProvider = ({ children }) => {
 
       if (response.ok) {
         console.log("File uploaded successfully");
+             setUploadedFile([]);
+
       } else {
         console.log("File upload failed");
       }

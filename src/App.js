@@ -29,27 +29,8 @@ function App(props) {
     localStorage.setItem("carArray", JSON.stringify(carArray));
   }, [carArray]);
 
-  function AddCar(values) {
-    if (!values.imageURLs) {
-      alert("Error");
-      return; // or handle the case where imageURL is undefined
-    }
-
-    alert(JSON.stringify(values));
-    const images = values.imageURLs.map((url) => ({ URL: url }));
-    const newCar = {
-      ...Car,
-      id: carArray.length + 1,
-      brand: values.brand,
-      name: values.name,
-      price: values.price,
-      image: images,
-    };
-
-    SetCar((prevcarArray) => [...prevcarArray, newCar]);
-  }
-
-  function sayHi(greeting) {
+  
+  function RenderHomePage(greeting) {
     handleClickHome();
   }
 
@@ -79,7 +60,7 @@ function App(props) {
             path="/"
             element={
               <MemoizedCarGrid
-                sayHi={sayHi}
+                RenderHomePage={RenderHomePage}
                 GetCarfromGrid={GetCarfromGrid}
                 carArray={carArray}
               />

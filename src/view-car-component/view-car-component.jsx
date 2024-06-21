@@ -1,14 +1,11 @@
 import React from "react";
-// import { Button } from "carbon-components-react";
-// import sportsCar from "./home-page-images/pexels-sarmad-mughal-305070.jpg"
 import { useState, useEffect, useRef } from "react";
-import CARS from "../Data";
 import "./view-car.css";
 
 import { BrowserRouter as Router, Route, useParams } from "react-router-dom";
 
 function DisplayCar(props) {
-  const [imageIndex, setimageIndex] = useState(1);
+  const [imageIndex, setimageIndex] = useState(0);
   function handleImageChange(direction) {
     setimageIndex((prevIndex) => {
       const newIndex = prevIndex + direction;
@@ -28,7 +25,7 @@ function DisplayCar(props) {
         <div className="image-container">
           <img
             className="hero-image"
-            src={props.car.image[imageIndex].URL}
+            src={props.car.image[0].URL}
             alt=""
           />
           <div

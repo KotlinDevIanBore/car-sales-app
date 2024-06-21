@@ -1,13 +1,12 @@
-import { Button } from "carbon-components-react";
-import "./home-component.css"; // Importing CSS file
-// import sportsCar from "./home-page-images/pexels-sarmad-mughal-305070.jpg"
-import sportsCar from "./home-page-images/audi-image.jpg";
+
+import "./home-component.css"; 
+import { Link } from "react-router-dom";
+
 import IMAGES from "./images-array";
-import { useState, useEffect, useRef } from "react";
+import { useState} from "react";
 
 function HomePage(props) {
   const [scrollIndex, setScrollIndex] = useState(1);
-  // const homePageRef = useRef(null); // Create a ref
 
   function scrollImage() {
     setScrollIndex((prevIndex) => {
@@ -38,6 +37,7 @@ function HomePage(props) {
               <img
                 className="home-image"
                 src={image["URL" + scrollIndex]}
+                alt=''
                 onClick={() => {
                   scrollImage("works");
                 }}
@@ -46,6 +46,12 @@ function HomePage(props) {
           })}
         </div>
       </div>
+      <Link
+        to={"/add-car"}
+        // target="_blank"
+      >
+        <button>Manage Cars</button>
+      </Link>
     </div>
   );
 }

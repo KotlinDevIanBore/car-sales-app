@@ -107,11 +107,9 @@ console.log(notes)
                     </span>
                   </div>
                   <Link
-                    // to={`/view-car/${car.name} `}
                     to={`/view-car`}
                     onClick={() => {
                       props.GetCarfromGrid(car);
-                      console.log("works");
                     }}
 
                     // target="_blank"
@@ -144,22 +142,16 @@ console.log(notes)
       <button
         className="home-button"
         onClick={() => {
-          props.sayHi("Hello");
+          props.RenderHomePage("Hello");
         }}
       >
         Home
       </button>
-      <Link
-        to={"/add-car"}
-        // target="_blank"
-      >
-        <button>Manage Cars</button>
-      </Link>
+      
     </div>
   );
 }
 
 const MemoizedCarGrid = memo(CarGrid)
 
-// export default CarGrid;
 export default MemoizedCarGrid;
