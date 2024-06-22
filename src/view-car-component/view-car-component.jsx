@@ -25,7 +25,7 @@ function DisplayCar(props) {
         <div className="image-container">
           <img
             className="hero-image"
-            src={props.car.image[0].URL}
+            src={props.car.image[imageIndex].URL}
             alt=""
           />
           <div

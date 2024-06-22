@@ -125,6 +125,15 @@ function ManageCars(props) {
           Add Car
         </button>
       </form>
+
+      <button
+        className="home-button"
+        onClick={() => {
+          props.RenderHomePage("Hello");
+        }}
+      >
+        Home
+      </button>
     </div>
   );
 }

@@ -49,7 +49,7 @@ console.log(notes)
 
  
   function changeImageIndex(buttonId, direction) {
-    const updatedCars = props.carArray.map((car) => {
+    const updatedCars = carArray.map((car) => {
       if (car.id === buttonId) {
         SetIndex((prevIndex) => {
           const newIndex = prevIndex + direction;
@@ -62,7 +62,7 @@ console.log(notes)
     });
     SetCar(updatedCars);
   }
-
+  
   
   
 
@@ -112,7 +112,7 @@ console.log(notes)
                       props.GetCarfromGrid(car);
                     }}
 
-                    // target="_blank"
+                    
                   >
                     <div className="middle-arrow-container"></div>
                   </Link>

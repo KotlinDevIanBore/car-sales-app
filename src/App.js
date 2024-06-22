@@ -6,29 +6,12 @@ import CARS from "./Data.js";
 import HomePage from "./home-page/home-component.jsx";
 import DisplayCar from "./view-car-component/view-car-component.jsx";
 import ManageCarApp from "./admin/manage-app.jsx";
-import ManageCars from "./admin/manage-car-component.jsx";
 
 function App(props) {
   const [car, GetCarfromGrid] = useState("error");
   const cargridref = useRef();
   const homepageRef = useRef();
   const [carArray, SetCar] = useState(CARS);
-
-  const Car = {
-    id: "9",
-    brand: "Subaru",
-    name: "Forester",
-    imageIndex: "0",
-    image: [{ URL: require("./car-pictures/forester2.jpg") }],
-    price: "ksh 1,999,999",
-    availability: "available",
-    location: "Nairobi",
-  };
-
-  useEffect(() => {
-    localStorage.setItem("carArray", JSON.stringify(carArray));
-  }, [carArray]);
-
   
   function RenderHomePage(greeting) {
     handleClickHome();
@@ -70,7 +53,7 @@ function App(props) {
       </div>
       <Routes>
         <Route path="/view-car" element={<DisplayCar car={car} />} />
-        <Route path="/add-car" element={<ManageCarApp />} />
+        <Route path="/add-car" element={<ManageCarApp RenderHomePage={RenderHomePage} />} />
       </Routes>
     </div>
   );
