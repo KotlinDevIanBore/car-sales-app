@@ -1,3 +1,4 @@
+
 import React, { createContext, useState } from "react";
 
 export const CarContext = createContext();
@@ -12,52 +13,39 @@ export const CarProvider = ({ children }) => {
   });
 
   const [uploadedFile, setUploadedFile] = useState([]);
-  const handleFormData = async (formData) => {
-    console.log("Form Data:", formData);
+
+  const handleFormFileData = async (formData, uploadedFile) => {
+    const formData1 = new FormData();
+
+    // Append form data fields
+    Object.keys(formData).forEach((key) => {
+      formData1.append(key, formData[key]);
+    });
+
+    // Append files
+    uploadedFile.forEach((file) => {
+      formData1.append('uploadedCarFile', file); 
+    });
 
     try {
       const response = await fetch("http://localhost:3000/api/addCar", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+        body: formData1, // Send FormData directly as the body
       });
 
       if (!response.ok) {
         throw new Error("Failed to add car");
+      } else {
+        alert('Car Added Successfully');
       }
 
       const data = await response.json();
       console.log("Success:", data);
+
+      setUploadedFile([])
+
     } catch (error) {
-      console.error("Feilya:", error);
-    }
-  };
-
-  const handleFileData = async (uploadedFile) => {
-    const formData = new FormData();
-
-    uploadedFile.map ((file)=>(
-      formData.append('uploadedCarFile',file)
-    ))
-
-
-    try {
-      const response = await fetch("http://localhost:3000/api/uploadCar", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (response.ok) {
-        console.log("File uploaded successfully");
-             setUploadedFile([]);
-
-      } else {
-        console.log("File upload failed");
-      }
-    } catch (error) {
-      console.log("Problem in file upload");
+      console.error("Error:", error);
     }
   };
 
@@ -68,8 +56,7 @@ export const CarProvider = ({ children }) => {
         setUploadedFile,
         values,
         setValues,
-        handleFormData,
-        handleFileData,
+        handleFormFileData
       }}
     >
       {children}

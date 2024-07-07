@@ -6,10 +6,11 @@ function ManageCars(props) {
   const {
     values,
     setValues,
-    handleFormData,
+    // handleFormData,
     uploadedFile,
     setUploadedFile,
-    handleFileData,
+    // handleFileData,
+    handleFormFileData
   } = useContext(CarContext);
 
   function handleChange(e) {
@@ -46,10 +47,14 @@ function ManageCars(props) {
       availability: values.availability,
       location: values.location,
     };
+    if(!values.brand || !values.name || !values.price |values.location) {
+      alert("Fill all the form data")
+    }
+    // handleFormData(formData);
 
-    handleFormData(formData);
+    // handleFileData(uploadedFile);
 
-    handleFileData(uploadedFile);
+    handleFormFileData (formData,uploadedFile);
   }
   return (
     <div>

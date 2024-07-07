@@ -1,18 +1,16 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Route, Routes } from "react-router-dom";
 import MemoizedCarGrid from "./car-grid-component/Car-grid-component.jsx";
 import "./App.css";
-import CARS from "./Data.js";
 import HomePage from "./home-page/home-component.jsx";
 import DisplayCar from "./view-car-component/view-car-component.jsx";
-import ManageCarApp from "./admin/manage-app.jsx";
 
+import ManageCarApp from "./admin/manage-app.jsx";
 function App(props) {
   const [car, GetCarfromGrid] = useState("error");
   const cargridref = useRef();
   const homepageRef = useRef();
-  const [carArray, SetCar] = useState(CARS);
-  
+
   function RenderHomePage(greeting) {
     handleClickHome();
   }
@@ -45,7 +43,6 @@ function App(props) {
               <MemoizedCarGrid
                 RenderHomePage={RenderHomePage}
                 GetCarfromGrid={GetCarfromGrid}
-                carArray={carArray}
               />
             }
           />
@@ -53,7 +50,10 @@ function App(props) {
       </div>
       <Routes>
         <Route path="/view-car" element={<DisplayCar car={car} />} />
-        <Route path="/add-car" element={<ManageCarApp RenderHomePage={RenderHomePage} />} />
+        <Route
+          path="/add-car"
+          element={<ManageCarApp RenderHomePage={RenderHomePage} />}
+        />
       </Routes>
     </div>
   );

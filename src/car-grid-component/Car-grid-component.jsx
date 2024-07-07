@@ -1,29 +1,16 @@
 import "./car-grid-component.css";
-import { useState, useEffect, useRef , memo } from "react";
+import { useState, useEffect, useRef, memo, useContext } from "react";
 import { Link } from "react-router-dom";
-import fetchData from './car-grid-component-resource'
+import fetchData from "./car-grid-component-resource";
+import { carGridContext } from "./car-grid-context";
 
+ function  CarGrid(props) {
+  const {carArray, SetCar,carGridRef} = useContext(carGridContext)
 
-function CarGrid(props) {
-
-  
-
-  const [carArray, SetCar] = useState(null);
-
-
-  
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [imageIndex, SetIndex] = useState(0);
-  const carGridRef = useRef();
 
-  const [notes] = useState([
-    {
-      title: "First note",
-      description: "This is my first note",
-      done: false
-    }
-]);
 
   useEffect(() => {
     const loadCars = async () => {
@@ -34,37 +21,35 @@ function CarGrid(props) {
         setError(err);
       } finally {
         setLoading(false);
-
       }
     };
 
     loadCars();
   }, []);
 
+  
+
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error fetching data: {error.message}</div>;
-  
-console.log(notes)
-
 
  
+
   function changeImageIndex(buttonId, direction) {
     const updatedCars = carArray.map((car) => {
       if (car.id === buttonId) {
+        console.log(car.id, buttonId);
         SetIndex((prevIndex) => {
           const newIndex = prevIndex + direction;
           return (newIndex + car.image.length) % car.image.length;
         });
-        return { ...car, imageIndex: imageIndex.toString() }; 
+        return { ...car, imageIndex: imageIndex.toString() };
       } else {
         return car;
       }
     });
     SetCar(updatedCars);
   }
-  
-  
-  
 
   return (
     <div ref={carGridRef}>
@@ -87,14 +72,9 @@ console.log(notes)
                   {" "}
                   <img
                     className="car-image"
-
-
-                    src={(car.image[imageIndex].URL)}
-
+                    src={car.image[imageIndex].URL}
                     alt=""
                   />
-                  
-
                   <div
                     className="forward-arrow-container"
                     onClick={() => {
@@ -111,8 +91,6 @@ console.log(notes)
                     onClick={() => {
                       props.GetCarfromGrid(car);
                     }}
-
-                    
                   >
                     <div className="middle-arrow-container"></div>
                   </Link>
@@ -139,6 +117,8 @@ console.log(notes)
           );
         })}
       </div>
+
+     
       <button
         className="home-button"
         onClick={() => {
@@ -147,11 +127,10 @@ console.log(notes)
       >
         Home
       </button>
-      
     </div>
   );
 }
 
-const MemoizedCarGrid = memo(CarGrid)
+const MemoizedCarGrid = memo(CarGrid);
 
 export default MemoizedCarGrid;
