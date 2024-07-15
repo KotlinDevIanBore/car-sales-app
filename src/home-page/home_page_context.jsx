@@ -1,5 +1,7 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext,useRef } from "react";
 import { carGridContext } from "../car-grid-component/car-grid-context";
+import React from "react"; 
+
 
 
 export const searchContext = createContext();
@@ -8,6 +10,8 @@ export const SearchProvider = ({ children }) => {
   const [text, setText] = useState(null);
   const [searchCar, setsearchCar] = useState(null);
   const { SetCar } = useContext(carGridContext);
+  const homepageRef = useRef();
+
 
   async function SendSearchRequest() {
     const apiURl = "http://localhost:3000/api/search";
@@ -42,7 +46,7 @@ export const SearchProvider = ({ children }) => {
 
   return (
     <searchContext.Provider
-      value={{ text, setText, SendSearchRequest, searchCar, setsearchCar }}
+      value={{ text, setText, SendSearchRequest, searchCar, setsearchCar,homepageRef }}
     >
       {children}
     </searchContext.Provider>

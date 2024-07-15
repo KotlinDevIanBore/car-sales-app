@@ -1,21 +1,19 @@
+import React from 'react';
 import "./manage-car-component.css";
 import { useContext } from "react";
 import { CarContext } from "./manage-car-context";
 
-function ManageCars(props) {
+function ManageCars() {
   const {
     values,
     setValues,
-    // handleFormData,
     uploadedFile,
     setUploadedFile,
-    // handleFileData,
     handleFormFileData
   } = useContext(CarContext);
 
   function handleChange(e) {
     const { name, value } = e.target;
-
     setValues((prevValues) => ({
       ...prevValues,
       [name]: value,
@@ -23,7 +21,7 @@ function ManageCars(props) {
   }
 
   const handleFileChange = (event) => {
-    const files = Array.from (event.target.files) ;
+    const files = Array.from(event.target.files);
     setUploadedFile((prevFiles) => [...prevFiles, ...files]);
   };
 
@@ -37,9 +35,6 @@ function ManageCars(props) {
       location: "",
     });
 
-
-
-
     const formData = {
       brand: values.brand,
       name: values.name,
@@ -47,15 +42,13 @@ function ManageCars(props) {
       availability: values.availability,
       location: values.location,
     };
-    if(!values.brand || !values.name || !values.price |values.location) {
-      alert("Fill all the form data")
+    if (!values.brand || !values.name || !values.price || !values.location) {
+      alert("Fill all the form data");
     }
-    // handleFormData(formData);
 
-    // handleFileData(uploadedFile);
-
-    handleFormFileData (formData,uploadedFile);
+    handleFormFileData(formData, uploadedFile);
   }
+
   return (
     <div>
       <form className="form" onSubmit={handleSubmit}>
@@ -98,7 +91,7 @@ function ManageCars(props) {
             type="text"
             name="availability"
             value={values.availability}
-             onChange={handleChange}
+            onChange={handleChange}
           />
         </div>
         <div className="input-container">
@@ -122,7 +115,6 @@ function ManageCars(props) {
         </div>
 
         <button
-         
           onClick={handleSubmit}
           className="add-car-button"
           type="submit"
@@ -130,19 +122,8 @@ function ManageCars(props) {
           Add Car
         </button>
       </form>
-
-      <button
-        className="home-button"
-        onClick={() => {
-          props.RenderHomePage("Hello");
-        }}
-      >
-        Home
-      </button>
     </div>
   );
 }
 
 export default ManageCars;
-
-

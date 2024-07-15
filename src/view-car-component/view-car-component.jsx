@@ -1,8 +1,7 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
+import { useState} from "react";
 import "./view-car.css";
 
-import { BrowserRouter as Router, Route, useParams } from "react-router-dom";
 
 function DisplayCar(props) {
   const [imageIndex, setimageIndex] = useState(0);

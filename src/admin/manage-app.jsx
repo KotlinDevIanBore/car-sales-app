@@ -1,17 +1,29 @@
-import { CarProvider } from "./manage-car-context"
-import ManageCars from "./manage-car-component"
 
-function ManageCarApp (){
+import { CarProvider } from "./manage-car-context"; 
+import React from 'react';
 
-    return (
+import ManageCars from "./manage-car-component"; 
+import CarCardComponent from "./analytics/clicked_cars"; import './manage-app.css';
+import Tabs from "./clicked-carbon";
 
+
+
+ 
+
+function ManageCarApp() {
+  return (
     <CarProvider>
+      <div className="container">
+        <ManageCars className="component" />
+        
+        <Tabs className="component"/>
 
-<ManageCars/>
 
+        
+        
+      </div>
     </CarProvider>
-    )
-
+  );
 }
 
-export default ManageCarApp;
+export default ManageCarApp

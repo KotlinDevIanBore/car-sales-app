@@ -1,26 +1,35 @@
-import { createContext,useState,useRef } from "react";
+import { createContext, useState, useRef } from "react";
+import React from "react"; // Add this line
 
 
 export const carGridContext = createContext();
 
+export const CarGridContextProvider = ({ children }) => {
+  const [carArray, SetCar] = useState([]);
+  const carGridRef = useRef();
 
-export const CarGridContextProvider = ({children})=>{
+  function countClicks(carId) {
+    console.log(`clicked car id is ${carId}`);
 
-
-    const [carArray, SetCar] = useState([]);
-    const carGridRef = useRef();
-
-
-    
-
-   
+    const apiURL = "http://localhost:3000/api/clicked";
 
 
-    return <carGridContext.Provider value={{carArray,SetCar,carGridRef}}>
+    fetch (apiURL,{
 
-        {children}
+            'method': 'post',
+            headers: {
+                'Content-Type': 'application/json', // Specify content type
+              },
+            body: JSON.stringify({carid:carId})
+        
+    })
+  }
 
+  return (
+    <carGridContext.Provider
+      value={{ carArray, SetCar, carGridRef, countClicks }}
+    >
+      {children}
     </carGridContext.Provider>
-
-
-}
+  );
+};

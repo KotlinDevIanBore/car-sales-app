@@ -1,7 +1,7 @@
 import "./home-component.css";
 
 import IMAGES from "./images-array";
-import { useState, useContext} from "react";
+import React, { useState, useContext} from "react";
 import { searchContext } from "./home_page_context";
 import { carGridContext } from "../car-grid-component/car-grid-context";
 
@@ -10,7 +10,9 @@ function HomePage() {
 
   const { text, setText, SendSearchRequest } = useContext(searchContext);
 
-  const carGridRef = useContext(carGridContext)
+  const {carGridRef} = useContext(carGridContext)
+
+  const {homepageRef} = useContext(searchContext)
 
   function scrollImage() {
     setScrollIndex((prevIndex) => {
@@ -32,9 +34,16 @@ function HomePage() {
     carGridRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   } 
 
+  function handleClick (){
+
+    scrollCarGridIntoView()
+    SendSearchRequest ()
+  }
+
   return (
     <div
       className="  home-component"
+      ref = {homepageRef}
     >
       <div className="home-page">
         <div
@@ -43,9 +52,10 @@ function HomePage() {
             scrollImage("works");
           }}
         >
-          {IMAGES.map((image) => {
+          {IMAGES.map((image,index) => {
             return (
               <img
+                key={index}
                 className="home-image"
                 src={image["URL" + scrollIndex]}
                 alt=""
@@ -67,7 +77,10 @@ function HomePage() {
       </div>
       <button
         type="submit"
-        onClick={SendSearchRequest}
+        onClick={
+          handleClick
+
+        }
         className="search-button"
       >
         Search

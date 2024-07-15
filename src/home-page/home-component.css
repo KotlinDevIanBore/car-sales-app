@@ -80,6 +80,15 @@ border-radius: 15px;
   height: 30px;
   border: none;
   border-radius: 55px;
+  color: rgb(29, 97, 97);
+
+
+}
+.cars-in-stock-button:hover{
+
+
+  
+  color: rgb(76, 223, 223);
 
 
 }

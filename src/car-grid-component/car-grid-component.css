@@ -35,8 +35,6 @@
   
   .arrow-image-container {
     position: relative;
-  }.car-image:hover {
-    transform: scale(1.1);
   }
   
   .forward-arrow-container {
@@ -108,7 +106,9 @@
     border: rgb(21, 0, 255);
     margin-left: 50%;
     color: #364a72;
-    margin-bottom: 20px;
+    display: block;
+
+    
   }
   
   .home-button:hover {
