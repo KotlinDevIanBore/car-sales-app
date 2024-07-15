@@ -1,11 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900|Raleway:400,400i,700,700i');
+
 .display-car-page {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh; /* Make it occupy the entire viewport height */
-  width: 100vw; /* Make it occupy the entire viewport width */
-  background-color: red;
+  background-color: white;
   display: flex;
+  /* align-items: center; */
   justify-content: center;
-  align-items: center;
 }
+
+.image-info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+
+.info-container {
+  width: 600px;
+  max-height: 1069px;
+  background-color: #fff0fa;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: scroll;
+  margin-left: 10px;
+  
+
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  /* height: 700px; */
+
+  max-height: 1069px;
+
+}
+
+.hero-image {
+  height: 100%;
+  width: 100%;
+  max-width: 1426px;
+  max-height: 1069px;
+}
+
+.change-image-forward-div {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 49%;
+  color: white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.change-image-backward-div {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 49%;
+  color: white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.change-image-button-plus,
+.change-image-button-minus {
+  background-color: #364a72;
+  border: none;
+  margin-left: 10px;
+  color: aliceblue;
+}
+
+/*** STYLE ***/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+main {
+  display: block;
+  margin: 0 auto;
+  max-width: 40rem;
+  padding: 1rem;
+}
+
+ol.gradient-list {
+  counter-reset: gradient-counter;
+  list-style: none;
+  margin: 1.75rem 0;
+  padding-left: 1rem;
+}
+
+ol.gradient-list > li {
+  background: white;
+  border-radius: 0 0.5rem 0.5rem 0.5rem;
+  min-height: 3rem;
+  padding: 1rem 1rem 1rem 3rem;
+  position: relative;
+}
+.info-container ol,
+.info-container ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Additional styles for the list items */
+.info-container li {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+

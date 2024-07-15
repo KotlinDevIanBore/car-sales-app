@@ -1,0 +1,36 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.input-container,.add-car-button {
+  margin-top: 10px;
+  width: 700px;
+
+}
+ .input{
+  padding: 10px 10px;
+  width: 100%;
+
+ }
+ .add-car-button{
+  background-color: green;
+  height: 10%;
+ }
+ @media screen and  (min-width:3500px){
+
+  .input-container,.add-car-button {
+    margin-top: 10px;
+    width:1000px;
+  
+  }
+  .input{
+    padding: 30px 30px;
+    width: 100%;
+  
+   }
+
+
+ }

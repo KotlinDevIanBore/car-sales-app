@@ -1,27 +1,78 @@
-import React from 'react'
-// import { Button } from "carbon-components-react";
-// import sportsCar from "./home-page-images/pexels-sarmad-mughal-305070.jpg"
-import { useState, useEffect, useRef } from "react";
+import React from "react";
+import { useState} from "react";
+import "./view-car.css";
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-function DisplayCar() {
+function DisplayCar(props) {
+  const [imageIndex, setimageIndex] = useState(0);
+  function handleImageChange(direction) {
+    setimageIndex((prevIndex) => {
+      const newIndex = prevIndex + direction;
+      const lastIndex = props.car.image.length - 1;
+      if (newIndex < 0) {
+        return lastIndex;
+      } else if (newIndex > lastIndex) {
+        return 0;
+      } else {
+        return newIndex;
+      }
+    });
+  }
   return (
-    <div 
-    className='display-car-page'>
-      <div >
-        <h2>
-        Yes, you can include a route directly within your JSX structure like that. However, this approach is not common and might lead to unexpected behavior. Typically, routes are defined at a higher level, like in the main routing component of your application, such as App.js or Routes.js.
+    <div className="display-car-page">
+      <div className="image-info-container">
+        <div className="image-container">
+          <img
+            className="hero-image"
+            src={props.car.image[imageIndex].URL}
+            alt=""
+          />
+          <div
+            className="change-image-forward-div"
+            onClick={() => {
+              handleImageChange(1);
+            }}
+          >
+            +
+          </div>
+          <div
+            className="change-image-backward-div"
+            onClick={() => {
+              handleImageChange(-1);
+            }}
+          >
+            -
+          </div>
 
-But if for some reason you want to include a route within a specific part of your JSX structure, it's technically possible. However, it's important to understand that React Router works by matching the current URL to a set of routes and rendering the component associated with the matched route. Placing a ncomponent within a specific div won't affect how React Router matches URLs and renders components.
-
-Here's how you could technically achieve what you're describing:
-        </h2>
-
+          <button
+            className="change-image-button-minus"
+            onClick={() => {
+              handleImageChange(-1);
+            }}
+          >
+            Change Image-
+          </button>
+          <button
+            className="change-image-button-plus"
+            onClick={() => {
+              handleImageChange(1);
+            }}
+          >
+            Change Image +
+          </button>
+        </div>
+        <div className="info-container">
+          <ol class="gradient-list">
+            <li>{props.car.brand}</li>
+            <li>{props.car.name}</li>
+            <li>{props.car.price}</li>
+            <li>{props.car.availability}</li>
+            <li>Location:{props.car.location}</li>
+          </ol>
+        </div>
       </div>
     </div>
   );
 }
-
 
 export default DisplayCar;
