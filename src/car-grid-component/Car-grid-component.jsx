@@ -7,7 +7,7 @@ import { carGridContext } from "./car-grid-context";
 import { searchContext } from "../home-page/home_page_context";
 
 function CarGrid(props) {
-  const { carArray, SetCar, carGridRef,countClicks } = useContext(carGridContext);
+  const { carArray, SetCar, carGridRef,countClicks,handleCompareClick } = useContext(carGridContext);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -110,6 +110,14 @@ function CarGrid(props) {
               <div className="car-price">{car.price}</div>
 
               <button className="add-to-cart-button">Add to Cart</button>
+              <button className = "compare-button" onClick={ ()=>{handleCompareClick(car)}}>↑↓</button>
+              <Link 
+              to={"/compare-car"}
+              >
+              <button className = "compare-button"  >.</button>
+              </Link>
+              
+
             </div>
           </div>
         ))}
