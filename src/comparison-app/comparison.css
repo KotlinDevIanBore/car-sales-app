@@ -1,0 +1,135 @@
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 70px;
+  flex-flow: row wrap;
+  width: 100vw;
+  height: 100vh;
+}
+
+.car-image {
+  width: 100%;
+  max-width: 1500px;
+}
+
+.car-name,
+.car-price {
+  color: rgb(7, 142, 142);
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  margin-top: 10px;
+  letter-spacing: 3px;
+}
+
+.car-name:hover {
+  opacity: 1;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.arrow-image-container {
+  position: relative;
+}
+
+.forward-arrow-container {
+  position: absolute;
+  width: 20%;
+  height: 95%;
+  top: 10px;
+  right: 10px;
+  z-index: 1000000;
+  /* background-color: red; */
+}
+
+.forward-arrow {
+  margin-left: 50px;
+  margin-top: 150px;
+  opacity: 0;
+  height: 30px;
+  width: 30px;
+}
+
+.forward-arrow:hover {
+  opacity: 1;
+}
+
+.middle-arrow-container {
+  position: absolute;
+  width: auto;
+  height: 95%;
+  top: 10px;
+  left: 92px;
+  right: 92px;
+  z-index: 10000000;
+}
+
+.back-arrow-container {
+  position: absolute;
+  width: 20%;
+  height: 95%;
+  top: 10px;
+  left: 10px;
+  z-index: 1000000;
+  /* background-color: blue; */
+}
+
+.back-arrow {
+  margin-right: 50px;
+  margin-top: 150px;
+  opacity: 0;
+  height: 30px;
+  width: 30px;
+}
+
+.back-arrow:hover {
+  opacity: 1;
+}
+
+.add-to-cart-button {
+  margin-left: 100px;
+  margin-bottom: 10px;
+  opacity: 0;
+}
+
+.add-to-cart-button:hover {
+  background-color: #364a72;
+  opacity: 1;
+}
+
+.home-button {
+  border: rgb(21, 0, 255);
+  margin-left: 50%;
+  color: #364a72;
+  display: block;
+
+  
+}
+
+.home-button:hover {
+  border: solid;
+  border-color: rgb(7, 142, 142);
+}
+
+
+
+
+.card{
+  height: 600px;
+  width: 680px;
+  margin: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+ /* flex: 1 0 calc(25% - 10px); /* 25% of the row width, minus 10px for margin */
+  flex: 1 1 auto;
+
+}
+
+

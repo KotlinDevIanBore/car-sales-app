@@ -7,6 +7,7 @@ export const carGridContext = createContext();
 export const CarGridContextProvider = ({ children }) => {
   const [carArray, SetCar] = useState([]);
   const carGridRef = useRef();
+  const [comparisonArray,SetComparisonArray] = useState([]);
 
   function countClicks(carId) {
     console.log(`clicked car id is ${carId}`);
@@ -25,9 +26,24 @@ export const CarGridContextProvider = ({ children }) => {
     })
   }
 
+  function handleCompareClick(car){
+
+
+
+// SetComparisonArray ([...comparisonArray, car])
+    SetComparisonArray([...comparisonArray, car]);
+
+  }
+
+  // function fetchComparedCars(car.id){
+
+
+
+  // }
+
   return (
     <carGridContext.Provider
-      value={{ carArray, SetCar, carGridRef, countClicks }}
+      value={{ carArray, SetCar, carGridRef, countClicks,handleCompareClick,comparisonArray,SetComparisonArray }}
     >
       {children}
     </carGridContext.Provider>
