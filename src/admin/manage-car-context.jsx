@@ -19,6 +19,8 @@ export const CarProvider = ({ children }) => {
 
   const [mostSearchedCar,setMostSearchedCar] = useState([]);
 
+  const [clickLogData,setclickLogData] = useState ([])
+
   const handleFormFileData = async (formData, uploadedFile) => {
     const formData1 = new FormData();
 
@@ -75,7 +77,6 @@ export const CarProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    // const mostClickedUrl = `http://10.50.90.120:3000/api/mostClicked`;
     const mostSearchedUrl = "http://localhost:3000/api/searchedCars";
 
   
@@ -95,6 +96,25 @@ export const CarProvider = ({ children }) => {
   }, []);
 
 
+  useEffect(()=>{
+
+    async function loadClickLogs (){
+
+
+      const loadClicksURL = `http://localhost:3000/api/click-logs`;
+  
+      const response = await fetch (loadClicksURL);
+  
+      const clickData = await response.json();
+  
+      setclickLogData(clickData?clickData.data:[])
+  
+    }
+
+    loadClickLogs()
+  },[])
+
+
   
   
 
@@ -107,7 +127,9 @@ export const CarProvider = ({ children }) => {
         setValues,
         handleFormFileData,
         mostClickedCar,
-        mostSearchedCar
+        mostSearchedCar,
+        clickLogData,
+        setclickLogData
       }}
     >
       {children}
