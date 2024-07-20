@@ -135,4 +135,6 @@
   background-color:rgb(255, 255, 255);
 }
   
-
+.compare-button:hover {
+  color: rgb(117, 12, 17);
+}
