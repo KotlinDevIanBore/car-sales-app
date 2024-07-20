@@ -2,6 +2,8 @@
   margin-bottom: 50px;
   width: 100%;
   position: relative;
+  height: 100vh; /* Add this */
+
 
 
 }
@@ -91,4 +93,10 @@ border-radius: 15px;
   color: rgb(76, 223, 223);
 
 
+}
+.stories-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px; /* add 10px margin around the element */
 }

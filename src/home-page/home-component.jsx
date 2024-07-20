@@ -4,6 +4,7 @@ import IMAGES from "./images-array";
 import React, { useState, useContext} from "react";
 import { searchContext } from "./home_page_context";
 import { carGridContext } from "../car-grid-component/car-grid-context";
+import CircularRing from "../stories-app/ring";
 
 function HomePage() {
   const [scrollIndex, setScrollIndex] = useState(1);
@@ -85,6 +86,13 @@ function HomePage() {
       >
         Search
       </button>
+
+      <div className="stories-ring" >
+      < CircularRing />
+
+      </div>
+
+     
     </div>
   );
 }

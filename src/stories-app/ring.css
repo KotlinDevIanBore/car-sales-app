@@ -1,0 +1,42 @@
+/* .circular-ring {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border-width: 10px;
+    border-style: solid;
+    border-image: linear-gradient(to right, #434A54, #87CEEB) 1;
+    position: relative;
+  } */
+
+
+  .circular-ring {
+
+    height: 100px;
+    width: 100px; 
+    border-radius: 50%;
+    background: linear-gradient(45deg, 
+  rgb(245, 48, 169), 
+  rgb(253, 144, 78), 
+  rgb(253, 231, 76), 
+  rgb(64, 191, 213), 
+  rgb(136, 84, 208), 
+  rgb(246, 162, 194), 
+  rgb(255, 204, 128));
+   
+
+  }
+  
+  .ring-inner {
+
+    position: absolute;
+    height: 80px;
+    width: 80px; 
+    border-radius: 50%;
+    background-color:white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+    
+  }
