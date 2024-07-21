@@ -29,8 +29,8 @@
   .ring-inner {
 
     position: absolute;
-    height: 80px;
-    width: 80px; 
+    height: 90px;
+    width: 90px; 
     border-radius: 50%;
     background-color:white;
     top: 50%;
@@ -39,4 +39,11 @@
 
 
     
+  }
+
+  .logo {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover; /* or object-fit: contain */
   }

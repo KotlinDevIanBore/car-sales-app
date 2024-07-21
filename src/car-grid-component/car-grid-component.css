@@ -17,7 +17,7 @@
   
   .car-name,
   .car-price {
-    color: rgb(7, 142, 142);
+    /* color: rgb(7, 142, 142); */
     font-family: Arial, sans-serif;
     font-size: 16px;
     font-weight: 200;
