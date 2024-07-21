@@ -115,7 +115,6 @@ border-radius: 15px;
   cursor: pointer;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: optimize-contrast;
-  opacity: 0;
 }
 
 .story-image:hover {

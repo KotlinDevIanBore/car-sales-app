@@ -6,6 +6,8 @@ import React, { useState, useContext} from "react";
 import { searchContext } from "./home_page_context";
 import { carGridContext } from "../car-grid-component/car-grid-context";
 import CircularRing from "../stories-app/ring";
+import { useInterval } from 'react-use';
+
 
 function HomePage() {
   const [scrollIndex, setScrollIndex] = useState(1);
@@ -14,9 +16,18 @@ function HomePage() {
 
   const { text, setText, SendSearchRequest } = useContext(searchContext);
 
+  const [intervalRunning, setIntervalRunning] = useState(false);
+
   const {carGridRef} = useContext(carGridContext)
 
   const {homepageRef} = useContext(searchContext)
+
+
+  const max_interval=10000;
+
+  
+
+  
 
 
   function changeStoryIndex(){
@@ -31,7 +42,13 @@ function HomePage() {
   
   }
 
-  setInterval (()=>{changeStoryIndex()},10000)
+  // setInterval (()=>{changeStoryIndex()},30000);
+  useInterval (changeStoryIndex, intervalRunning?max_interval:null)
+
+
+  function handleRingClick(){
+    setIntervalRunning(!intervalRunning);
+  }
 
   function scrollImage() {
     setScrollIndex((prevIndex) => {
@@ -105,17 +122,19 @@ function HomePage() {
         Search
       </button>
 
-      <div className="stories-ring" >
+      <div className="stories-ring" onClick={handleRingClick} >
       < CircularRing />
 
       </div>
 
-      <img
+    {intervalRunning && <img
   src={storiesImages[storyIndex].url}
   alt=""
   className="story-image {
 "
 />
+
+    }  
 
      
     </div>
