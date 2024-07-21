@@ -100,3 +100,28 @@ border-radius: 15px;
   left: 0;
   margin: 10px; /* add 10px margin around the element */
 }
+.story-image {
+  filter: none;
+  /* max-width: 80%;
+  max-height: 80%; */
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  opacity: 0;
+}
+
+.story-image:hover {
+  opacity: 1;
+  transform: scale(1.05) translate(-50%, -50%);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+}
+

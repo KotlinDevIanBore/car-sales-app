@@ -29,8 +29,8 @@
   .ring-inner {
 
     position: absolute;
-    height: 90px;
-    width: 90px; 
+    height: 95px;
+    width: 95px; 
     border-radius: 50%;
     background-color:white;
     top: 50%;

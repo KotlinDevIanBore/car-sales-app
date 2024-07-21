@@ -1,6 +1,7 @@
 import "./home-component.css";
 
 import IMAGES from "./images-array";
+import storiesImages from "../stories-app/stories_photos/stories_array";
 import React, { useState, useContext} from "react";
 import { searchContext } from "./home_page_context";
 import { carGridContext } from "../car-grid-component/car-grid-context";
@@ -9,11 +10,28 @@ import CircularRing from "../stories-app/ring";
 function HomePage() {
   const [scrollIndex, setScrollIndex] = useState(1);
 
+  const [storyIndex,setstoryIndex]= useState(0)
+
   const { text, setText, SendSearchRequest } = useContext(searchContext);
 
   const {carGridRef} = useContext(carGridContext)
 
   const {homepageRef} = useContext(searchContext)
+
+
+  function changeStoryIndex(){
+
+    setstoryIndex((prevIndex) => {
+      if (prevIndex < 5) {
+        return prevIndex + 1;
+      } else {
+        return 0;
+      }
+    });
+  
+  }
+
+  setInterval (()=>{changeStoryIndex()},10000)
 
   function scrollImage() {
     setScrollIndex((prevIndex) => {
@@ -91,6 +109,13 @@ function HomePage() {
       < CircularRing />
 
       </div>
+
+      <img
+  src={storiesImages[storyIndex].url}
+  alt=""
+  className="story-image {
+"
+/>
 
      
     </div>
