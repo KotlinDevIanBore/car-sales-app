@@ -1,4 +1,3 @@
-
 const path = require('path');
 
 const webpackConfig = {
@@ -16,6 +15,14 @@ const webpackConfig = {
           loader: 'babel-loader',
           options: { presets: ['@babel/env', '@babel/preset-react'] },
         }
+      },
+      {
+        test: /\.scss$/, // Add rule for SCSS files
+        use: [
+          'style-loader',  // Injects styles into DOM
+          'css-loader',    // Translates CSS into CommonJS
+          'sass-loader'    // Compiles Sass to CSS
+        ]
       },
       {
         test: /\.css$/,

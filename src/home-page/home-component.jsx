@@ -7,7 +7,8 @@ import { searchContext } from "./home_page_context";
 import { carGridContext } from "../car-grid-component/car-grid-context";
 import CircularRing from "../stories-app/ring";
 import { useInterval } from 'react-use';
-
+import { MyProgressBar } from "../stories-app/progress-bar";
+import UIShellHeader from "../ui-shell-app/ui-shell-header";
 
 function HomePage() {
   const [scrollIndex, setScrollIndex] = useState(1);
@@ -81,6 +82,8 @@ function HomePage() {
       className="  home-component"
       ref = {homepageRef}
     >
+            < UIShellHeader />
+
       <div className="home-page">
         <div
           className="home-image-container"
@@ -126,13 +129,20 @@ function HomePage() {
       < CircularRing />
 
       </div>
+      {/* < MyProgressBar className="my-progress-bar"/> */}
 
-    {intervalRunning && <img
+
+    {intervalRunning && <div>
+    
+    <img
   src={storiesImages[storyIndex].url}
   alt=""
-  className="story-image {
-"
+  className="story-image"
 />
+<p  className="story-text" >{storiesImages[storyIndex].text}</p>
+
+</div>
+
 
     }  
 
