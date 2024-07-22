@@ -13,11 +13,9 @@ import UIShellHeader from "../ui-shell-app/ui-shell-header";
 function HomePage() {
   const [scrollIndex, setScrollIndex] = useState(1);
 
-  const [storyIndex,setstoryIndex]= useState(0)
 
-  const { text, setText, SendSearchRequest } = useContext(searchContext);
+  const { text, setText, SendSearchRequest,changeStoryIndex,storyIndex,setstoryIndex ,handleRingClick ,intervalRunning, setIntervalRunning} = useContext(searchContext);
 
-  const [intervalRunning, setIntervalRunning] = useState(false);
 
   const {carGridRef} = useContext(carGridContext)
 
@@ -29,27 +27,10 @@ function HomePage() {
   
 
   
-
-
-  function changeStoryIndex(){
-
-    setstoryIndex((prevIndex) => {
-      if (prevIndex < 5) {
-        return prevIndex + 1;
-      } else {
-        return 0;
-      }
-    });
-  
-  }
-
-  // setInterval (()=>{changeStoryIndex()},30000);
   useInterval (changeStoryIndex, intervalRunning?max_interval:null)
 
 
-  function handleRingClick(){
-    setIntervalRunning(!intervalRunning);
-  }
+ 
 
   function scrollImage() {
     setScrollIndex((prevIndex) => {

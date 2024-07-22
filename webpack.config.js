@@ -1,3 +1,4 @@
+
 const path = require('path');
 
 const webpackConfig = {
@@ -19,15 +20,22 @@ const webpackConfig = {
       {
         test: /\.scss$/, // Add rule for SCSS files
         use: [
-          'style-loader',  // Injects styles into DOM
+          'tyle-loader',  // Injects styles into DOM
           'css-loader',    // Translates CSS into CommonJS
-          'sass-loader'    // Compiles Sass to CSS
+          'ass-loader'    // Compiles Sass to CSS
         ]
       },
       {
         test: /\.css$/,
         use: [
-          'style-loader',
+          'tyle-loader',
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
           'css-loader'
         ]
       },
@@ -54,6 +62,12 @@ const webpackConfig = {
     compress: true,
     port: 9000,
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css'
+    })
+  ]
 };
 
 module.exports = webpackConfig;
