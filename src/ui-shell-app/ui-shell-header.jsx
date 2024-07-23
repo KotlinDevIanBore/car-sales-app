@@ -36,7 +36,7 @@ const UIShellHeader = () => {
     return (
         <div className="ui-shell-header">
             {/* Your header content here */}
-            <h1>Dream Cars,Real Prices </h1>
+            <h1>Dream Cars Real Prices </h1>
 
             <div className="stories-ring" onClick={handleRingClick} >
       < CircularRing />

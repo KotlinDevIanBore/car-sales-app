@@ -11,8 +11,8 @@
 
   .circular-ring {
 
-    height: 100px;
-    width: 100px; 
+    height: 70px;
+    width: 70px; 
     border-radius: 50%;
     background: linear-gradient(45deg, 
   rgb(245, 48, 169), 
@@ -29,9 +29,9 @@
   .ring-inner {
 
     position: absolute;
-    height: 90px;
-    width: 90px; 
-    padding: 4px;
+    height: 60px;
+    width: 60px; 
+    /* padding: 4px; */
     border-radius: 50%;
     background-color:white;
     top: 50%;

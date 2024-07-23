@@ -1,5 +1,6 @@
 
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const webpackConfig = {
   entry: './src/index.js',
@@ -20,24 +21,17 @@ const webpackConfig = {
       {
         test: /\.scss$/, // Add rule for SCSS files
         use: [
-          'tyle-loader',  // Injects styles into DOM
+          'style-loader',  // Injects styles into DOM
           'css-loader',    // Translates CSS into CommonJS
-          'ass-loader'    // Compiles Sass to CSS
+          'sass-loader'    // Compiles Sass to CSS
         ]
       },
       {
         test: /\.css$/,
         use: [
-          'tyle-loader',
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader'
-        ]
+          'style-loader',  // Injects styles into DOM
+          'css-loader',    // Translates CSS into CommonJS
+        ],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
