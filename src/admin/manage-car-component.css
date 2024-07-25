@@ -5,7 +5,7 @@
   align-items: center;
 
 }
-.input-container,.add-car-button {
+.input_container,.add-car_button {
   margin-top: 10px;
   width: 700px;
 
@@ -15,13 +15,13 @@
   width: 100%;
 
  }
- .add-car-button{
+ .add_car_button{
   background-color: green;
   height: 10%;
  }
  @media screen and  (min-width:3500px){
 
-  .input-container,.add-car-button {
+  .input_container,.add_car_button {
     margin-top: 10px;
     width:1000px;
   

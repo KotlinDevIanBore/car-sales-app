@@ -52,7 +52,7 @@ function ManageCars() {
   return (
     <div>
       <form className="form" onSubmit={handleSubmit}>
-        <div className="input-container">
+        <div className="input_container">
           <input
             className="input"
             placeholder="car brand"
@@ -63,7 +63,7 @@ function ManageCars() {
           />
         </div>
 
-        <div className="input-container">
+        <div className="input_container">
           <input
             className="input"
             placeholder="car name"
@@ -74,7 +74,7 @@ function ManageCars() {
           />
         </div>
 
-        <div className="input-container">
+        <div className="input_container">
           <input
             className="input"
             placeholder="car price"
@@ -84,7 +84,7 @@ function ManageCars() {
             onChange={handleChange}
           />
         </div>
-        <div className="input-container">
+        <div className="input_container">
           <input
             className="input"
             placeholder="availabilty"
@@ -94,7 +94,7 @@ function ManageCars() {
             onChange={handleChange}
           />
         </div>
-        <div className="input-container">
+        <div className="input_container">
           <input
             className="input"
             placeholder="location"
@@ -105,7 +105,7 @@ function ManageCars() {
           />
         </div>
 
-        <div className="input-container">
+        <div className="input_container">
           <input
             className="input"
             multiple
@@ -116,7 +116,7 @@ function ManageCars() {
 
         <button
           onClick={handleSubmit}
-          className="add-car-button"
+          className="add_car_button"
           type="submit"
         >
           Add Car
