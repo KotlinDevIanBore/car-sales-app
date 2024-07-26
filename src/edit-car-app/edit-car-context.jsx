@@ -33,7 +33,7 @@ function handleSubmit (event){
 function sendEditedCar(){
 
 
-    const apiURl = 'api/EditedCats'
+    const apiURl = 'http://localhost:3000/api/EditedCars'
 
     fetch (apiURl, {
 
