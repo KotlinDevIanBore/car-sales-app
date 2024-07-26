@@ -1,8 +1,6 @@
-import { createContext, useState, useContext,useRef } from "react";
+import { createContext, useState, useContext, useRef } from "react";
 import { carGridContext } from "../car-grid-component/car-grid-context";
-import React from "react"; 
-
-
+import React from "react";
 
 export const searchContext = createContext();
 
@@ -10,8 +8,14 @@ export const SearchProvider = ({ children }) => {
   const [text, setText] = useState(null);
   const [searchCar, setsearchCar] = useState(null);
   const { SetCar } = useContext(carGridContext);
+  const [storyIndex, setstoryIndex] = useState(0);
+  const [intervalRunning, setIntervalRunning] = useState(false);
+
   const homepageRef = useRef();
 
+  function handleRingClick() {
+    setIntervalRunning(!intervalRunning);
+  }
 
   async function SendSearchRequest() {
     const apiURl = "http://localhost:3000/api/search";
@@ -28,25 +32,42 @@ export const SearchProvider = ({ children }) => {
 
       const data = await response.json();
       setText(null);
-      console.log (data.cars)
+      console.log(data.cars);
 
-
-
-      
-
-      SetCar (data.cars)
-
+      SetCar(data.cars);
 
       return data;
     } catch (error) {
       console.error("Error sending search request:", error);
-      return { error: "Error sending search request" }; 
+      return { error: "Error sending search request" };
     }
   }
 
+  function changeStoryIndex() {
+    setstoryIndex((prevIndex) => {
+      if (prevIndex < 5) {
+        return prevIndex + 1;
+      } else {
+        return 0;
+      }
+    });
+  }
   return (
     <searchContext.Provider
-      value={{ text, setText, SendSearchRequest, searchCar, setsearchCar,homepageRef }}
+      value={{
+        text,
+        setText,
+        SendSearchRequest,
+        searchCar,
+        setsearchCar,
+        homepageRef,
+        changeStoryIndex,
+        storyIndex,
+        setstoryIndex,
+        handleRingClick,
+        intervalRunning,
+        setIntervalRunning,
+      }}
     >
       {children}
     </searchContext.Provider>

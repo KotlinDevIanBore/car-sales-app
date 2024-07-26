@@ -1,18 +1,34 @@
-import "./home-component.css";
+// import "./home-component.css";
+// import styles from "./home-component.css";
 
+import styles from "./home-component.module.css"
 import IMAGES from "./images-array";
-import React, { useState, useContext} from "react";
+import storiesImages from "../stories-app/stories_photos/stories_array";
+import React, { useState, useContext } from "react";
 import { searchContext } from "./home_page_context";
 import { carGridContext } from "../car-grid-component/car-grid-context";
+import { useInterval } from "react-use";
+import UIShellHeader from "../ui-shell-app/ui-shell-header";
 
 function HomePage() {
   const [scrollIndex, setScrollIndex] = useState(1);
 
-  const { text, setText, SendSearchRequest } = useContext(searchContext);
+  const {
+    text,
+    setText,
+    SendSearchRequest,
+    changeStoryIndex,
+    storyIndex,
+    intervalRunning,
+  } = useContext(searchContext);
 
-  const {carGridRef} = useContext(carGridContext)
+  const { carGridRef } = useContext(carGridContext);
 
-  const {homepageRef} = useContext(searchContext)
+  const { homepageRef } = useContext(searchContext);
+
+  const max_interval = 10000;
+
+  useInterval(changeStoryIndex, intervalRunning ? max_interval : null);
 
   function scrollImage() {
     setScrollIndex((prevIndex) => {
@@ -32,31 +48,32 @@ function HomePage() {
 
   function scrollCarGridIntoView() {
     carGridRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-  } 
+  }
 
-  function handleClick (){
-
-    scrollCarGridIntoView()
-    SendSearchRequest ()
+  function handleClick() {
+    scrollCarGridIntoView();
+    SendSearchRequest();
   }
 
   return (
-    <div
-      className="  home-component"
-      ref = {homepageRef}
-    >
+    <div className={styles.home_component} ref={homepageRef}>
+      
+      <UIShellHeader />
+
       <div className="home-page">
         <div
-          className="home-image-container"
+          
+       className={styles.home_image_container}
+
           onClick={() => {
             scrollImage("works");
           }}
         >
-          {IMAGES.map((image,index) => {
+          {IMAGES.map((image, index) => {
             return (
               <img
                 key={index}
-                className="home-image"
+                className={styles.home_image}
                 src={image["URL" + scrollIndex]}
                 alt=""
               ></img>
@@ -64,27 +81,38 @@ function HomePage() {
           })}
         </div>
 
-        <button className="cars-in-stock-button" onClick={scrollCarGridIntoView} >Cars In Stock</button>
+        <button
+          className={styles.cars_in_stock_button}
+          onClick={scrollCarGridIntoView}
+        >
+          Cars In Stock
+        </button>
       </div>
 
-      <div className="search-bar-container">
+      <div className={styles.search_bar_container}>
+      
         <input
           type="text"
-          className="search-bar"
+          className={styles.search_bar}
           placeholder=" Search Your Dream Car Here "
           onChange={handleChange}
         ></input>
       </div>
-      <button
-        type="submit"
-        onClick={
-          handleClick
-
-        }
-        className="search-button"
-      >
+      <button type="submit" onClick={handleClick} className={styles.search_button}>
         Search
       </button>
+
+      {intervalRunning && (
+        <div>
+          <img
+            src={storiesImages[storyIndex].url}
+            alt=""
+  
+            className={styles.story_image}
+          />
+          <p className={styles.story_text}>{storiesImages[storyIndex].text}</p>
+        </div>
+      )}
     </div>
   );
 }

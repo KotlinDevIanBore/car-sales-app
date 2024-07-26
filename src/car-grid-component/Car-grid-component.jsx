@@ -1,5 +1,8 @@
 
-import "./car-grid-component.css";
+// import "./car-grid-component.module.css";
+
+import styles from "./car-grid-component.module.css";
+
 import React, { useState, useEffect, memo, useContext } from "react";
 import { Link } from "react-router-dom";
 import fetchData from "./car-grid-component-resource";
@@ -65,19 +68,22 @@ function CarGrid(props) {
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
       />
 
-      <nav className="top-navigation"> Navigation Bar</nav>
-      <div className="grid">
+      
+      <div   className={styles.grid}  >
         {carArray.map((car) => (
           <div key={car.id}>
-            <div className="car-container div-2">
-              <div className="arrow-image-container">
+
+            <div className={`${styles.car_container} ${styles.div_2}`} >
+              <div   className={styles.arrow_image_container}>
                 <img
-                  className="car-image"
+
+                  className = {styles.car_image}
                   src={car.image[car.imageIndex].URL}
                   alt=""
                 />
                 <div
-                  className="forward-arrow-container"
+                
+                className = {styles.forward_arrow_container}  
                   onClick={() => changeImageIndex(car.id, 1)}
                 >
                   <span className="material-symbols-outlined forward-arrow">
@@ -92,10 +98,10 @@ function CarGrid(props) {
                     countClicks(car.id);
                   }}
                 >
-                  <div className="middle-arrow-container"></div>
+                  <div   className = {styles.middle_arrow_container}></div>
                 </Link>
                 <div
-                  className="back-arrow-container"
+                 className = {styles.back_arrow_container}      
                   onClick={() => changeImageIndex(car.id, -1)}
                 >
                   <span className="material-symbols-outlined back-arrow">
@@ -104,17 +110,17 @@ function CarGrid(props) {
                 </div>
               </div>
 
-              <div className="car-name">
+              <div   className = {styles.car_name}>
                 {car.brand} {car.name}
               </div>
-              <div className="car-price">{car.price}</div>
+              <div  className = {styles.car_price}  >       {car.price}</div>
 
-              <button className="add-to-cart-button">Add to Cart</button>
-              <button className = "compare-button" onClick={ ()=>{handleCompareClick(car)}}>↑↓</button>
+             
+              <button  className = {styles.compare_button}  onClick={ ()=>{handleCompareClick(car)}}>↑↓</button>
               <Link 
               to={"/compare-car"}
               >
-              <button className = "compare-button"  >.</button>
+              <button className = {styles.compare_button} >.</button>
               </Link>
               
 
@@ -124,7 +130,7 @@ function CarGrid(props) {
       </div>
 
       <button
-        className="home-button"
+      className = {styles.home_button}
         onClick={scrollToHomepage}
       >
         Home

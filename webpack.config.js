@@ -1,5 +1,6 @@
 
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const webpackConfig = {
   entry: './src/index.js',
@@ -18,11 +19,19 @@ const webpackConfig = {
         }
       },
       {
+        test: /\.scss$/, // Add rule for SCSS files
+        use: [
+          'style-loader',  // Injects styles into DOM
+          'css-loader',    // Translates CSS into CommonJS
+          'sass-loader'    // Compiles Sass to CSS
+        ]
+      },
+      {
         test: /\.css$/,
         use: [
-          'style-loader',
-          'css-loader'
-        ]
+          'style-loader',  // Injects styles into DOM
+          'css-loader',    // Translates CSS into CommonJS
+        ],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
@@ -47,6 +56,12 @@ const webpackConfig = {
     compress: true,
     port: 9000,
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css'
+    })
+  ]
 };
 
 module.exports = webpackConfig;

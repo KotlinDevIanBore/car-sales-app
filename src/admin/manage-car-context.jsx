@@ -57,7 +57,6 @@ export const CarProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    // const mostClickedUrl = `http://10.50.90.120:3000/api/mostClicked`;
     const mostClickedUrl = "http://localhost:3000/api/mostClicked";
 
   
@@ -67,7 +66,7 @@ export const CarProvider = ({ children }) => {
         const data = await response.json();
 
         setMostClickedCar(data ? data.cars : []);
-        console.log(`most clicked cars data is ${data.cars}`);
+        
       } catch (error) {
         console.error(error);
       }
