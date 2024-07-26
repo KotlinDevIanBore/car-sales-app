@@ -2,9 +2,11 @@
 import React, { useState, useEffect, memo, useContext } from "react";
 import fetchData from "../car-grid-component/car-grid-component-resource";
 import { carGridContext } from "../car-grid-component/car-grid-context";
+import { PenIcon } from "../../icons.jsx/penicon";
 import { EditedCarContext } from "./edit-car-context";
 
 import styles from './edit-car.module.css';
+
 
 const EditCar = ()=>{
 
@@ -63,7 +65,7 @@ function  handleChange(e){
                 <p className= {styles.most_clicked_car_name}>
                   {car.brand} {car.name}
                 </p>
-                <button onClick={ ()=>{handleEditClick(car.id)} } className= {styles.car_clicks} > Edit Car {car.clicks}</button>
+                <button onClick={ ()=>{handleEditClick(car.id)} } className= {styles.car_clicks} > <PenIcon/> {car.clicks}</button>
                 <img className= {styles.car_image1}    src={car.image[0].URL} alt="" />
               </div>
             </div>
@@ -99,7 +101,6 @@ function  handleChange(e){
             
           </div>
     ))}
-
     </div>
 }
 
