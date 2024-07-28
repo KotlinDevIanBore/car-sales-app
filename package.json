@@ -19,7 +19,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite serve"
+    "serve": "vite serve",
+    "prebuild": "npm install"
   },
   "proxy": {
     "/api": {
@@ -38,6 +39,7 @@
   "license": "MIT",
   "devDependencies": {
     "@vitejs/plugin-react": "^3.0.0",
+    "sass": "^1.77.8",
     "vite": "^4.0.0"
   }
 }
