@@ -1,3 +1,5 @@
+
+import { API_URL } from "../../api";
 const fetcher = async (url) => {
   try {
     const response = await fetch(url);
@@ -11,8 +13,9 @@ const fetcher = async (url) => {
   }
 };
 
-const apiUrl = "http://localhost:3000/api/cars";
-// const apiUrl = "http://10.50.90.120:3000/api/cars";
+// const apiUrl = "http://localhost:3000/api/cars";
+const apiUrl = `${API_URL}/api/cars`;
+
 const fetchData = async () => {
   try {
     const CARS = await fetcher(apiUrl);

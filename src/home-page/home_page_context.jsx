@@ -1,6 +1,7 @@
 import { createContext, useState, useContext, useRef } from "react";
 import { carGridContext } from "../car-grid-component/car-grid-context";
 import React from "react";
+import { API_URL } from "../../api";
 
 export const searchContext = createContext();
 
@@ -18,7 +19,8 @@ export const SearchProvider = ({ children }) => {
   }
 
   async function SendSearchRequest() {
-    const apiURl = "http://localhost:3000/api/search";
+    // const apiURl = "http://localhost:3000/api/search";
+    const apiURl = `${API_URL}/api/search`;
 
     try {
       const response = await fetch(apiURl, {
