@@ -2,6 +2,7 @@ import { createContext } from "react";
 import React, { useState, useEffect, memo, useContext } from "react";
 import fetchData from "../car-grid-component/car-grid-component-resource";
 import { carGridContext } from "../car-grid-component/car-grid-context";
+import { API_URL } from "../../api";
 
 
 export const EditedCarContext = createContext ();
@@ -33,7 +34,8 @@ function handleSubmit (event){
 function sendEditedCar(){
 
 
-    const apiURl = 'http://localhost:3000/api/EditedCars'
+    // const apiURl = 'http://localhost:3000/api/EditedCars'
+     const apiURl = `${API_URL}/api/EditedCars`
 
     fetch (apiURl, {
 

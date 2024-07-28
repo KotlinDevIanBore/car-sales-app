@@ -1,4 +1,5 @@
 import { createContext, useState, useRef } from "react";
+import { API_URL } from "../../api";
 import React from "react"; // Add this line
 
 
@@ -12,7 +13,9 @@ export const CarGridContextProvider = ({ children }) => {
   function countClicks(carId) {
     console.log(`clicked car id is ${carId}`);
 
-    const apiURL = "http://localhost:3000/api/clicked";
+    // const apiURL = "http://localhost:3000/api/clicked";
+    const apiURL = `${API_URL}/api/clicked`;
+
 
 
     fetch (apiURL,{

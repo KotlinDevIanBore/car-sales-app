@@ -1,5 +1,6 @@
 
 import React, { createContext, useState,useEffect, useContext } from "react";
+import { API_URL } from "../../api";
 
 export const CarContext = createContext();
 
@@ -35,7 +36,11 @@ export const CarProvider = ({ children }) => {
     });
 
     try {
-      const response = await fetch("http://localhost:3000/api/addCar", {
+      // const addCarURL = "http://localhost:3000/api/addCar";
+      const addCarURL = `${API_URL}/api/addCar`;
+
+
+      const response = await fetch(addCarURL, {
         method: "POST",
         body: formData1, 
       });
@@ -57,7 +62,8 @@ export const CarProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const mostClickedUrl = "http://localhost:3000/api/mostClicked";
+    // const mostClickedUrl = "http://localhost:3000/api/mostClicked";
+    const mostClickedUrl = `${API_URL}/api/mostClicked`;
 
   
     async function loadCars() {
@@ -76,7 +82,9 @@ export const CarProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    const mostSearchedUrl = "http://localhost:3000/api/searchedCars";
+    // const mostSearchedUrl = "http://localhost:3000/api/searchedCars";
+    const mostSearchedUrl = `${API_URL}/api/searchedCars`;
+
 
   
     async function loadCars() {
@@ -100,7 +108,9 @@ export const CarProvider = ({ children }) => {
     async function loadClickLogs (){
 
 
-      const loadClicksURL = `http://localhost:3000/api/click-logs`;
+      // const loadClicksURL = `http://localhost:3000/api/click-logs`;
+      const loadClicksURL = `${API_URL}/api/click-logs`;
+  
   
       const response = await fetch (loadClicksURL);
   
