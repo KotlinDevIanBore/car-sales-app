@@ -14,6 +14,7 @@ const fetcher = async (url) => {
 };
 
 // const apiUrl = "http://localhost:3000/api/cars";
+//const apiURL = "https://car-sales-app-server.onrender.com/api/cars"
 const apiUrl = `${API_URL}/api/cars`;
 
 const fetchData = async () => {
