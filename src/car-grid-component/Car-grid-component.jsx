@@ -58,6 +58,7 @@ function CarGrid(props) {
   }
 
   return (
+    <>
     <div ref={carGridRef}>
       <link
         rel="stylesheet"
@@ -129,13 +130,17 @@ function CarGrid(props) {
         ))}
       </div>
 
-      <button
+     
+    </div>
+    <button
       className = {styles.home_button}
         onClick={scrollToHomepage}
       >
         Home
       </button>
-    </div>
+
+    </>
+    
   );
 }
 

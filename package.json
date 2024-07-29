@@ -22,12 +22,7 @@
     "serve": "vite serve",
     "prebuild": "npm install"
   },
-  "proxy": {
-    "/api": {
-      "target": "http://localhost:3000",
-      "changeOrigin": true
-    }
-  },
+  
   "vite": {
     "plugins": [
       "@vitejs/plugin-react"
