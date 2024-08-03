@@ -67,7 +67,7 @@
 }
 
 .search_button:hover {
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.116);
 }
 
 .cars_in_stock_button {
