@@ -1,7 +1,7 @@
 // import "./home-component.css";
 // import styles from "./home-component.css";
 
-import styles from "./home-component.module.css"
+import styles from "./home-component.module.css";
 import IMAGES from "./images-array";
 import storiesImages from "../stories-app/stories_photos/stories_array";
 import React, { useState, useContext } from "react";
@@ -57,14 +57,11 @@ function HomePage() {
 
   return (
     <div className={styles.home_component} ref={homepageRef}>
-      
       <UIShellHeader />
 
       <div className="home-page">
         <div
-          
-       className={styles.home_image_container}
-
+          className={styles.home_image_container}
           onClick={() => {
             scrollImage("works");
           }}
@@ -81,33 +78,35 @@ function HomePage() {
           })}
         </div>
 
-        <button
+        {/* <button
           className={styles.cars_in_stock_button}
           onClick={scrollCarGridIntoView}
         >
-<h5 style={{ fontSize: '0.5em' }}>Cars In Stock</h5>        </button>
+          <h5 style={{ fontSize: "0.5em" }}>Cars In Stock</h5>{" "}
+        </button> */}
       </div>
 
       <div className={styles.search_bar_container}>
-      
         <input
           type="text"
           className={styles.search_bar}
           placeholder=" Search Your Dream Car Here "
           onChange={handleChange}
         ></input>
-         <button type="submit" onClick={handleClick} className={`${styles.search_text} ${styles.search_button}`}>
-        Search
-      </button>
+        <button
+          type="submit"
+          onClick={handleClick}
+          className={`${styles.search_text} ${styles.search_button}`}
+        >
+          Search
+        </button>
       </div>
-     
 
       {intervalRunning && (
         <div>
           <img
             src={storiesImages[storyIndex].url}
             alt=""
-  
             className={styles.story_image}
           />
           <p className={styles.story_text}>{storiesImages[storyIndex].text}</p>
