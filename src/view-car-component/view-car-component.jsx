@@ -44,22 +44,20 @@ function DisplayCar(props) {
             -
           </div>
 
-          <button
+          {/* <button
             className="change-image-button-minus"
             onClick={() => {
               handleImageChange(-1);
             }}
           >
-            {/* Change Image- */}
-          </button>
-          <button
+          </button> */}
+          {/* <button
             className="change-image-button-plus"
             onClick={() => {
               handleImageChange(1);
             }}
           >
-            {/* Change Image + */}
-          </button>
+          </button> */}
         </div>
         <div className="info-container">
           <ol class="gradient-list">
