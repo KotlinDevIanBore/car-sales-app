@@ -21,7 +21,7 @@ function DisplayCar(props) {
   return (
     <div className="display-car-page">
       <div className="image-info-container">
-        <div className="image-container">
+        <div className="hero-image-container">
           <img
             className="hero-image"
             src={props.car.image[imageIndex].URL}
@@ -50,7 +50,7 @@ function DisplayCar(props) {
               handleImageChange(-1);
             }}
           >
-            Change Image-
+            {/* Change Image- */}
           </button>
           <button
             className="change-image-button-plus"
@@ -58,7 +58,7 @@ function DisplayCar(props) {
               handleImageChange(1);
             }}
           >
-            Change Image +
+            {/* Change Image + */}
           </button>
         </div>
         <div className="info-container">
