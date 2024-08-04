@@ -97,10 +97,11 @@ function HomePage() {
           placeholder=" Search Your Dream Car Here "
           onChange={handleChange}
         ></input>
-      </div>
-      <button type="submit" onClick={handleClick} className={styles.search_button}>
+         <button type="submit" onClick={handleClick} className={styles.search_button}>
         Search
       </button>
+      </div>
+     
 
       {intervalRunning && (
         <div>
