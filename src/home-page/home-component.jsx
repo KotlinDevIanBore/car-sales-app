@@ -85,8 +85,7 @@ function HomePage() {
           className={styles.cars_in_stock_button}
           onClick={scrollCarGridIntoView}
         >
-          Cars In Stock
-        </button>
+<h5 style={{ fontSize: '0.5em' }}>Cars In Stock</h5>        </button>
       </div>
 
       <div className={styles.search_bar_container}>
@@ -97,7 +96,7 @@ function HomePage() {
           placeholder=" Search Your Dream Car Here "
           onChange={handleChange}
         ></input>
-         <button type="submit" onClick={handleClick} className={styles.search_button}>
+         <button type="submit" onClick={handleClick} className={`${styles.search_text} ${styles.search_button}`}>
         Search
       </button>
       </div>
