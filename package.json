@@ -6,7 +6,6 @@
     "@ant-design/icons": "^5.4.0",
     "@carbon/charts-react": "^1.19.2",
     "@carbon/react": "^1.62.1",
-    "@emotion/react": "^11.13.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mui/icons-material": "^5.16.6",
@@ -24,7 +23,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build --ignore-warnings",
+    "build": "vite build ",
     "serve": "vite serve",
     "prebuild": "npm install"
   },
