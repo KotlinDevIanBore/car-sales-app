@@ -37,6 +37,8 @@
   "author": "KotlinDevIanBore <iankipchirchirb3@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
     "@vitejs/plugin-react": "^3.0.0",
     "sass": "^1.77.8",
     "vite": "^4.0.0"
