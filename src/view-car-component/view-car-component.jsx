@@ -1,6 +1,7 @@
 import React from "react";
 import { useState} from "react";
 import "./view-car.css";
+import UIShellHeader from "../ui-shell-app/ui-shell-header";
 
 
 function DisplayCar(props) {
@@ -20,6 +21,10 @@ function DisplayCar(props) {
   }
   return (
     <div className="display-car-page">
+      <div className="ui-shell-header-container">
+      <UIShellHeader/>
+      </div>
+     
       <div className="image-info-container">
         <div className="hero-image-container">
           <img
