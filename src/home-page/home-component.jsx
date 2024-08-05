@@ -2,8 +2,6 @@
 // import styles from "./home-component.css";
 
 import styles from "./home-component.module.css";
-import { Input } from "antd";
-import { SearchOutlined } from "@ant-design/icons";
 import IMAGES from "./images-array";
 import storiesImages from "../stories-app/stories_photos/stories_array";
 import React, { useState, useContext } from "react";
@@ -64,19 +62,7 @@ function HomePage() {
     scrollCarGridIntoView();
     SendSearchRequest();
   }
-  const SearchBox = () => {
-    return (
-      <Input.Search
-        placeholder="Search..."
-        // onSearch={(value) => console.log(value)}
-        onInput={(e) => handleChange(e)}
-        suffix={
-          <SearchOutlined onClick={handleClick} />
-        }
-        style={{ width: 200 }}
-      />
-    );
-  };
+  
   return (
     <div className={styles.home_component} ref={homepageRef}>
       <UIShellHeader />
