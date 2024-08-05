@@ -15,13 +15,12 @@
 } */
 .ui-shell-header-component{
   display: block;
-  background-color:blue;
 }
 
 .display-car-page {
   background-color: white;
   justify-content: center;
-  height: 100vh;
+  height: auto;
   width:100vw;
   display: block;
 }
@@ -30,7 +29,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 100vh;
+  height: fit-content;
   width:100vw;
   margin-top: 10px;
   /* display: block; */
@@ -85,7 +84,6 @@
   align-items: center;
   justify-content: flex-end;
 }
-background-color: red;
 
 .change-image-backward-div {
   position: absolute;
