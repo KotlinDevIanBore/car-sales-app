@@ -24,7 +24,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --ignore-warnings",
     "serve": "vite serve",
     "prebuild": "npm install"
   },
