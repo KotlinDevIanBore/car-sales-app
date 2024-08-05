@@ -29,7 +29,6 @@ function HomePage() {
     storyIndex,
     intervalRunning,
   } = useContext(searchContext);
-
   const { carGridRef } = useContext(carGridContext);
 
   const { homepageRef } = useContext(searchContext);
