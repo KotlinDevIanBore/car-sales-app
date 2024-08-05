@@ -9,12 +9,12 @@ import { searchContext } from "./home_page_context";
 import { carGridContext } from "../car-grid-component/car-grid-context";
 import { useInterval } from "react-use";
 import UIShellHeader from "../ui-shell-app/ui-shell-header";
-import Box from '@mui/material/Box';
+// import Box from '@mui/material/Box';
 // import TextField from '@mui/material/TextField';
-import { TextField } from '@mui/material';
+// import { TextField } from '@mui/material';
 // import SearchIcon from '@material-ui/icons/Search';
-import SearchIcon from '@mui/icons-material/Search';
-import InputAdornment from '@mui/material/InputAdornment';
+// import SearchIcon from '@mui/icons-material/Search';
+// import InputAdornment from '@mui/material/InputAdornment';
 
 
 
