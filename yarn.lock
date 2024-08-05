@@ -23,7 +23,7 @@
   resolved "https://registry.npmjs.org/@babel/compat-data/-/compat-data-7.24.8.tgz"
   integrity sha512-c4IM7OTg6k1Q+AJ153e2mc2QVTezTwnb4VzquwcyiEzGnW0Kedv4do/TrkU98qPeC5LNiMt/QXwIjzYXLBpyZg==
 
-"@babel/core@^7.20.12":
+"@babel/core@^7.0.0", "@babel/core@^7.0.0-0", "@babel/core@^7.20.12":
   version "7.24.8"
   resolved "https://registry.npmjs.org/@babel/core/-/core-7.24.8.tgz"
   integrity sha512-6AWcmZC/MZCO0yKys4uhg5NlxL0ESF3K6IAaoQ+xSXvPyPyxNWRafP+GDbI88Oh68O7QkJgmEtedWPM9U0pZNg==
@@ -178,7 +178,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.24.7"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.18.3", "@babel/runtime@^7.22.15", "@babel/runtime@^7.23.9", "@babel/runtime@^7.4.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.18.3", "@babel/runtime@^7.22.15", "@babel/runtime@^7.23.9", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
   version "7.24.8"
   resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.24.8.tgz"
   integrity sha512-5F7SDGs1T72ZczbRwbGO9lQi0NLjQxzl6i4lJxLxfW9U5UluCSyEJeniWvnhl3/euNiqQVbo8zruhsDfid0esA==
@@ -451,6 +451,13 @@
   resolved "https://registry.npmjs.org/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.6.0.tgz"
   integrity sha512-xyX0X9mc0kyz9plIyryrRbl7ngsA9jz77mCZJsUkLl+ZKs0KWObgaEBoSgQiYWAsSmjz/yjl0F++Got0Mdp4Rw==
 
+"@fortawesome/fontawesome-svg-core@~1 || ~6":
+  version "6.6.0"
+  resolved "https://registry.npmjs.org/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-6.6.0.tgz"
+  integrity sha512-KHwPkCk6oRT4HADE7smhfsKudt9N/9lm6EJ5BVg0tD1yPA5hht837fB87F8pn15D8JfTqQOjhKTktwmLMiD7Kg==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "6.6.0"
+
 "@fortawesome/free-solid-svg-icons@^6.6.0":
   version "6.6.0"
   resolved "https://registry.npmjs.org/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-6.6.0.tgz"
@@ -507,19 +514,19 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@material-ui/icons@^4.11.3":
-  version "4.11.3"
-  resolved "https://registry.npmjs.org/@material-ui/icons/-/icons-4.11.3.tgz"
-  integrity sha512-IKHlyx6LDh8n19vzwH5RtHIOHl9Tu90aAAxcbWME6kp4dmvODM3UvOHJeMIDzUbd4muuJKHmlNoBN+mDY4XkBA==
-  dependencies:
-    "@babel/runtime" "^7.4.4"
-
 "@mui/core-downloads-tracker@^5.16.6":
   version "5.16.6"
   resolved "https://registry.npmjs.org/@mui/core-downloads-tracker/-/core-downloads-tracker-5.16.6.tgz"
   integrity sha512-kytg6LheUG42V8H/o/Ptz3olSO5kUXW9zF0ox18VnblX6bO2yif1FPItgc3ey1t5ansb1+gbe7SatntqusQupg==
 
-"@mui/material@^5.16.6":
+"@mui/icons-material@^5.16.6":
+  version "5.16.6"
+  resolved "https://registry.npmjs.org/@mui/icons-material/-/icons-material-5.16.6.tgz"
+  integrity sha512-ceNGjoXheH9wbIFa1JHmSc9QVjJUvh18KvHrR4/FkJCSi9HXJ+9ee1kUhCOEFfuxNF8UB6WWVrIUOUgRd70t0A==
+  dependencies:
+    "@babel/runtime" "^7.23.9"
+
+"@mui/material@^5.0.0", "@mui/material@^5.16.6":
   version "5.16.6"
   resolved "https://registry.npmjs.org/@mui/material/-/material-5.16.6.tgz"
   integrity sha512-0LUIKBOIjiFfzzFNxXZBRAyr9UQfmTAFzbt6ziOU2FDXhorNN2o3N9/32mNJbCA8zJo2FqFU6d3dtoqUDyIEfA==
@@ -614,13 +621,19 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*":
-  version "18.3.3"
-  resolved "https://registry.npmjs.org/@types/react/-/react-18.3.3.tgz"
-  integrity sha512-hti/R0pS0q1/xx+TsI73XIqk26eBsISZ2R0wUijXIngRK9R/e7Xw/cXVxQK7R5JjW+SV4zGcn5hXjudkN/pLIw==
+"@types/react@*", "@types/react@^17.0.0 || ^18.0.0":
+  version "17.0.80"
+  resolved "https://registry.npmjs.org/@types/react/-/react-17.0.80.tgz"
+  integrity sha512-LrgHIu2lEtIo8M7d1FcI3BdwXWoRQwMoXOZ7+dPTW0lYREjmlHl3P0U1VD0i/9tppOuv8/sam7sOjx34TxSFbA==
   dependencies:
     "@types/prop-types" "*"
+    "@types/scheduler" "^0.16"
     csstype "^3.0.2"
+
+"@types/scheduler@^0.16":
+  version "0.16.8"
+  resolved "https://registry.npmjs.org/@types/scheduler/-/scheduler-0.16.8.tgz"
+  integrity sha512-WZLiwShhwLRmeV6zH+GkbOFT6Z6VklCItrDioxUnv+u4Ll+8vKeFySoFyK/0ctcRpOmwAicELfmys1sDc/Rw+A==
 
 "@vitejs/plugin-react@^3.0.0":
   version "3.1.0"
@@ -675,7 +688,7 @@ braces@~3.0.2:
   dependencies:
     fill-range "^7.1.1"
 
-browserslist@^4.23.1:
+browserslist@^4.23.1, "browserslist@>= 4.21.0":
   version "4.23.2"
   resolved "https://registry.npmjs.org/browserslist/-/browserslist-4.23.2.tgz"
   integrity sha512-qkqSyistMYdxAcw+CzbZwlBy8AGmS/eEWs+sEV5TnLRGDOL+C5M2EnH6tlZyg0YoAxGJAFKh61En9BR941GnHA==
@@ -1502,7 +1515,7 @@ prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
     object-assign "^4.1.1"
     react-is "^16.13.1"
 
-react-dom@^18.0.0:
+react-dom@*, "react-dom@^16.8.6 || ^17.0.1 || ^18.2.0", "react-dom@^17.0.0 || ^18.0.0", react-dom@^18.0.0, react-dom@>=16.6.0, react-dom@>=16.8, react-dom@>=16.8.0:
   version "18.3.1"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.3.1.tgz"
   integrity sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==
@@ -1575,7 +1588,7 @@ react-use@^17.5.1:
     ts-easing "^0.2.0"
     tslib "^2.1.0"
 
-react@^18.0.0:
+react@*, "react@^16.8.6 || ^17.0.1 || ^18.2.0", "react@^17.0.0 || ^18.0.0", react@^18.0.0, react@^18.3.1, react@>=16, react@>=16.12.0, react@>=16.3, react@>=16.6.0, react@>=16.8, react@>=16.8.0:
   version "18.3.1"
   resolved "https://registry.npmjs.org/react/-/react-18.3.1.tgz"
   integrity sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==
@@ -1628,7 +1641,7 @@ rw@1:
   resolved "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sass@^1.77.8:
+sass@*, sass@^1.33.0, sass@^1.77.8:
   version "1.77.8"
   resolved "https://registry.npmjs.org/sass/-/sass-1.77.8.tgz"
   integrity sha512-4UHg6prsrycW20fqLGPShtEvo/WyHRVRHwOP4DzkUrObWoWI05QBSfzU71TVB7PFaL104TwNaHpjlWXAZbQiNQ==
@@ -1778,7 +1791,7 @@ ts-easing@^0.2.0:
   resolved "https://registry.npmjs.org/ts-easing/-/ts-easing-0.2.0.tgz"
   integrity sha512-Z86EW+fFFh/IFB1fqQ3/+7Zpf9t2ebOAxNI/V6Wo7r5gqiqtxmgTlQ1qbqQcjLKYeSHPTsEmvlJUDg/EuL0uHQ==
 
-tslib@^2.1.0, tslib@^2.6.2, tslib@^2.6.3:
+tslib@*, tslib@^2.1.0, tslib@^2.6.2, tslib@^2.6.3:
   version "2.6.3"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.6.3.tgz"
   integrity sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==
@@ -1798,7 +1811,7 @@ use-resize-observer@^6.0.0:
   dependencies:
     resize-observer-polyfill "^1.5.1"
 
-vite@^4.0.0:
+vite@^4.0.0, vite@^4.1.0-beta.0:
   version "4.5.3"
   resolved "https://registry.npmjs.org/vite/-/vite-4.5.3.tgz"
   integrity sha512-kQL23kMeX92v3ph7IauVkXkikdDRsYMGTVl5KY2E9OY4ONLvkHf04MDTbnfo6NKxZiDLWzVpP5oTa8hQD8U3dg==
