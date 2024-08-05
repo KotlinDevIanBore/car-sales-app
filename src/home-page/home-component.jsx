@@ -100,13 +100,13 @@ function HomePage() {
           placeholder=" Search Your Dream Car Here "
           onChange={handleChange}
         ></input> */}
-        <TextField id="outlined-basic" label="Search Your Car Here" variant="outlined" onChange={handleChange} InputProps={{
+        {/* <TextField id="outlined-basic" label="Search Your Car Here" variant="outlined" onChange={handleChange} InputProps={{
     endAdornment: (
       <InputAdornment position="end">
         <SearchIcon onClick={handleClick} />
       </InputAdornment>
     ),
-  }} />
+  }} /> */}
         {/* <button
           type="submit"
           onClick={handleClick}
