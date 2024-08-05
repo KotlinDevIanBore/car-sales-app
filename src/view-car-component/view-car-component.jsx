@@ -56,13 +56,7 @@ function DisplayCar(props) {
             }}
           >
           </button> */}
-          {/* <button
-            className="change-image-button-plus"
-            onClick={() => {
-              handleImageChange(1);
-            }}
-          >
-          </button> */}
+          
         </div>
         <div className="info-container">
           <ol class="gradient-list">
