@@ -12,9 +12,9 @@ import { useInterval } from "react-use";
 import UIShellHeader from "../ui-shell-app/ui-shell-header";
 
 
-import { TextField } from '@mui/material';
-import { Search } from '@mui/icons-material';
-import { InputAdornment } from '@mui/material';
+import  TextField  from '@mui/material/TextField';
+import Search from '@mui/icons-material/Search';
+import InputAdornment from '@mui/material/InputAdornment';
 
 
 
