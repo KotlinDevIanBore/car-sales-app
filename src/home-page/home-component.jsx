@@ -16,8 +16,7 @@ import UIShellHeader from "../ui-shell-app/ui-shell-header";
 
 import { TextField } from '@mui/material';
 import { Search } from '@mui/icons-material';
-import InputAdornment from '@mui/material/InputAdornment';
-
+import { InputAdornment } from '@mui/material';
 
 
 
@@ -117,13 +116,16 @@ function HomePage() {
           onChange={handleChange}
         ></input> */}
 
-        <TextField id="outlined-basic" label="Search Your Car Here" variant="outlined" onChange={handleChange} InputProps={{
-    endAdornment: (
-      <InputAdornment position="end">
-        <Search onClick={handleClick} />
-      </InputAdornment>
-    ),
-  }} />
+<TextField
+  id="outlined-basic"
+  label="Search Your Car Here"
+  variant="outlined"
+  onChange={handleChange}
+>
+  <InputAdornment position="end">
+    <Search onClick={handleClick} />
+  </InputAdornment>
+</TextField>
 
   {/* <SearchBox/> */}
         {/* <button
