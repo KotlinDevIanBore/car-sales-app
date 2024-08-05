@@ -10,9 +10,12 @@ import React, { useState, useContext } from "react";
 import { searchContext } from "./home_page_context";
 import { carGridContext } from "../car-grid-component/car-grid-context";
 import { useInterval } from "react-use";
+
 import UIShellHeader from "../ui-shell-app/ui-shell-header";
+
+
 import { TextField } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
+import { Search } from '@mui/icons-material';
 import InputAdornment from '@mui/material/InputAdornment';
 
 
@@ -117,7 +120,7 @@ function HomePage() {
         <TextField id="outlined-basic" label="Search Your Car Here" variant="outlined" onChange={handleChange} InputProps={{
     endAdornment: (
       <InputAdornment position="end">
-        <SearchIcon onClick={handleClick} />
+        <Search onClick={handleClick} />
       </InputAdornment>
     ),
   }} />
