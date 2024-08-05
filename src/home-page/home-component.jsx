@@ -10,7 +10,8 @@ import { carGridContext } from "../car-grid-component/car-grid-context";
 import { useInterval } from "react-use";
 import UIShellHeader from "../ui-shell-app/ui-shell-header";
 import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
+// import TextField from '@mui/material/TextField';
+import { TextField } from '@mui/material';
 import SearchIcon from '@material-ui/icons/Search';
 import InputAdornment from '@mui/material/InputAdornment';
 
@@ -99,7 +100,7 @@ function HomePage() {
           placeholder=" Search Your Dream Car Here "
           onChange={handleChange}
         ></input> */}
-        <TextField id="outlined-basic" label="Search Your Car Here" variant="standard" onChange={handleChange} InputProps={{
+        <TextField id="outlined-basic" label="Search Your Car Here" variant="outlined" onChange={handleChange} InputProps={{
     endAdornment: (
       <InputAdornment position="end">
         <SearchIcon onClick={handleClick} />
