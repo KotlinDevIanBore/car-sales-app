@@ -2,6 +2,8 @@
 // import styles from "./home-component.css";
 
 import styles from "./home-component.module.css";
+import { Input } from "antd";
+import { SearchOutlined } from "@ant-design/icons";
 import IMAGES from "./images-array";
 import storiesImages from "../stories-app/stories_photos/stories_array";
 import React, { useState, useContext } from "react";
@@ -9,12 +11,11 @@ import { searchContext } from "./home_page_context";
 import { carGridContext } from "../car-grid-component/car-grid-context";
 import { useInterval } from "react-use";
 import UIShellHeader from "../ui-shell-app/ui-shell-header";
-// import Box from '@mui/material/Box';
-// import TextField from '@mui/material/TextField';
-// import { TextField } from '@mui/material';
-// import SearchIcon from '@material-ui/icons/Search';
-// import SearchIcon from '@mui/icons-material/Search';
-// import InputAdornment from '@mui/material/InputAdornment';
+import { TextField } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
+import InputAdornment from '@mui/material/InputAdornment';
+
+
 
 
 
@@ -61,7 +62,19 @@ function HomePage() {
     scrollCarGridIntoView();
     SendSearchRequest();
   }
-
+  const SearchBox = () => {
+    return (
+      <Input.Search
+        placeholder="Search..."
+        // onSearch={(value) => console.log(value)}
+        onInput={(e) => handleChange(e)}
+        suffix={
+          <SearchOutlined onClick={handleClick} />
+        }
+        style={{ width: 200 }}
+      />
+    );
+  };
   return (
     <div className={styles.home_component} ref={homepageRef}>
       <UIShellHeader />
@@ -100,13 +113,16 @@ function HomePage() {
           placeholder=" Search Your Dream Car Here "
           onChange={handleChange}
         ></input> */}
-        {/* <TextField id="outlined-basic" label="Search Your Car Here" variant="outlined" onChange={handleChange} InputProps={{
+
+        <TextField id="outlined-basic" label="Search Your Car Here" variant="outlined" onChange={handleChange} InputProps={{
     endAdornment: (
       <InputAdornment position="end">
         <SearchIcon onClick={handleClick} />
       </InputAdornment>
     ),
-  }} /> */}
+  }} />
+
+  {/* <SearchBox/> */}
         {/* <button
           type="submit"
           onClick={handleClick}
