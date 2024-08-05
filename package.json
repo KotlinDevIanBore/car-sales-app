@@ -7,6 +7,7 @@
     "@carbon/react": "^1.62.1",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@mui/material": "^5.16.6",
     "carbon-components": "^10.58.12",
     "carbon-components-react": "^8.62.1",
     "carbon-icons": "^7.0.7",
@@ -22,7 +23,6 @@
     "serve": "vite serve",
     "prebuild": "npm install"
   },
-  
   "vite": {
     "plugins": [
       "@vitejs/plugin-react"
