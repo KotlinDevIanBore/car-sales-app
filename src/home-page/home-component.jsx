@@ -9,6 +9,12 @@ import { searchContext } from "./home_page_context";
 import { carGridContext } from "../car-grid-component/car-grid-context";
 import { useInterval } from "react-use";
 import UIShellHeader from "../ui-shell-app/ui-shell-header";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import SearchIcon from '@material-ui/icons/Search';
+import InputAdornment from '@mui/material/InputAdornment';
+
+
 
 function HomePage() {
   const [scrollIndex, setScrollIndex] = useState(1);
@@ -87,20 +93,29 @@ function HomePage() {
       </div>
 
       <div className={styles.search_bar_container}>
-        <input
+        {/* <input
           type="text"
           className={styles.search_bar}
           placeholder=" Search Your Dream Car Here "
           onChange={handleChange}
-        ></input>
-        <button
+        ></input> */}
+        <TextField id="outlined-basic" label="Search Your Car Here" variant="standard" onChange={handleChange} InputProps={{
+    endAdornment: (
+      <InputAdornment position="end">
+        <SearchIcon onClick={handleClick} />
+      </InputAdornment>
+    ),
+  }} />
+        {/* <button
           type="submit"
           onClick={handleClick}
           className={`${styles.search_text} ${styles.search_button}`}
         >
           Search
-        </button>
-      </div>
+        </button> */}
+
+      </div>      
+
 
       {intervalRunning && (
         <div>
