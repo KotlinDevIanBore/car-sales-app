@@ -15,6 +15,7 @@ import UIShellHeader from "../ui-shell-app/ui-shell-header";
 import  TextField  from '@mui/material/TextField';
 import Search from '@mui/icons-material/Search';
 import InputAdornment from '@mui/material/InputAdornment';
+import SearchIcon from "./search_button";
 
 
 
@@ -102,7 +103,7 @@ function HomePage() {
           onChange={handleChange}
         ></input> */}
 
-<TextField
+{/* <TextField
   id="outlined-basic"
   label="Search Your Car Here"
   variant="outlined"
@@ -111,7 +112,9 @@ function HomePage() {
   <InputAdornment position="end">
     <Search onClick={handleClick} />
   </InputAdornment>
-</TextField>
+</TextField> */}
+
+<SearchIcon/>
 
   {/* <SearchBox/> */}
         {/* <button
