@@ -13,26 +13,23 @@ import EditedCarContextProvider from "../edit-car-app/edit-car-context";
 
 function ManageCarApp() {
   return (
-
-    <EditedCarContextProvider>
-
-
-    
-    
-    <CarProvider>
-      <div className="container">
-        <ManageCars className="component" />
-        
-        <Tabs className="component"/>
-        <EditCar/>
-
-
-        
-        
-      </div>
-    </CarProvider>
-    </EditedCarContextProvider>
-     
+    <div>
+      <EditedCarContextProvider>
+        <CarProvider>
+          <div className="flex  flex-wrap md:flex-nowrap md:flex-row w-full justify-center flex-grow">
+            <div className="flex-grow">
+              <ManageCars />
+            </div>
+            <div className="flex-grow">
+              <Tabs />
+            </div>
+            <div className="flex-grow">
+              <EditCar />
+            </div>
+          </div>
+        </CarProvider>
+      </EditedCarContextProvider>
+    </div>
   );
 }
 
