@@ -7,11 +7,17 @@ const CircularRing = () => {
 
   
   return (
-    <div className="circular-ring">
+    <div>
+      <div className="circular-ring">
       <div className="ring-inner">
         <img src={throttlelogo} alt="" className="logo" />
       </div>
     </div>
+
+    {/* <div>Our Stories</div> */}
+
+    </div>
+    
   );
 };
 

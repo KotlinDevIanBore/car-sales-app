@@ -8,11 +8,14 @@ const SearchIcon = () =>  {
         text,
         setText,
         SendSearchRequest,
+        scrollCarGridIntoView
       } = useContext(searchContext);
 
       function handleClick(event) {
-        SendSearchRequest();
         event.preventDefault();
+        SendSearchRequest();
+        scrollCarGridIntoView();
+        
       }
 
       function handleChange(e) {

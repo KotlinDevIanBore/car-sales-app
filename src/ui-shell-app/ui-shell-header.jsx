@@ -27,8 +27,7 @@ const UIShellHeader = () => {
   useInterval(changeStoryIndex, intervalRunning ? max_interval : null);
   return (
     <div className="ui-shell-header">
-     
-
+      <div>
       <div className="wrapper-element">
         <div className="stories-ring" onClick={handleRingClick}>
           <CircularRing />
@@ -36,9 +35,19 @@ const UIShellHeader = () => {
         
       </div>
       
-      {/* <SearchIcon/> */}
 
+      </div>
+      
+      
+
+      {/* <SearchIcon/> */}
+      <div className="flex basis-1/8 gap-4">
+      <div>Our Collection</div>
+      <div>About</div>
       <div>Contact Us </div>
+
+      </div>
+     
     </div>
   );
 };

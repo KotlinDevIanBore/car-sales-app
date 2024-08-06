@@ -14,17 +14,15 @@ import UIShellHeader from "../ui-shell-app/ui-shell-header";
 import SearchIcon from "./search_button";
 
 function HomePage() {
+
   const [scrollIndex, setScrollIndex] = useState(1);
 
   const {
-    text,
-    setText,
-    SendSearchRequest,
     changeStoryIndex,
     storyIndex,
     intervalRunning,
   } = useContext(searchContext);
-  const { carGridRef } = useContext(carGridContext);
+  
 
   const { homepageRef } = useContext(searchContext);
 
@@ -86,7 +84,7 @@ function HomePage() {
   <div className="  flex justify-center items-center   font-bold  rounded-md mb-20 ">
     <SearchIcon />
   </div>
-  <div className=" flex justify-center items-center  text-sky-500 font-bold text-3xl rounded-md ">
+  <div className=" flex justify-center items-center  text-[#078E8E] font-bold text-3xl rounded-md ">
     Dream Cars Real Prices
   </div>
 </div>
