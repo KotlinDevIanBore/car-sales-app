@@ -11,14 +11,7 @@ import { useInterval } from "react-use";
 
 import UIShellHeader from "../ui-shell-app/ui-shell-header";
 
-
-import  TextField  from '@mui/material/TextField';
-import Search from '@mui/icons-material/Search';
-import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from "./search_button";
-
-
-
 
 function HomePage() {
   const [scrollIndex, setScrollIndex] = useState(1);
@@ -49,14 +42,10 @@ function HomePage() {
     });
   }
 
-  
-
   function scrollCarGridIntoView() {
     carGridRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  
-  
   return (
     <div className={styles.home_component} ref={homepageRef}>
       <UIShellHeader />
@@ -79,47 +68,9 @@ function HomePage() {
             );
           })}
         </div>
-
-        {/* <button
-          className={styles.cars_in_stock_button}
-          onClick={scrollCarGridIntoView}
-        >
-          <h5 style={{ fontSize: "0.5em" }}>Cars In Stock</h5>{" "}
-        </button> */}
       </div>
 
-      <div className={styles.search_bar_container}>
-        {/* <input
-          type="text"
-          className={styles.search_bar}
-          placeholder=" Search Your Dream Car Here "
-          onChange={handleChange}
-        ></input> */}
-
-{/* <TextField
-  id="outlined-basic"
-  label="Search Your Car Here"
-  variant="outlined"
-  onChange={handleChange}
->
-  <InputAdornment position="end">
-    <Search onClick={handleClick} />
-  </InputAdornment>
-</TextField> */}
-
-{/* <SearchIcon/> */}
-
-  {/* <SearchBox/> */}
-        {/* <button
-          type="submit"
-          onClick={handleClick}
-          className={`${styles.search_text} ${styles.search_button}`}
-        >
-          Search
-        </button> */}
-
-      </div>      
-
+      <div className={styles.search_bar_container}></div>
 
       {intervalRunning && (
         <div>
@@ -131,7 +82,14 @@ function HomePage() {
           <p className={styles.story_text}>{storiesImages[storyIndex].text}</p>
         </div>
       )}
-      {/* <SearchIcon/> */}
+      <div className=" mt-8 justify-center items-center h-[25vh]" >
+  <div className="  flex justify-center items-center   font-bold  rounded-md mb-20 ">
+    <SearchIcon />
+  </div>
+  <div className=" flex justify-center items-center  text-sky-500 font-bold text-3xl rounded-md ">
+    Dream Cars Real Prices
+  </div>
+</div>
     </div>
   );
 }

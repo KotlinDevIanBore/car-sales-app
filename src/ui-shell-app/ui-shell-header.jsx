@@ -36,9 +36,9 @@ const UIShellHeader = () => {
         
       </div>
       
-      <SearchIcon/>
+      {/* <SearchIcon/> */}
 
-      <div>Dream Cars Real Prices </div>
+      <div>Contact Us </div>
     </div>
   );
 };
