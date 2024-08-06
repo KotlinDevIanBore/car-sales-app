@@ -131,7 +131,7 @@ function HomePage() {
           <p className={styles.story_text}>{storiesImages[storyIndex].text}</p>
         </div>
       )}
-      <SearchIcon/>
+      {/* <SearchIcon/> */}
     </div>
   );
 }
