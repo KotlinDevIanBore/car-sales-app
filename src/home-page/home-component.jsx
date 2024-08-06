@@ -107,7 +107,7 @@ function HomePage() {
   </InputAdornment>
 </TextField> */}
 
-<SearchIcon/>
+{/* <SearchIcon/> */}
 
   {/* <SearchBox/> */}
         {/* <button
@@ -131,6 +131,7 @@ function HomePage() {
           <p className={styles.story_text}>{storiesImages[storyIndex].text}</p>
         </div>
       )}
+      <SearchIcon/>
     </div>
   );
 }
