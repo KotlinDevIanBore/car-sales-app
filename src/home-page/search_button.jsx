@@ -6,12 +6,12 @@ const SearchIcon = () => (
     <div className="flex">
       <input 
         type="text" 
-        placeholder="Search for the tool you like"
-        className="w-full md:w-80 px-3 h-10 rounded-l border-2 border-sky-500 focus:outline-none focus:border-sky-500"
+        placeholder="Search for your dream car here"
+        className="w-full md:w-80 px-3 h-10 rounded-l border-2 border-sky-500 focus:outline-none focus:border-sky-500 "
       />
       <button 
         type="submit" 
-        className="bg-sky-500 text-white rounded-r px-2 md:px-3 py-0 md:py-1"
+        className=" h-10 bg-sky-500 text-white rounded-r px-2 md:px-3 py-0 md:py-1"
       >
         Search
       </button>
