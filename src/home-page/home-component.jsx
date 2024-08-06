@@ -49,20 +49,13 @@ function HomePage() {
     });
   }
 
-  function handleChange(e) {
-    const searchInput = e.target.value;
-    setText(searchInput);
-    console.log(text);
-  }
+  
 
   function scrollCarGridIntoView() {
     carGridRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  function handleClick() {
-    scrollCarGridIntoView();
-    SendSearchRequest();
-  }
+  
   
   return (
     <div className={styles.home_component} ref={homepageRef}>

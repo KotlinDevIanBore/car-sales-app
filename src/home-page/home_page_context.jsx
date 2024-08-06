@@ -16,6 +16,7 @@ export const SearchProvider = ({ children }) => {
 
   function handleRingClick() {
     setIntervalRunning(!intervalRunning);
+   
   }
 
   async function SendSearchRequest() {
@@ -54,6 +55,9 @@ export const SearchProvider = ({ children }) => {
       }
     });
   }
+
+
+
   return (
     <searchContext.Provider
       value={{
