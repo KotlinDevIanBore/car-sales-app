@@ -11,11 +11,13 @@ export const SearchProvider = ({ children }) => {
   const { SetCar } = useContext(carGridContext);
   const [storyIndex, setstoryIndex] = useState(0);
   const [intervalRunning, setIntervalRunning] = useState(false);
+  const { carGridRef } = useContext(carGridContext);
 
   const homepageRef = useRef();
 
   function handleRingClick() {
     setIntervalRunning(!intervalRunning);
+   
   }
 
   async function SendSearchRequest() {
@@ -54,6 +56,11 @@ export const SearchProvider = ({ children }) => {
       }
     });
   }
+
+  function scrollCarGridIntoView() {
+    carGridRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   return (
     <searchContext.Provider
       value={{
@@ -69,6 +76,7 @@ export const SearchProvider = ({ children }) => {
         handleRingClick,
         intervalRunning,
         setIntervalRunning,
+        scrollCarGridIntoView
       }}
     >
       {children}

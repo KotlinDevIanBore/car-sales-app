@@ -7,7 +7,6 @@
 }
 .input_container,.add-car_button {
   margin-top: 10px;
-  width: 700px;
 
 }
  .input{
@@ -19,18 +18,4 @@
   background-color: green;
   height: 10%;
  }
- @media screen and  (min-width:3500px){
-
-  .input_container,.add_car_button {
-    margin-top: 10px;
-    width:1000px;
-  
-  }
-  .input{
-    padding: 30px 30px;
-    width: 100%;
-  
-   }
-
-
- }
+ 

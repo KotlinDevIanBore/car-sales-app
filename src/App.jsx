@@ -5,6 +5,7 @@ import "./App.css";
 import HomePage from "./home-page/home-component.jsx";
 import DisplayCar from "./view-car-component/view-car-component.jsx";
 import RenderComparison from "./comparison-app/comparison-component.jsx";
+import SearchIcon from "./home-page/search_button.jsx";
 
 
 
@@ -54,6 +55,7 @@ function App(props) {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
+
       </Routes>
 
       <Routes>
