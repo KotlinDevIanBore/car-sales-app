@@ -18,14 +18,14 @@
   }
   
   .car_name,
-  .car_price {
-    color: rgb(7, 142, 142);
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 200;
-    margin-top: 10px;
-    letter-spacing: 3px;
-  }
+.car_price {
+  color: #2f2f2f; /* or #2f2f2f for a slightly darker shade */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  margin-top: 10px;
+  letter-spacing: 3px;
+}
   
   .car_name:hover {
     opacity: 1;

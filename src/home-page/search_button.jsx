@@ -30,12 +30,12 @@ const SearchIcon = () =>  {
   <input 
     type="text" 
     placeholder="Search for your dream car here"
-    className="w-full md:w-80 px-3 h-4 md:h-10 sm:h-5 xs:h-6 rounded-l border-2 border-sky-500 focus:outline-none focus:border-sky-500 text-base md:text-base sm:text-sm xs:text-xs"
+    className="w-full md:w-80 px-3 h-4 md:h-10 sm:h-5 xs:h-6 rounded-l border-2 border-CCCCCC focus:outline-none focus:border-sky-500 text-base md:text-base sm:text-sm xs:text-xs"
     onChange={handleChange}
   />
   <button 
     type="submit" 
-    className="h-4  md:h-10 sm:h-5 xs:h-6 bg-sky-500 text-white rounded-r px-2 md:px-3 sm:px-2 xs:px-1 py-0 md:py-1 sm:py-0 xs:py-0"
+    className="h-4  md:h-10 sm:h-5 xs:h-6 bg-teal-400 text-white rounded-r px-2 md:px-3 sm:px-2 xs:px-1 py-0 md:py-1 sm:py-0 xs:py-0 hover:bg-teal-500"
     onClick={handleClick}
   >
     Search
