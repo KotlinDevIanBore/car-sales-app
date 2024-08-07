@@ -3,6 +3,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    
     padding: 10px;
     margin-top: 70px;
     margin-left: 10px;
@@ -46,7 +47,7 @@
     top: 10px;
     right: 10px;
     z-index: 1000000;
-    /* background-color: red; */
+   
   }
   
   .forward_arrow {
@@ -98,6 +99,7 @@
   .home_button {
     border: rgb(21, 0, 255);
     margin-left: 50%;
+    bottom: 0;
     color: #364a72;
     display: block;
     
@@ -119,7 +121,7 @@
     margin-bottom: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, background-color 0.3s ease;
-    flex: 1 0 calc(25% - 10px); /* 25% of the row width, minus 10px for margin */
+    flex: 1 0 calc(25% - 10px); 
 
   }
 .compare_button{
