@@ -11,7 +11,7 @@ const RenderMostClickedCars = ()=>{
     const {mostClickedCar} = useContext(CarContext);
 
     if (!mostClickedCar || mostClickedCar.length === 0) {
-      return <div>No most clicked cars available</div>;
+      return <div>...</div>;
     }
   
 
