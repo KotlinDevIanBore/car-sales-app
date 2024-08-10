@@ -46,6 +46,7 @@ const UIShellHeader = () => {
           <img
             src={storiesImages[storyIndex].url}
             alt=""
+            onClick={changeStoryIndex}
             className={styles.story_image}
           />
           <p className={styles.story_text}>{storiesImages[storyIndex].text}</p>
@@ -56,7 +57,7 @@ const UIShellHeader = () => {
        */}
 
       {/* <SearchIcon/> */}
-      <div className="flex basis-1/8 gap-4">
+      <div className="flex basis-1/8 gap-4 items-center">
       <div>Our Collection</div>
       <div>About</div>
       <div>Contact Us </div>
