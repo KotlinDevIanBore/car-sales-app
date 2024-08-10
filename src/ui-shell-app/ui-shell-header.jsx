@@ -57,7 +57,7 @@ const UIShellHeader = () => {
        */}
 
       {/* <SearchIcon/> */}
-      <div className="flex basis-1/8 gap-4 items-center">
+      <div className="flex basis-1/8 gap-4 ">
       <div>Our Collection</div>
       <div>About</div>
       <div>Contact Us </div>
