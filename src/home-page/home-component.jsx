@@ -70,7 +70,7 @@ function HomePage() {
 
       <div className={styles.search_bar_container}></div>
 
-      {intervalRunning && (
+      {/* {intervalRunning && (
         <div>
           <img
             src={storiesImages[storyIndex].url}
@@ -79,7 +79,7 @@ function HomePage() {
           />
           <p className={styles.story_text}>{storiesImages[storyIndex].text}</p>
         </div>
-      )}
+      )} */}
       <div className=" mt-8 justify-center items-center h-[25vh]" >
   <div className="  flex justify-center items-center   font-bold  rounded-md mb-20 ">
     <SearchIcon />
