@@ -10,18 +10,48 @@ import audiGrillImage3 from "./home-page-images/audi-grill.jpg";
 import benzSideImage2 from "./home-page-images/benz-side.jpg";
 import vintagePorscheImage1 from "./home-page-images/vintage-porsche.jpg";
 
+
+
 const IMAGES = [
   {
-    URL10: audiImage10,
-    URL9: rusticImage9,
-    URL8: mercedesBenzImage8,
-    URL7: moEidImage7,
-    URL6: vintageFordImage6,
-    URL5: blackAndWhiteImage5,
-    URL4: rusticImage4,
-    URL3: audiGrillImage3,
-    URL2: benzSideImage2,
-    URL1: vintagePorscheImage1
+    URL: audiImage10,
+    text: "The home of German Engineering"
+  },
+  {
+    URL: rusticImage9,
+    text: "Rustic charm"
+  },
+  {
+    URL: mercedesBenzImage8,
+    text: "Mercedes-Benz: The best or nothing"
+  },
+  {
+    URL: moEidImage7,
+    text: "Mo Eid's masterpiece"
+  },
+  {
+    URL: vintageFordImage6,
+    text: "The Home of American Muscle"
+  },
+  {
+    URL: blackAndWhiteImage5,
+    text: "Timeless black and white"
+  },
+  {
+    URL: rusticImage4,
+    text: "Rustic beauty"
+  },
+  {
+    URL: audiGrillImage3,
+    text: "See Our Collection of AUDIs"
+  },
+  {
+    URL: benzSideImage2,
+    text: "Mercedes-Benz's sleek design"
+  },
+  {
+    URL: vintagePorscheImage1,
+    text: "Home of Dream Cars and Real Prices"
   }
 ];
 
