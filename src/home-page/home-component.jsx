@@ -15,7 +15,7 @@ import SearchIcon from "./search_button";
 
 function HomePage() {
 
-  const [scrollIndex, setScrollIndex] = useState(1);
+  const [scrollIndex, setScrollIndex] = useState(3);
 
   const {
     changeStoryIndex,
