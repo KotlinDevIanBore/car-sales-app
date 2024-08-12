@@ -20,39 +20,75 @@ import bmw from "./home-page-images/bmw-4497318_1280.jpg"
 const IMAGES = [
   {
     URL: bmw,
-    text: "The home of German Engineering"
+    text: "The home of German Engineering",
+    buttonText: [
+      { text: "Explore Models" },
+      { text: "Learn More" },
+      { text: "Test Drive" }
+    ]
   },
   {
     URL: rusticImage9,
-    text: "Rustic charm"
+    text: "Rustic charm",
+    buttonText: [
+      { text: "View Rustic Collection" },
+      { text: "Get Inspired" }
+    ]
   },
   {
     URL: mercedesBenzImage8,
-    text: "Mercedes-Benz: The best or nothing"
+    text: "Mercedes-Benz: The best or nothing",
+    buttonText: [
+      { text: "C 200" },
+      { text: "E-200" },
+      { text: "AMG" }
+    ]
   },
   {
     URL: americanMuscle1,
-    text: "The Home of American Muscle"
+    text: "The Home of American Muscle",
+    buttonText: [
+      { text: "Explore Our Collection" }
+    ]
   },
   {
     URL: offRoadCar,
-    text: "DIRT Cheap, Drive an offroader for less than 300 ksh"
+    text: "DIRT Cheap, Drive an offroader for less than 900 k",
+    buttonText: [
+      { text: "Discover Off-road Deals" },
+      { text: "Learn More" }
+    ]
   },
   {
     URL: rusticImage4,
-    text: "Rustic beauty"
+    text: "Rustic beauty",
+    buttonText: [
+      { text: "View Rustic Collection" }
+    ]
   },
   {
     URL: audiGrillImage3,
-    text: "See Our Collection of AUDIs"
+    text: "See Our Collection of AUDIs",
+    buttonText: [
+      { text: "Q5" },
+      { text: "A5" },
+      { text: "A7" }
+    ]
   },
   {
     URL: challenger,
-    text: "The Home of American Muscle"
+    text: "The Home of American Muscle",
+    buttonText: [
+      { text: "Learn More" }
+    ]
   },
   {
     URL: vintagePorscheImage1,
-    text: "Dream Cars Real Prices"
+    text: "El Classico",
+    buttonText: [
+      { text: "Our Classics" },
+      { text: "View Vintage Collection" }
+    ]
   }
 ];
 

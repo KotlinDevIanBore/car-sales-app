@@ -69,6 +69,23 @@ function HomePage() {
   xl:text-7xl 
   2xl:text-8xl 
   rounded-md absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">{IMAGES[scrollIndex].text}</p>
+<span class="absolute bottom-0 left-0 right-0 flex justify-center mb-20 gap-4">
+
+  {IMAGES[scrollIndex].buttonText.map ((text)=>(
+
+
+<button class="text-white border border-white hover:border-gray-200 py-2 px-4 rounded sm:py-1  sm:px-2 md:py-3 md:px-6 lg:py-4 lg:px-8">
+  {text.text}
+</button>
+ 
+
+
+
+  ))}
+
+</span> 
+
+  
             
         </div>
       </div>
