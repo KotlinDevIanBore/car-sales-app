@@ -53,7 +53,7 @@ const IMAGES = [
   },
   {
     URL: offRoadCar,
-    text: "DIRT Cheap, Drive an offroader for less than 900 k",
+    text: "Offroaders for Less Than $900k",
     buttonText: [
       { text: "Discover Off-road Deals" },
       { text: "Learn More" }
@@ -68,7 +68,7 @@ const IMAGES = [
   },
   {
     URL: audiGrillImage3,
-    text: "See Our Collection of AUDIs",
+    text: "AUDI",
     buttonText: [
       { text: "Q5" },
       { text: "A5" },

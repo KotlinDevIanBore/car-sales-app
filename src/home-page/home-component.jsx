@@ -1,5 +1,4 @@
-// import "./home-component.css";
-// import styles from "./home-component.css";
+
 
 import styles from "./home-component.module.css";
 import IMAGES from "./images-array";
