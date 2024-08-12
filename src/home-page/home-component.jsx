@@ -1,11 +1,7 @@
-
-
 import styles from "./home-component.module.css";
 import IMAGES from "./images-array";
-import storiesImages from "../stories-app/stories_photos/stories_array";
 import React, { useState, useContext } from "react";
 import { searchContext } from "./home_page_context";
-import { carGridContext } from "../car-grid-component/car-grid-context";
 import { useInterval } from "react-use";
 
 import UIShellHeader from "../ui-shell-app/ui-shell-header";
@@ -13,15 +9,10 @@ import UIShellHeader from "../ui-shell-app/ui-shell-header";
 import SearchIcon from "./search_button";
 
 function HomePage() {
-
   const [scrollIndex, setScrollIndex] = useState(3);
 
-  const {
-    changeStoryIndex,
-    storyIndex,
-    intervalRunning,
-  } = useContext(searchContext);
-  
+  const { changeStoryIndex, storyIndex, intervalRunning } =
+    useContext(searchContext);
 
   const { homepageRef } = useContext(searchContext);
 
@@ -31,15 +22,13 @@ function HomePage() {
 
   function scrollImage() {
     setScrollIndex((prevIndex) => {
-      if (prevIndex < IMAGES.length-1) {
+      if (prevIndex < IMAGES.length - 1) {
         return prevIndex + 1;
       } else {
         return 0;
       }
     });
   }
-
-  
 
   return (
     <div className={styles.home_component} ref={homepageRef}>
@@ -52,54 +41,46 @@ function HomePage() {
             scrollImage("works");
           }}
         >
-          
+          <img
+            className={styles.home_image}
+            // src={image["URL" + scrollIndex]}
+            src={IMAGES[scrollIndex].URL}
+            alt=""
+          ></img>
 
-              <img
-                className={styles.home_image}
-                // src={image["URL" + scrollIndex]}
-                src={IMAGES[scrollIndex].URL}
-
-                alt=""
-              ></img>
-
-<p className="text-white font-bold 
+          <div class="flex flex-col gap-10" >
+            <p
+              className="text-white font-bold 
   md:text-5xl 
   lg:text-6xl 
   xl:text-7xl 
   2xl:text-8xl 
-  rounded-md absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">{IMAGES[scrollIndex].text}</p>
-<span class="absolute bottom-0 left-0 right-0 flex justify-center mb-20 gap-4">
-
-  {IMAGES[scrollIndex].buttonText.map ((text)=>(
-
-
-<button class="text-white border border-white hover:border-gray-200 py-2 px-4 rounded sm:py-1  sm:px-2 md:py-3 md:px-6 lg:py-4 lg:px-8">
-  {text.text}
-</button>
- 
-
-
-
-  ))}
-
-</span> 
-
-  
-            
+  mb-10
+  rounded-md absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            >
+              {IMAGES[scrollIndex].text}
+            </p>
+            <div class="absolute bottom-0 left-0 right-0 flex justify-center mb-20 gap-4">
+              {IMAGES[scrollIndex].buttonText.map((text) => (
+                <button class="text-white border border-white hover:border-gray-200 py-2 px-4 rounded sm:py-1  sm:px-2 md:py-3 md:px-6 lg:py-4 lg:px-8">
+                  {text.text}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
       <div className={styles.search_bar_container}></div>
 
-      
-      <div className=" mt-8 justify-center items-center h-[25vh]" >
-  <div className="  flex justify-center items-center   font-bold  rounded-md mb-20 ">
-    <SearchIcon />
-  </div>
-  <div className=" flex justify-center items-center  text-[#078E8E] font-bold text-10xl rounded-md ">
-   Easy as Search Find Drive away
-  </div>
-</div>
+      <div className=" mt-8 justify-center items-center h-[25vh]">
+        <div className="  flex justify-center items-center   font-bold  rounded-md mb-20 ">
+          <SearchIcon />
+        </div>
+        <div className=" flex justify-center items-center  text-[#078E8E] font-bold text-10xl rounded-md ">
+          Easy as Search Find Drive away
+        </div>
+      </div>
     </div>
   );
 }
