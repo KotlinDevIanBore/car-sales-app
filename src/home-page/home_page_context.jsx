@@ -2,6 +2,7 @@ import { createContext, useState, useContext, useRef } from "react";
 import { carGridContext } from "../car-grid-component/car-grid-context";
 import React from "react";
 import { API_URL } from "../../api";
+import { SendSearchRequest } from "../api";
 
 export const searchContext = createContext();
 
@@ -17,34 +18,16 @@ export const SearchProvider = ({ children }) => {
 
   function handleRingClick() {
     setIntervalRunning(!intervalRunning);
-   
+    
   }
 
-  async function SendSearchRequest() {
-    // const apiURl = "http://localhost:3000/api/search";
-    const apiURl = `${API_URL}/api/search`;
+  
 
-    try {
-      const response = await fetch(apiURl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ Text: text }),
-      });
-      console.log("search request sent");
+  async function fetchSearchData (){
 
-      const data = await response.json();
-      setText(null);
-      console.log(data.cars);
+    const data = await SendSearchRequest (text);
+    SetCar(data.cars);
 
-      SetCar(data.cars);
-
-      return data;
-    } catch (error) {
-      console.error("Error sending search request:", error);
-      return { error: "Error sending search request" };
-    }
   }
 
   function changeStoryIndex() {
@@ -60,13 +43,16 @@ export const SearchProvider = ({ children }) => {
   function scrollCarGridIntoView() {
     carGridRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   }
+  function handleDynamicButton (id){
 
+    console.log (id)
+    }
   return (
     <searchContext.Provider
       value={{
         text,
         setText,
-        SendSearchRequest,
+        fetchSearchData,
         searchCar,
         setsearchCar,
         homepageRef,
@@ -76,7 +62,9 @@ export const SearchProvider = ({ children }) => {
         handleRingClick,
         intervalRunning,
         setIntervalRunning,
-        scrollCarGridIntoView
+        scrollCarGridIntoView,
+        handleDynamicButton
+
       }}
     >
       {children}

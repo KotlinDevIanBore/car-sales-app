@@ -3,12 +3,16 @@ import RenderMostClickedCars from './analytics/most-clicked-cars';
 import RenderMostSearchedCar from './analytics/most-searched-car';
 import './clicked-carbon.css'
 import LineApp from './analytics/graph';
+ import EditCar from '../edit-car-app/edit-car'
+ import ManageCars from '../admin/manage-car-component';
 
 
 const ComponentDictionary = {
   tab1: RenderMostClickedCars,
   tab2: RenderMostSearchedCar,
   tab3: LineApp,
+  tab4: EditCar,
+  tab5: ManageCars
 };
 
 const Tabs = () => {
@@ -30,6 +34,12 @@ const Tabs = () => {
         </li>
         <li className={activeTab === 'tab3' ? 'active' : ''}>
           <a href="#" onClick={() => handleTabChange('tab3')}>Trends</a>
+        </li>
+        <li className={activeTab === 'tab4' ? 'active' : ''}>
+          <a href="#" onClick={() => handleTabChange('tab4')}>EditCars</a>
+        </li>
+        <li className={activeTab === 'tab5' ? 'active' : ''}>
+          <a href="#" onClick={() => handleTabChange('tab5')}>Add Car</a>
         </li>
       </ul>
 
