@@ -25,18 +25,18 @@ export const CarProvider = ({ children }) => {
   const handleFormFileData = async (formData, uploadedFile) => {
     const formData1 = new FormData();
 
-    // Append form data fields
+   
     Object.keys(formData).forEach((key) => {
       formData1.append(key, formData[key]);
-    });
+    });                                                                                                                                                                                                    
 
-    // Append files
+    
     uploadedFile.forEach((file) => {
       formData1.append('uploadedCarFile', file); 
     });
 
     try {
-      // const addCarURL = "http://localhost:3000/api/addCar";
+      
       const addCarURL = `${API_URL}/api/addCar`;
 
 

@@ -22,72 +22,72 @@ const IMAGES = [
     URL: bmw,
     text: "The home of German Engineering",
     buttonText: [
-      { text: "Explore Models" },
-      { text: "Learn More" },
-      { text: "Test Drive" }
+      { id: "btn-1", text: "Explore Models" },
+      { id: "btn-2", text: "Learn More" },
+      { id: "btn-3", text: "Test Drive" }
     ]
   },
   {
     URL: rusticImage9,
     text: "Rustic charm",
     buttonText: [
-      { text: "View Rustic Collection" },
-      { text: "Get Inspired" }
+      { id: "btn-4", text: "View Rustic Collection" },
+      { id: "btn-5", text: "Get Inspired" }
     ]
   },
   {
     URL: mercedesBenzImage8,
     text: "Mercedes-Benz: The best or nothing",
     buttonText: [
-      { text: "C 200" },
-      { text: "E-200" },
-      { text: "AMG" }
+      { id: "btn-6", text: "C 200" },
+      { id: "btn-7", text: "E-200" },
+      { id: "btn-8", text: "AMG" }
     ]
   },
   {
     URL: americanMuscle1,
     text: "The Home of American Muscle",
     buttonText: [
-      { text: "Explore Our Collection" }
+      { id: "btn-9", text: "Explore Our Collection" }
     ]
   },
   {
     URL: offRoadCar,
     text: "Offroaders for Less Than $900k",
     buttonText: [
-      { text: "Discover Off-road Deals" },
-      { text: "Learn More" }
+      { id: "btn-10", text: "Discover Off-road Deals" },
+      { id: "btn-11", text: "Learn More" }
     ]
   },
   {
     URL: rusticImage4,
     text: "Rustic beauty",
     buttonText: [
-      { text: "View Rustic Collection" }
+      { id: "btn-12", text: "View Rustic Collection" }
     ]
   },
   {
     URL: audiGrillImage3,
     text: "AUDI",
     buttonText: [
-      { text: "Q5" },
-      { text: "A5" },
-      { text: "A7" }
+      { id: "btn-13", text: "Q5" },
+      { id: "btn-14", text: "A5" },
+      { id: "btn-15", text: "A7" }
     ]
   },
   {
     URL: challenger,
     text: "The Home of American Muscle",
     buttonText: [
-      { text: "Learn More" }
+      { id: "btn-16", text: "Learn More" }
     ]
   },
   {
     URL: vintagePorscheImage1,
     text: "El Classico",
     buttonText: [
-      { text: "Our Classics" },
-      { text: "View Vintage Collection" }
+      { id: "btn-17", text: "Our Classics" },
+      { id: "btn-18", text: "View Vintage Collection" }
     ]
   }
 ];

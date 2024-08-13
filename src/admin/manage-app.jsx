@@ -18,7 +18,7 @@ function ManageCarApp() {
         <CarProvider>
           <div className="flex  flex-wrap md:flex-nowrap md:flex-row w-full justify-center flex-grow">
             <div className="flex-grow">
-              <ManageCars />
+             
             </div>
             <div className="flex-grow">
               <Tabs />
