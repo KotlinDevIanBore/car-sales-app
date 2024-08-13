@@ -71,7 +71,7 @@ const IMAGES = [
     text: "AUDI",
     buttonText: [
       { id: "btn-13", text: "Q5" },
-      { id: "btn-14", text: "A5" },
+      { id: "btn-14", text: "A4" },
       { id: "btn-15", text: "A7" }
     ]
   },

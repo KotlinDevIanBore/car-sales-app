@@ -43,9 +43,11 @@ export const SearchProvider = ({ children }) => {
   function scrollCarGridIntoView() {
     carGridRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   }
-  function handleDynamicButton (id){
+  async function handleDynamicButton (id){
 
-    console.log (id)
+    console.log (id);
+    const data = await SendSearchRequest (id);
+    SetCar (data.cars);
     }
   return (
     <searchContext.Provider
