@@ -10,6 +10,9 @@ export const EditedCarContext = createContext ();
 
 const EditedCarContextProvider = ({children})=>{
 
+    const {carArray,SetCar}=useContext (carGridContext);
+
+
     const [formData,setFormData] = useState(
         [
           
@@ -50,7 +53,7 @@ function sendEditedCar(){
 
 
 }
-    return <EditedCarContext.Provider value = {{formData,setFormData,handleSubmit}}>
+    return <EditedCarContext.Provider value = {{formData,setFormData,handleSubmit,carArray,SetCar}}>
     
     {children}
     

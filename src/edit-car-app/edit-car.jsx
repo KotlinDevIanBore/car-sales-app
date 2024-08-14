@@ -1,24 +1,23 @@
 
 import React, { useState, useEffect, memo, useContext } from "react";
 import fetchData from "../car-grid-component/car-grid-component-resource";
-import { carGridContext } from "../car-grid-component/car-grid-context";
 import { EditedCarContext } from "./edit-car-context";
 
 import styles from './edit-car.module.css';
 
 
 const EditCar = ()=>{
+  const {formData,setFormData,handleSubmit,carArray,SetCar} = useContext(EditedCarContext);
 
-    const {carArray,SetCar}=useContext (carGridContext);
-    const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+
+    // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
 
   const [editId,setEditId] = useState(false);
   const [edit,setEdit] = useState(false);
-  const {formData,setFormData,handleSubmit} = useContext(EditedCarContext)
 
 
-
+ 
   function handleEditClick (carid){
 
     setEditId (carid)
@@ -35,9 +34,9 @@ const EditCar = ()=>{
             }));
             SetCar(carsWithIndex);
           } catch (err) {
-            setError(err);
+            // setError(err);
           } finally {
-            setLoading(false);
+            // setLoading(false);
           }
         };
     

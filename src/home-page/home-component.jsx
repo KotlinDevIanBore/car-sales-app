@@ -84,7 +84,7 @@ function HomePage() {
           <SearchIcon />
         </div>
         <div className=" flex justify-center items-center  text-[#078E8E] font-bold text-10xl rounded-md ">
-          Easy as Search Find Drive away
+        Effortlessly Search, Find, and Drive Off
         </div>
       </div>
     </div>
