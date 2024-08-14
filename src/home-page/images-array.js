@@ -14,7 +14,7 @@ import challenger from "./home-page-images/challenger-5880009_1280.jpg"
 import americanMuscle1 from "./home-page-images/challenger_high_rez.jpg"
 import msportwheel from "./home-page-images/wheel-7043351_1280.jpg"
 import bmw from "./home-page-images/bmw-4497318_1280.jpg"
-
+import blackaudi from "./home-page-images/black-2398252_1920.jpg"
 
 
 const IMAGES = [
@@ -67,7 +67,7 @@ const IMAGES = [
     ]
   },
   {
-    URL: audiGrillImage3,
+    URL: blackaudi,
     text: "AUDI",
     buttonText: [
       { id: "btn-13", text: "Q5" },
