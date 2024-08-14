@@ -39,8 +39,8 @@ const IMAGES = [
     URL: mercedesBenzImage8,
     text: "Mercedes-Benz: The best or nothing",
     buttonText: [
-      { id: "btn-6", text: "C 200" },
-      { id: "btn-7", text: "E-200" },
+      { id: "btn-6", text: "C200" },
+      { id: "btn-7", text: "GLC" },
       { id: "btn-8", text: "AMG" }
     ]
   },
@@ -84,10 +84,10 @@ const IMAGES = [
   },
   {
     URL: vintagePorscheImage1,
-    text: "El Classico",
+    text: "Feel the Breeze",
     buttonText: [
-      { id: "btn-17", text: "Our Classics" },
-      { id: "btn-18", text: "View Vintage Collection" }
+      { id: "btn-17", text: "Our Convertibles" },
+      // { id: "btn-18", text: "View Vintage Collection" }
     ]
   }
 ];

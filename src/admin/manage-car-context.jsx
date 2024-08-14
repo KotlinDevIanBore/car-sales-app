@@ -11,6 +11,7 @@ export const CarProvider = ({ children }) => {
     price: "",
     availability: "",
     location: "",
+    cohort:""
   });
 
   const [uploadedFile, setUploadedFile] = useState([]);
@@ -62,7 +63,6 @@ export const CarProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    // const mostClickedUrl = "http://localhost:3000/api/mostClicked";
     const mostClickedUrl = `${API_URL}/api/mostClicked`;
 
   
@@ -82,7 +82,6 @@ export const CarProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    // const mostSearchedUrl = "http://localhost:3000/api/searchedCars";
     const mostSearchedUrl = `${API_URL}/api/searchedCars`;
 
 
@@ -108,7 +107,6 @@ export const CarProvider = ({ children }) => {
     async function loadClickLogs (){
 
 
-      // const loadClicksURL = `http://localhost:3000/api/click-logs`;
       const loadClicksURL = `${API_URL}/api/click-logs`;
   
   

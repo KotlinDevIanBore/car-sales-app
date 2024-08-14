@@ -33,6 +33,7 @@ function ManageCars() {
       price: "",
       availability: "",
       location: "",
+      cohort: ""
     });
 
     const formData = {
@@ -41,8 +42,9 @@ function ManageCars() {
       price: values.price,
       availability: values.availability,
       location: values.location,
+      cohort:values.cohort
     };
-    if (!values.brand || !values.name || !values.price || !values.location) {
+    if (!values.brand || !values.name || !values.price || !values.location||!values.cohort) {
       alert("Fill all the form data");
     }
 
@@ -101,6 +103,16 @@ function ManageCars() {
             type="text"
             name="location"
             value={values.location}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="input_container">
+          <input
+            className="input"
+            placeholder="cohort"
+            type="text"
+            name="cohort"
+            value={values.cohort}
             onChange={handleChange}
           />
         </div>
