@@ -48,7 +48,7 @@ const IMAGES = [
     URL: americanMuscle1,
     text: "The Home of American Muscle",
     buttonText: [
-      { id: "btn-9", text: "Explore Our Collection" }
+      { id: "muscle", text: "Explore Our Collection" }
     ]
   },
   {
@@ -86,7 +86,7 @@ const IMAGES = [
     URL: vintagePorscheImage1,
     text: "Feel the Breeze",
     buttonText: [
-      { id: "btn-17", text: "Our Convertibles" },
+      { id: "10", text: "Our Convertibles" },
       // { id: "btn-18", text: "View Vintage Collection" }
     ]
   }

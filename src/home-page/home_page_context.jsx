@@ -2,6 +2,7 @@ import { createContext, useState, useContext, useRef } from "react";
 import { carGridContext } from "../car-grid-component/car-grid-context";
 import React from "react";
 import { SendSearchRequest } from "../api";
+import { SendHomePageRequest } from "../api";
 
 export const searchContext = createContext();
 
@@ -45,8 +46,8 @@ export const SearchProvider = ({ children }) => {
   async function handleDynamicButton (id){
 
     console.log (id);
-    const data = await SendSearchRequest (id);
-    SetCar (data.cars);
+    const data = await SendHomePageRequest (id);
+    SetCar (data.data);
 
     scrollCarGridIntoView();
     }
