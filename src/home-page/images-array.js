@@ -22,7 +22,7 @@ const IMAGES = [
     URL: bmw,
     text: "The home of German Engineering",
     buttonText: [
-      { id: "btn-1", text: "Explore Models" },
+      { id: "11", text: "Explore Models" },
       { id: "btn-2", text: "Learn More" },
       { id: "btn-3", text: "Test Drive" }
     ]
@@ -39,8 +39,8 @@ const IMAGES = [
     URL: mercedesBenzImage8,
     text: "Mercedes-Benz: The best or nothing",
     buttonText: [
-      { id: "btn-6", text: "C200" },
-      { id: "btn-7", text: "GLC" },
+      { id: "12", text: "C200" },
+      { id: "13", text: "GLC" },
       { id: "btn-8", text: "AMG" }
     ]
   },
@@ -70,8 +70,8 @@ const IMAGES = [
     URL: blackaudi,
     text: "AUDI",
     buttonText: [
-      { id: "btn-13", text: "Q5" },
-      { id: "btn-14", text: "A4" },
+      { id: "7", text: "Q5" },
+      { id: "8", text: "A4" },
       { id: "btn-15", text: "A7" }
     ]
   },

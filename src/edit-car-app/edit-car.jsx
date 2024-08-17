@@ -96,29 +96,32 @@ function  handleChange (e,car){
     {editId===car.id && edit && 
     
     
-    <form onSubmit={handleSubmit}>
-
-<label>
-Brand:
-<input type="text" name="brand"  defaultValue={car.brand} onChange={ (e) => {handleChange (e,car)} } />
-</label>
-<label>
-Name:
-<input type="text" name="name"  defaultValue={car.name} onChange={ (e) => {handleChange (e,car)} } />
-</label>
-<label>
-Price:
-<input type="any" name="price"  defaultValue={car.price} onChange={ (e) => {handleChange (e,car)} } />
-</label>
-<label>
-Availability:
-<input type="any" name="availability"  defaultValue={car.availability} onChange={ (e) => {handleChange (e,car)} } />
-</label>
-<label>
-Location:
-<input type="any" name="location"   defaultValue={car.location} onChange={ (e) => {handleChange (e,car)} } />
-</label>
-<button type="submit">Save Changes</button>
+    <form onSubmit={handleSubmit} className="flex flex-col w-full max-w-md mx-auto p-4">
+  <label className="block mb-4">
+    Brand:
+    <input type="text" name="brand" defaultValue={car.brand} onChange={(e) => {handleChange(e, car)}} className="block w-full p-2 border border-gray-300 rounded" />
+  </label>
+  <label className="block mb-4">
+    Name:
+    <input type="text" name="name" defaultValue={car.name} onChange={(e) => {handleChange(e, car)}} className="block w-full p-2 border border-gray-300 rounded" />
+  </label>
+  <label className="block mb-4">
+    Price:
+    <input type="any" name="price" defaultValue={car.price} onChange={(e) => {handleChange(e, car)}} className="block w-full p-2 border border-gray-300 rounded" />
+  </label>
+  <label className="block mb-4">
+    Availability:
+    <input type="any" name="availability" defaultValue={car.availability} onChange={(e) => {handleChange(e, car)}} className="block w-full p-2 border border-gray-300 rounded" />
+  </label>
+  <label className="block mb-4">
+    Location:
+    <input type="any" name="location" defaultValue={car.location} onChange={(e) => {handleChange(e, car)}} className="block w-full p-2 border border-gray-300 rounded" />
+  </label>
+  <label className="block mb-4">
+    Cohort:
+    <input type="any" name="cohort" defaultValue={car.cohort} onChange={(e) => {handleChange(e, car)}} className="block w-full p-2 border border-gray-300 rounded" />
+  </label>
+  <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Save Changes</button>
 </form>
 }
    
