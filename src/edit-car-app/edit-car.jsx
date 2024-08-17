@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, memo, useContext } from "react";
 import fetchData from "../car-grid-component/car-grid-component-resource";
 import { carGridContext } from "../car-grid-component/car-grid-context";
@@ -19,7 +18,9 @@ const EditCar = ()=>{
 
 
 
-  function handleEditClick (carid){
+  function handleEditClick (car){
+
+const carid = car.id;
 
     setEditId (carid)
     setEdit(!edit)
@@ -45,13 +46,33 @@ const EditCar = ()=>{
       }, []);
 
    
-function  handleChange(e){
+function  handleChange (e,car){
 
   const {name,value} = e.target;
-  const carID = e.target.dataset.carId;
+  console.log (car[name]);
+
+  
+  const carID = car.id;
 
 
-   setFormData ({...formData, [name]:value,carId:carID})
+
+
+  
+
+  setFormData((prevFormData) => {
+
+
+    return { ...prevFormData, ...car, [name]: value };
+
+   
+  });
+
+  // setFormData((prevFormData) => ({
+  //   ...prevFormData,
+  //   ...car,
+  //   [name]: value
+  // }));
+
 }
 
 
@@ -67,7 +88,7 @@ function  handleChange(e){
         <p className= {styles.most_clicked_car_name}>
           {car.brand} {car.name}
         </p>
-        <button onClick={ ()=>{handleEditClick(car.id)} } className= {styles.car_clicks} >  {car.clicks}</button>
+        <button onClick={ ()=>{handleEditClick(car)} } className= {styles.car_clicks} > edit  </button>
         <img className= {styles.car_image1}    src={car.image[0].URL} alt="" />
       </div>
     </div>
@@ -79,28 +100,28 @@ function  handleChange(e){
 
 <label>
 Brand:
-<input type="text" name="brand" data-car-id ={car.id} defaultValue={car.brand} onChange={handleChange} />
+<input type="text" name="brand"  defaultValue={car.brand} onChange={ (e) => {handleChange (e,car)} } />
 </label>
 <label>
 Name:
-<input type="text" name="name" data-car-id ={car.id} defaultValue={car.name} onChange={handleChange} />
+<input type="text" name="name"  defaultValue={car.name} onChange={ (e) => {handleChange (e,car)} } />
 </label>
 <label>
 Price:
-<input type="any" name="price" data-car-id ={car.id} defaultValue={car.price} onChange={handleChange} />
+<input type="any" name="price"  defaultValue={car.price} onChange={ (e) => {handleChange (e,car)} } />
 </label>
 <label>
 Availability:
-<input type="any" name="availability" data-car-id ={car.id} defaultValue={car.availability} onChange={handleChange} />
+<input type="any" name="availability"  defaultValue={car.availability} onChange={ (e) => {handleChange (e,car)} } />
 </label>
 <label>
 Location:
-<input type="any" name="location"  data-car-id ={car.id} defaultValue={car.location} onChange={handleChange} />
+<input type="any" name="location"   defaultValue={car.location} onChange={ (e) => {handleChange (e,car)} } />
 </label>
 <button type="submit">Save Changes</button>
 </form>
 }
-    
+   
   </div>
 ))}
 </div>
