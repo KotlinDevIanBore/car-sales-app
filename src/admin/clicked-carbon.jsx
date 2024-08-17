@@ -11,7 +11,7 @@ const ComponentDictionary = {
   tab1: RenderMostClickedCars,
   tab2: RenderMostSearchedCar,
   tab3: LineApp,
-  tab4: EditCar,
+  tab4: LineApp,
   tab5: ManageCars
 };
 
