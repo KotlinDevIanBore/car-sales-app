@@ -113,7 +113,7 @@ function CarGrid(props) {
               </div>
 
               <div   className = {styles.car_name}>
-                {car.brand} {car.name}
+               {car.brand} {car.name}  {car.year}
               </div>
               <div  className = {styles.car_price}  >       {car.price}</div>
 
