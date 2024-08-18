@@ -117,10 +117,18 @@ function  handleChange (e,car){
     Location:
     <input type="any" name="location" defaultValue={car.location} onChange={(e) => {handleChange(e, car)}} className="block w-full p-2 border border-gray-300 rounded" />
   </label>
+
   <label className="block mb-4">
     Cohort:
     <input type="any" name="cohort" defaultValue={car.cohort} onChange={(e) => {handleChange(e, car)}} className="block w-full p-2 border border-gray-300 rounded" />
   </label>
+
+  <label className="block mb-4">
+    Year of Manufacture:
+    <input type="any" name="year" defaultValue={car.year} onChange={(e) => {handleChange(e, car)}} className="block w-full p-2 border border-gray-300 rounded" />
+  </label>
+
+
   <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Save Changes</button>
 </form>
 }
