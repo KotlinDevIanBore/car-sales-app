@@ -2,7 +2,7 @@ import React from "react";
 import { useState} from "react";
 import "./view-car.css";
 import UIShellHeader from "../ui-shell-app/ui-shell-header";
-
+// import HtmlParser from 'react-html-parser';
 
 function DisplayCar(props) {
   const [imageIndex, setimageIndex] = useState(0);
@@ -58,6 +58,13 @@ function DisplayCar(props) {
           </button> */}
           
         </div>
+
+        
+
+        <p
+          className="text-sm  max-w-md "
+          dangerouslySetInnerHTML={{ __html: props.car.description }}
+        ></p>
         <div className="info-container">
           <ol class="gradient-list">
             <li>{props.car.brand}</li>
@@ -67,6 +74,8 @@ function DisplayCar(props) {
             <li>Location:{props.car.location}</li>
           </ol>
         </div>
+       
+
       </div>
     </div>
   );

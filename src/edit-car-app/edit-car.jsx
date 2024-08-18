@@ -127,6 +127,10 @@ function  handleChange (e,car){
     Year of Manufacture:
     <input type="any" name="year" defaultValue={car.year} onChange={(e) => {handleChange(e, car)}} className="block w-full p-2 border border-gray-300 rounded" />
   </label>
+  <label className="block mb-4">
+    Description
+    <input type="any" name="description" defaultValue={car.description} onChange={(e) => {handleChange(e, car)}} className="block w-full p-2 border border-gray-300 rounded" />
+  </label>
 
 
   <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Save Changes</button>
