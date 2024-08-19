@@ -6,6 +6,8 @@ import UIShellHeader from "../ui-shell-app/ui-shell-header";
 
 function DisplayCar(props) {
   const [imageIndex, setimageIndex] = useState(0);
+
+  const [clamp,setClamp]= useState (true)
   function handleImageChange(direction) {
     setimageIndex((prevIndex) => {
       const newIndex = prevIndex + direction;
@@ -18,6 +20,10 @@ function DisplayCar(props) {
         return newIndex;
       }
     });
+  }
+  function handleClamp (){
+
+    setClamp (!clamp)
   }
   return (
     <div className="display-car-page">
@@ -64,7 +70,9 @@ function DisplayCar(props) {
        
         <div className="info-container">
           <ol class="gradient-list">
-          <li className="text-sm line-clamp-3 max-w-md overflow-hidden" >{props.car.description}</li>
+         
+          <li className= {`text-sm ${clamp? 'line-clamp-3': ''} max-w-md overflow-hidden`} onClick={handleClamp}  >{props.car.description} </li>
+          <li onClick={handleClamp}>click for more</li>
             <li>{props.car.brand}</li>
             <li>{props.car.name}</li>
             <li>{props.car.price}</li>
