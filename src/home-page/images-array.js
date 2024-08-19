@@ -51,7 +51,7 @@ const IMAGES = [
     URL: sexyMustang,
     text: "The Home of American Muscle",
     buttonText: [
-      { id: "muscle", text: "Explore Our Collection" }
+      { id: "10", text: "Explore Our Collection" }
     ]
   },
   {
@@ -76,13 +76,6 @@ const IMAGES = [
       { id: "7", text: "Q5" },
       { id: "8", text: "A4" },
       { id: "btn-15", text: "A7" }
-    ]
-  },
-  {
-    URL: challenger,
-    text: "The Home of American Muscle",
-    buttonText: [
-      { id: "btn-16", text: "Learn More" }
     ]
   },
   {
