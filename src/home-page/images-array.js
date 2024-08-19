@@ -15,6 +15,7 @@ import americanMuscle1 from "./home-page-images/challenger_high_rez.jpg"
 import msportwheel from "./home-page-images/wheel-7043351_1280.jpg"
 import bmw from "./home-page-images/bmw-4497318_1280.jpg"
 import blackaudi from "./home-page-images/black-2398252_1920.jpg"
+import sexyMustang from "./home-page-images/pexels-ivan-kazlouski-234108500-12152940.jpg"
 
 
 const IMAGES = [
@@ -45,7 +46,7 @@ const IMAGES = [
     ]
   },
   {
-    URL: americanMuscle1,
+    URL: sexyMustang,
     text: "The Home of American Muscle",
     buttonText: [
       { id: "muscle", text: "Explore Our Collection" }
