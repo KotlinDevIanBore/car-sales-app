@@ -116,7 +116,9 @@ function CarGrid(props) {
               </div>
               <div  className = {styles.car_price}  >       {car.price}</div>
 
-              <p className="text-sm truncate overflow-hidden max-w-md">{car.description}</p>
+              
+
+              <p className={`text-sm truncate overflow-hidden max-w-md ${styles.car_price}`}>{car.description}</p>
 
              
               <button  className = {styles.compare_button}  onClick={ ()=>{handleCompareClick(car)}}>↑↓</button>
