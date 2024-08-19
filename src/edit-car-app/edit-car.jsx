@@ -13,8 +13,8 @@ const EditCar = ()=>{
   const [error, setError] = useState(null);
 
   const [editId,setEditId] = useState(false);
-  const [edit,setEdit] = useState(false);
-  const {formData,setFormData,handleSubmit} = useContext(EditedCarContext)
+  
+  const {formData,setFormData,handleSubmit,edit,setEdit} = useContext(EditedCarContext)
 
 
 

@@ -15,6 +15,7 @@ const EditedCarContextProvider = ({children})=>{
           
         ]
       )
+      const [edit,setEdit] = useState(false);
 
 function handleSubmit (event){
 
@@ -26,6 +27,8 @@ function handleSubmit (event){
     console.log (formData)
 
     sendEditedCar();
+
+    setEdit(!edit);
 
 }
 
@@ -50,7 +53,7 @@ function sendEditedCar(){
 
 
 }
-    return <EditedCarContext.Provider value = {{formData,setFormData,handleSubmit}}>
+    return <EditedCarContext.Provider value = {{formData,setFormData,handleSubmit,edit,setEdit}}>
     
     {children}
     
