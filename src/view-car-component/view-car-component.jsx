@@ -61,15 +61,10 @@ function DisplayCar(props) {
 
         
 
-        <p
-          className="text-sm line-clamp-3 max-w-md overflow-hidden"
-          // dangerouslySetInnerHTML={{ __html: props.car.description }}
-          
-        >
-          {props.car.description}
-        </p>
+       
         <div className="info-container">
           <ol class="gradient-list">
+          <li className="text-sm line-clamp-3 max-w-md overflow-hidden" >{props.car.description}</li>
             <li>{props.car.brand}</li>
             <li>{props.car.name}</li>
             <li>{props.car.price}</li>
