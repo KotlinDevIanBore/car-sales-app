@@ -16,7 +16,9 @@ import msportwheel from "./home-page-images/wheel-7043351_1280.jpg"
 import bmw from "./home-page-images/bmw-4497318_1280.jpg"
 import blackaudi from "./home-page-images/black-2398252_1920.jpg"
 import sexyMustang from "./home-page-images/pexels-ivan-kazlouski-234108500-12152940.jpg"
-
+import editedMustang from "./home-page-images/Untitled design.png"
+import audikeys from "./home-page-images/audikeys.jpg"
+import rundon from "./home-page-images/rundon.jpg"
 
 const IMAGES = [
   {
@@ -29,7 +31,7 @@ const IMAGES = [
     ]
   },
   {
-    URL: rusticImage9,
+    URL: rundon,
     text: "Rustic charm",
     buttonText: [
       { id: "btn-4", text: "View Rustic Collection" },
@@ -68,7 +70,7 @@ const IMAGES = [
     ]
   },
   {
-    URL: blackaudi,
+    URL: audikeys,
     text: "AUDI",
     buttonText: [
       { id: "7", text: "Q5" },
