@@ -4,8 +4,8 @@ html, body {
   display: flex;
   justify-content: center;
 
-  overflow:hidden;
-  overflow: scroll;
+  overflow-y: auto; /* or scroll */
+  overflow-x: hidden;
   height: 100%;
   width: 100%;
   margin: 0%;

@@ -29,18 +29,58 @@ function App(props) {
   const [car, GetCarfromGrid] = useState("error");
 
   return (
-    <div className=" m-0 p-0 border-0">
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route
-        path="/"
-        element={<MemoizedCarGrid GetCarfromGrid={GetCarfromGrid} />}
-      />
-      <Route path="/view-car" element={<DisplayCar car={car} />} />
-      <Route path="/add-car" element={<ManageCarApp />} />
-      <Route path="/compare-car" element={<RenderComparison />} />
-    </Routes>
-  </div>
+  //   <div className=" m-0 p-0 border-0">
+  //   <Routes>
+  //     <Route path="/" element={<HomePage />} />
+  //     <Route
+  //       path="/"
+  //       element={<MemoizedCarGrid GetCarfromGrid={GetCarfromGrid} />}
+  //     />
+  //     <Route path="/view-car" element={<DisplayCar car={car} />} />
+  //     <Route path="/add-car" element={<ManageCarApp />} />
+  //     <Route path="/compare-car" element={<RenderComparison />} />
+  //   </Routes>
+  // </div>
+
+<div className=" m-0 p-0 border-0">
+{/* <Routes>
+<Route path="/" element={<HomePage />} />
+<Route
+      path="/"
+      element={
+        <MemoizedCarGrid
+          GetCarfromGrid={GetCarfromGrid}
+        />
+      }
+    />
+<Route path="/view-car" element={<DisplayCar car={car} />} />
+<Route
+    path="/add-car"
+    element={<ManageCarApp  />}
+  />
+
+          <Route path="/compare-car" element={<RenderComparison />} />
+
+
+
+
+</Routes> */}
+
+<Routes>
+  <Route path="/" element={<HomePage />} />
+
+</Routes>
+
+<Routes>
+  <Route
+    path="/"
+    element={<MemoizedCarGrid GetCarfromGrid={GetCarfromGrid} />}
+  />
+  <Route path="/view-car" element={<DisplayCar car={car} />} />
+  <Route path="/add-car" element={<ManageCarApp />} />
+  <Route path="/compare-car" element={<RenderComparison />} />
+</Routes>
+</div>
   );
 }
 
