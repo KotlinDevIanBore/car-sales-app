@@ -2,9 +2,8 @@ import styles from "./home-component.module.css";
 import IMAGES from "./images-array";
 import React, { useState, useContext } from "react";
 import { searchContext } from "./home_page_context";
-import { useInterval } from "react-use"; 
-import Swipe from 'react-swipe';
-
+import { useInterval } from "react-use";
+import Swipe from "react-swipe";
 
 import UIShellHeader from "../ui-shell-app/ui-shell-header";
 
@@ -13,7 +12,7 @@ import SearchIcon from "./search_button";
 function HomePage() {
   const [scrollIndex, setScrollIndex] = useState(3);
 
-  const { changeStoryIndex, storyIndex, intervalRunning,handleDynamicButton } =
+  const { changeStoryIndex, storyIndex, intervalRunning, handleDynamicButton } =
     useContext(searchContext);
 
   const { homepageRef } = useContext(searchContext);
@@ -50,7 +49,7 @@ function HomePage() {
             alt=""
           ></img>
 
-          <div class="flex flex-col gap-10" >
+          <div class="flex flex-col gap-10">
             <p
               className="text-white font-bold 
   md:text-5xl 
@@ -64,11 +63,13 @@ function HomePage() {
             </p>
             <div class="absolute bottom-0 left-0 right-0 flex justify-center mb-20 gap-4">
               {IMAGES[scrollIndex].buttonText.map((text) => (
-                
-                <button onClick = { (e)=>{
-                  e.stopPropagation();
-                  handleDynamicButton (text.id)
-                }}  class="text-white border border-white hover:border-gray-200 py-2 px-4 rounded sm:py-1  sm:px-2 md:py-3 md:px-6 lg:py-4 lg:px-8">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleDynamicButton(text.id);
+                  }}
+                  class="text-white border border-white hover:border-gray-200 py-2 px-4 rounded sm:py-1  sm:px-2 md:py-3 md:px-6 lg:py-4 lg:px-8"
+                >
                   {text.text}
                 </button>
               ))}
