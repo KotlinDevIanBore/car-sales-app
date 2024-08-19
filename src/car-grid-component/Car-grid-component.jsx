@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import fetchData from "./car-grid-component-resource";
 import { carGridContext } from "./car-grid-context";
 import { searchContext } from "../home-page/home_page_context";
-import EditCar from "../edit-car-app/edit-car";
 
 function CarGrid(props) {
   const { carArray, SetCar, carGridRef,countClicks,handleCompareClick } = useContext(carGridContext);
@@ -133,7 +132,6 @@ function CarGrid(props) {
             </div>
           </div>
         ))}
-        {/* <EditCar/> */}
       </div>
 
      
