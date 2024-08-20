@@ -69,17 +69,21 @@ function DisplayCar(props) {
 
        
         <div className="info-container">
-          <ol class="gradient-list">
-         
-          <li className= {`text-sm ${clamp? 'line-clamp-3': ''} max-w-md overflow-hidden`} onClick={handleClamp}  >{props.car.description} </li>
-          <li onClick={handleClamp}>click for more</li>
-            <li>{props.car.brand}</li>
-            <li>{props.car.name}</li>
-            <li>{props.car.price}</li>
-            <li>{props.car.availability}</li>
-            <li>Location:{props.car.location}</li>
-          </ol>
-        </div>
+  <ol className="gradient-list">
+    <li
+      className={`${clamp ? 'line-clamp-3' : ''} text-sm max-w-md overflow-hidden`}
+      onClick={handleClamp}
+    >
+      <div dangerouslySetInnerHTML={{ __html: props.car.description }} />
+    </li>
+    <li onClick={handleClamp}>click for more</li>
+    <li>{props.car.brand}</li>
+    <li>{props.car.name}</li>
+    <li>{props.car.price}</li>
+    <li>{props.car.availability}</li>
+    <li>Location:{props.car.location}</li>
+  </ol>
+</div>
        
 
       </div>
