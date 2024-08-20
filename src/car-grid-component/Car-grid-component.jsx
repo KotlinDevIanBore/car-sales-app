@@ -15,7 +15,7 @@ function CarGrid(props) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { homepageRef } = useContext(searchContext);
-
+const [imageIndex1,setimageIndex1]= useState (0);
 
   
 
@@ -42,16 +42,38 @@ function CarGrid(props) {
   if (error) return <div>Error fetching data: {error.message}</div>;
 
   function changeImageIndex(buttonId, direction) {
-    const updatedCars = carArray.map((car) => {
-      if (car.id === buttonId) {
-        const newIndex = (car.imageIndex + direction + car.image.length) % car.image.length;
-        return { ...car, imageIndex: newIndex };
-      } else {
-        return car;
-      }
-    });
-    SetCar(updatedCars);
+    const index = carArray.findIndex((car) => car.id === buttonId);
+    if (index !== -1) {
+      const car = carArray[index];
+      const newIndex = (car.imageIndex + direction + car.image.length) % car.image.length;
+      carArray[index] = { ...car, imageIndex: newIndex };
+      SetCar([...carArray]); // Create a new array reference to trigger a re-render
+    }
   }
+
+  function changeImageIndex1 (car) {
+ 
+    alert ('function called')
+
+
+  if (imageIndex1>car.image.length-1) {
+
+    setimageIndex1 (0)
+  }
+else {
+  (
+    setimageIndex1 ((prevIndex)=>
+      prevIndex +1 
+      
+    )
+  
+  )
+}
+
+
+
+  }
+  
 
   function scrollToHomepage() {
     homepageRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -79,6 +101,7 @@ function CarGrid(props) {
                 <img
 
                   className = {styles.car_image}
+                  // src={car.image[imageIndex1].URL}
                   src={car.image[car.imageIndex].URL}
                   alt=""
                 />
@@ -86,6 +109,7 @@ function CarGrid(props) {
                 
                 className = {styles.forward_arrow_container}  
                   onClick={() => changeImageIndex(car.id, 1)}
+                  // onClick={() => changeImageIndex1(car)}
                 >
                   <span className="material-symbols-outlined forward-arrow">
                     navigate_next
@@ -104,6 +128,7 @@ function CarGrid(props) {
                 <div
                  className = {styles.back_arrow_container}      
                   onClick={() => changeImageIndex(car.id, -1)}
+                  // onClick={() => changeImageIndex1(car)}
                 >
                   <span className="material-symbols-outlined back-arrow">
                     navigate_before
