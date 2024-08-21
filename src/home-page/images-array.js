@@ -82,7 +82,7 @@ const IMAGES = [
     URL: vintagePorscheImage1,
     text: "Feel the Breeze",
     buttonText: [
-      { id: "10", text: "Our Convertibles" },
+      { id: "14", text: "Our Convertibles" },
       // { id: "btn-18", text: "View Vintage Collection" }
     ]
   }
