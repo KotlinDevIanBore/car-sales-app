@@ -3,6 +3,7 @@ import React, { useState, useEffect, memo, useContext } from "react";
 import fetchData from "../car-grid-component/car-grid-component-resource";
 import { carGridContext } from "../car-grid-component/car-grid-context";
 import { API_URL } from "../../api";
+import { deleteCar } from "../api";
 
 
 export const EditedCarContext = createContext ();
@@ -53,7 +54,13 @@ function sendEditedCar(){
 
 
 }
-    return <EditedCarContext.Provider value = {{formData,setFormData,handleSubmit,edit,setEdit}}>
+
+async function handleDelete (id){
+    // alert (`handle delete called for car id ${id}`);
+    await  deleteCar (id)
+    setEdit(!edit);
+}
+    return <EditedCarContext.Provider value = {{formData,setFormData,handleSubmit,edit,setEdit, handleDelete}}>
     
     {children}
     

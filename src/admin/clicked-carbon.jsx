@@ -24,7 +24,7 @@ const Tabs = () => {
 
   return (
     <div>
-      <ul className="tabs horizontal">
+      <ul className="tabs vertical">
         
         <li className={activeTab === 'tab1' ? 'active' : ''}>
           <a href="#" onClick={() => handleTabChange('tab1')}>Most Clicked Car</a>

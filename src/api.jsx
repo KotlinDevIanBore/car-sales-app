@@ -59,3 +59,29 @@ catch (error){
 }
 
 export {SendHomePageRequest};
+
+async function deleteCar (id){
+  alert (`handle delete called for car id ${encodeURIComponent(id)}`);
+
+  const apiURL = `${API_URL}/api/v1/car/${id}`
+
+  const response = await fetch (apiURL,{
+
+    method : 'DELETE',
+    headers : {
+    'Content-Type':  'application/json'
+    }
+  })
+
+if (response.ok) {
+
+  alert (`Car with ID ${id} deleted successfuly`)
+}
+else {
+
+  alert (`Error deleting car : ${response.status} ${response.statusText}`)
+}
+
+}
+
+export {deleteCar};
