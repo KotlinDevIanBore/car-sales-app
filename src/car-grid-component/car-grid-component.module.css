@@ -110,7 +110,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, background-color 0.3s ease;
   flex: 1 0 calc(25% - 20px);
-  max-width: 380px;
+  max-width: 381px;
   min-width: 250px;
   
 }
@@ -126,24 +126,27 @@ body {
   color: rgb(117, 12, 17);
 }
 
+/* For screens up to 1200px */
 @media screen and (max-width: 1200px) {
   .car_container {
     flex: 1 0 calc(33.33% - 20px);
   }
 }
 
+/* For screens up to 900px */
 @media screen and (max-width: 900px) {
   .car_container {
     flex: 1 0 calc(50% - 20px);
   }
 }
 
+/* For screens up to 600px */
 @media screen and (max-width: 600px) {
   .car_container {
     flex: 1 0 100%;
     max-width: none;
   }
-  
+
   .forward_arrow,
   .back_arrow {
     margin-top: 50%;

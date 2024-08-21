@@ -18,6 +18,8 @@ const fetcher = async (url) => {
 const apiUrl = `${API_URL}/api/cars`;
 
 const fetchData = async () => {
+
+  
   try {
     const CARS = await fetcher(apiUrl);
     return CARS;
