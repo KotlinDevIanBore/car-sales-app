@@ -3,8 +3,8 @@ import IMAGES from "./images-array";
 import React, { useState, useContext } from "react";
 import { searchContext } from "./home_page_context";
 import { useInterval } from "react-use";
-import Swipe from "react-swipe";
-import Footer from "../footer-app/footer";
+import { carGridContext } from "../car-grid-component/car-grid-context";
+
 
 import UIShellHeader from "../ui-shell-app/ui-shell-header";
 
@@ -17,6 +17,7 @@ function HomePage() {
     useContext(searchContext);
 
   const { homepageRef } = useContext(searchContext);
+  const {isCarGridVisible,toggleCarGrid} = useContext (carGridContext);
 
   const max_interval = 10000;
 
@@ -76,6 +77,8 @@ function HomePage() {
                 </button>
               ))}
             </div>
+
+            
           </div>
         </div>
       </div>
@@ -90,7 +93,15 @@ function HomePage() {
           Easy as Search Find Drive away
         </div>
       </div>
-      {/* <Footer/> */}
+      <div className="flex justify-center mt-8 mb-12">
+  <button 
+    onClick={toggleCarGrid}
+    aria-label={isCarGridVisible ? "Hide car grid" : "Show car grid"}
+    className="px-6 py-3 text-lg font-semibold text-[#078E8E]  rounded shadow-md  "
+  >
+    {isCarGridVisible ? "" : "See Our Cars"}
+  </button>
+</div>
     </div>
   );
 }
