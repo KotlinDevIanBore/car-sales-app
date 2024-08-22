@@ -37,14 +37,14 @@ const IMAGES = [
       { id: "btn-3", text: "Test Drive" }
     ]
   },
-  {
-    URL: doge,
-    text: "Rustic charm",
-    buttonText: [
-      { id: "btn-4", text: "View Rustic Collection" },
-      { id: "btn-5", text: "Get Inspired" }
-    ]
-  },
+  // {
+  //   URL: doge,
+  //   text: "Rustic charm",
+  //   buttonText: [
+  //     { id: "btn-4", text: "View Rustic Collection" },
+  //     { id: "btn-5", text: "Get Inspired" }
+  //   ]
+  // },
   {
     URL: mercedesInterior,
     text: "Mercedes-Benz: The best or nothing",

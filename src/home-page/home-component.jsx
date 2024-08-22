@@ -4,6 +4,7 @@ import React, { useState, useContext } from "react";
 import { searchContext } from "./home_page_context";
 import { useInterval } from "react-use";
 import Swipe from "react-swipe";
+import Footer from "../footer-app/footer";
 
 import UIShellHeader from "../ui-shell-app/ui-shell-header";
 
@@ -89,6 +90,7 @@ function HomePage() {
           Easy as Search Find Drive away
         </div>
       </div>
+      {/* <Footer/> */}
     </div>
   );
 }

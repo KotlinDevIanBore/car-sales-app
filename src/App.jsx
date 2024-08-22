@@ -6,6 +6,8 @@ import HomePage from "./home-page/home-component.jsx";
 import DisplayCar from "./view-car-component/view-car-component.jsx";
 import RenderComparison from "./comparison-app/comparison-component.jsx";
 import SearchIcon from "./home-page/search_button.jsx";
+import Footer from "./footer-app/footer.jsx";
+import LandingPage from "./landing-page/landing-page.jsx";
 
 
 
@@ -43,43 +45,17 @@ function App(props) {
   // </div>
 
 <div className=" m-0 p-0 border-0">
-{/* <Routes>
-<Route path="/" element={<HomePage />} />
-<Route
-      path="/"
-      element={
-        <MemoizedCarGrid
-          GetCarfromGrid={GetCarfromGrid}
-        />
-      }
-    />
-<Route path="/view-car" element={<DisplayCar car={car} />} />
-<Route
-    path="/add-car"
-    element={<ManageCarApp  />}
-  />
 
-          <Route path="/compare-car" element={<RenderComparison />} />
-
-
-
-
-</Routes> */}
 
 <Routes>
-  <Route path="/" element={<HomePage />} />
-
-</Routes>
-
-<Routes>
-  <Route
-    path="/"
-    element={<MemoizedCarGrid GetCarfromGrid={GetCarfromGrid} />}
-  />
+  <Route path="/" element={<LandingPage />} />
   <Route path="/view-car" element={<DisplayCar car={car} />} />
   <Route path="/add-car" element={<ManageCarApp />} />
   <Route path="/compare-car" element={<RenderComparison />} />
+
 </Routes>
+
+
 </div>
   );
 }
