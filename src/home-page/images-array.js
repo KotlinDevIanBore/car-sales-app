@@ -24,6 +24,7 @@ import doge from "./home-page-images/doge.jpg"
 import whitedoge from "./home-page-images/white_doge.jpg"
 import bluemuscle from "./home-page-images/bluemuscle.jpg"
 import camping from "./home-page-images/offroadcamp.jpg"
+import purpleDoge from "./home-page-images/purpledoge.jpg"
 
 const IMAGES = [
   {
@@ -53,7 +54,8 @@ const IMAGES = [
     ]
   },
   {
-    URL: bluemuscle,
+    URL: bluemuscle, 
+    // URL: purpleDoge,  
     text: "American Muscle",
     buttonText: [
       { id: "10", text: "Explore Our Collection" }

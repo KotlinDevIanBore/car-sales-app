@@ -62,14 +62,14 @@ function HomePage() {
             >
               {IMAGES[scrollIndex].text}
             </p>
-            <div className="absolute bottom-0 left-0 right-0 flex justify-center mb-20 gap-4">
+            <div className="absolute top-[80%] left-0 right-0 flex justify-center mb-20 gap-4">
               {IMAGES[scrollIndex].buttonText.map((text) => (
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     handleDynamicButton(text.id);
                   }}
-                  className=" absolute top-[75%] text-white border border-white hover:border-gray-200 py-2 px-4 rounded sm:py-1  sm:px-2 md:py-3 md:px-6 lg:py-4 lg:px-8 "
+                  className="  text-white border border-white hover:border-gray-200 py-2 px-4 rounded sm:py-1  sm:px-2 md:py-3 md:px-6 lg:py-4 lg:px-8 "
                 >
                   {text.text}
                 </button>
