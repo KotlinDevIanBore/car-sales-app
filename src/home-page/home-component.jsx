@@ -5,7 +5,6 @@ import { searchContext } from "./home_page_context";
 import { useInterval } from "react-use";
 import { carGridContext } from "../car-grid-component/car-grid-context";
 
-
 import UIShellHeader from "../ui-shell-app/ui-shell-header";
 
 import SearchIcon from "./search_button";
@@ -13,11 +12,11 @@ import SearchIcon from "./search_button";
 function HomePage() {
   const [scrollIndex, setScrollIndex] = useState(3);
 
-  const { changeStoryIndex, storyIndex, intervalRunning, handleDynamicButton } =
+  const { changeStoryIndex, storyIndex, intervalRunning, handleDynamicButton,scrollCarGridIntoView } =
     useContext(searchContext);
 
   const { homepageRef } = useContext(searchContext);
-  const {isCarGridVisible,toggleCarGrid} = useContext (carGridContext);
+  const { isCarGridVisible, toggleCarGrid } = useContext(carGridContext);
 
   const max_interval = 10000;
 
@@ -78,8 +77,6 @@ function HomePage() {
                 </button>
               ))}
             </div>
-
-            
           </div>
         </div>
       </div>
@@ -95,14 +92,17 @@ function HomePage() {
         </div>
       </div>
       <div className="flex justify-center mt-8 mb-12">
-  <button 
-    onClick={toggleCarGrid}
-    aria-label={isCarGridVisible ? "Hide car grid" : "Show car grid"}
-    className="px-6 py-3 text-lg font-semibold text-[#078E8E]  rounded shadow-md  "
-  >
-    {isCarGridVisible ? "" : "See Our Cars"}
-  </button>
-</div>
+        <button
+        onClick={() => {
+          toggleCarGrid();
+          // scrollCarGridIntoView();
+        }}
+          aria-label={isCarGridVisible ? "Hide car grid" : "Show car grid"}
+          className="px-6 py-3 text-lg font-semibold text-[#078E8E]  rounded shadow-md  "
+        >
+          {isCarGridVisible ? "" : "See Our Cars"}
+        </button>
+      </div>
     </div>
   );
 }

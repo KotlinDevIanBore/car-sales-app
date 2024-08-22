@@ -1,24 +1,31 @@
 import { createContext, useState, useRef,useContext } from "react";
 import { API_URL } from "../../api";
-import React from "react"; // Add this line
+import React from "react"; 
 import { ViewCarContext } from "../view-car-component/view-car-context";
-
+import { searchContext } from "../home-page/home_page_context";
 
 export const carGridContext = createContext();
 
 export const CarGridContextProvider = ({ children }) => {
-
+  // const {scrollCarGridIntoView} = useContext (searchContext);
+  const {SetDisplayCar} = useContext (ViewCarContext);
   const [carArray, SetCar] = useState([]);
   const carGridRef = useRef();
   const [comparisonArray,SetComparisonArray] = useState([]);
-  const {SetDisplayCar} = useContext (ViewCarContext);
+  
   const [isCarGridVisible, setCarGridVisibility] = useState(false);
-  const toggleCarGrid = () => setCarGridVisibility(prev => !prev);
+  
+
+  const toggleCarGrid = ()=>{
+
+    setCarGridVisibility (!isCarGridVisible);
+    // scrollCarGridIntoView ();
+  }
 
   function countClicks(carId) {
     console.log(`clicked car id is ${carId}`);
 
-    // const apiURL = "http://localhost:3000/api/clicked";
+    
     const apiURL = `${API_URL}/api/clicked`;
 
 
@@ -27,7 +34,7 @@ export const CarGridContextProvider = ({ children }) => {
 
             'method': 'post',
             headers: {
-                'Content-Type': 'application/json', // Specify content type
+                'Content-Type': 'application/json', 
               },
             body: JSON.stringify({carid:carId})
         
