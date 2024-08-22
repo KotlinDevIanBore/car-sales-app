@@ -25,6 +25,7 @@ import whitedoge from "./home-page-images/white_doge.jpg"
 import bluemuscle from "./home-page-images/bluemuscle.jpg"
 import camping from "./home-page-images/offroadcamp.jpg"
 import purpleDoge from "./home-page-images/purpledoge.jpg"
+import mercedesInterior from "./home-page-images/mercedes_interior.jpg"
 
 const IMAGES = [
   {
@@ -45,7 +46,7 @@ const IMAGES = [
     ]
   },
   {
-    URL: mercedesBenzImage8,
+    URL: mercedesInterior,
     text: "Mercedes-Benz: The best or nothing",
     buttonText: [
       { id: "12", text: "C200" },
