@@ -23,6 +23,7 @@ import greymuscle from "./home-page-images/pexels-derwin-edwards-163348797-10854
 import doge from "./home-page-images/doge.jpg"
 import whitedoge from "./home-page-images/white_doge.jpg"
 import bluemuscle from "./home-page-images/bluemuscle.jpg"
+import camping from "./home-page-images/offroadcamp.jpg"
 
 const IMAGES = [
   {
@@ -59,8 +60,8 @@ const IMAGES = [
     ]
   },
   {
-    URL: offRoadCar,
-    text: "Offroaders for Less Than $900k",
+    URL: camping,
+    text: "Experience the Outdoors",
     buttonText: [
       { id: "btn-10", text: "Discover Off-road Deals" },
       { id: "btn-11", text: "Learn More" }
