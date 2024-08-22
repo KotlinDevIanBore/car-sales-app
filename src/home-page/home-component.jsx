@@ -52,12 +52,13 @@ function HomePage() {
           <div class="flex flex-col gap-10">
             <p
               className="text-white font-bold 
+          
   md:text-5xl 
   lg:text-6xl 
   xl:text-7xl 
   2xl:text-8xl 
   mb-10
-  rounded-md absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+  rounded-md absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2"
             >
               {IMAGES[scrollIndex].text}
             </p>
@@ -68,7 +69,7 @@ function HomePage() {
                     e.stopPropagation();
                     handleDynamicButton(text.id);
                   }}
-                  className="text-white border border-white hover:border-gray-200 py-2 px-4 rounded sm:py-1  sm:px-2 md:py-3 md:px-6 lg:py-4 lg:px-8"
+                  className=" absolute top-[75%] text-white border border-white hover:border-gray-200 py-2 px-4 rounded sm:py-1  sm:px-2 md:py-3 md:px-6 lg:py-4 lg:px-8 "
                 >
                   {text.text}
                 </button>

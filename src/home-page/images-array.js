@@ -54,7 +54,7 @@ const IMAGES = [
   },
   {
     URL: bluemuscle,
-    text: "The Home of American Muscle",
+    text: "American Muscle",
     buttonText: [
       { id: "10", text: "Explore Our Collection" }
     ]
