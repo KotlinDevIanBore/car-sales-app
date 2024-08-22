@@ -9,7 +9,7 @@ import { carGridContext } from "./car-grid-context";
 import { searchContext } from "../home-page/home_page_context";
 
 function CarGrid(props) {
-  const { carArray, SetCar, carGridRef, countClicks, handleCompareClick } =
+  const { carArray, SetCar, carGridRef, countClicks, handleCompareClick,DisplayCar } =
     useContext(carGridContext);
 
   const [loading, setLoading] = useState(true);
@@ -46,19 +46,11 @@ function CarGrid(props) {
       const newIndex =
         (car.imageIndex + direction + car.image.length) % car.image.length;
       carArray[index] = { ...car, imageIndex: newIndex };
-      SetCar([...carArray]); // Create a new array reference to trigger a re-render
+      SetCar([...carArray]); 
     }
   }
 
-  function changeImageIndex1(car) {
-    alert("function called");
-
-    if (imageIndex1 > car.image.length - 1) {
-      setimageIndex1(0);
-    } else {
-      setimageIndex1((prevIndex) => prevIndex + 1);
-    }
-  }
+  
 
   function scrollToHomepage() {
     homepageRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -99,7 +91,8 @@ function CarGrid(props) {
                   <Link
                     to={`/view-car`}
                     onClick={() => {
-                      props.GetCarfromGrid(car);
+                      
+                      DisplayCar(car)
 
                       countClicks(car.id);
                     }}
