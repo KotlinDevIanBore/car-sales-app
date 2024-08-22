@@ -19,6 +19,10 @@ import sexyMustang from "./home-page-images/pexels-ivan-kazlouski-234108500-1215
 import editedMustang from "./home-page-images/Untitled design.png"
 import audikeys from "./home-page-images/audikeys.jpg"
 import rundon from "./home-page-images/rundon.jpg"
+import greymuscle from "./home-page-images/pexels-derwin-edwards-163348797-10854756.jpg"
+import doge from "./home-page-images/doge.jpg"
+import whitedoge from "./home-page-images/white_doge.jpg"
+import bluemuscle from "./home-page-images/bluemuscle.jpg"
 
 const IMAGES = [
   {
@@ -31,7 +35,7 @@ const IMAGES = [
     ]
   },
   {
-    URL: rundon,
+    URL: doge,
     text: "Rustic charm",
     buttonText: [
       { id: "btn-4", text: "View Rustic Collection" },
@@ -48,7 +52,7 @@ const IMAGES = [
     ]
   },
   {
-    URL: sexyMustang,
+    URL: bluemuscle,
     text: "The Home of American Muscle",
     buttonText: [
       { id: "10", text: "Explore Our Collection" }
@@ -62,13 +66,13 @@ const IMAGES = [
       { id: "btn-11", text: "Learn More" }
     ]
   },
-  {
-    URL: rusticImage4,
-    text: "Rustic beauty",
-    buttonText: [
-      { id: "btn-12", text: "View Rustic Collection" }
-    ]
-  },
+  // {
+  //   URL: bluemuscle,
+  //   text: "Rustic beauty",
+  //   buttonText: [
+  //     { id: "btn-12", text: "View Rustic Collection" }
+  //   ]
+  // },
   {
     URL: audikeys,
     text: "AUDI",
