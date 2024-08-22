@@ -16,9 +16,9 @@ export const CarGridContextProvider = ({ children }) => {
   const [isCarGridVisible, setCarGridVisibility] = useState(false);
   
 
-  const toggleCarGrid = ()=>{
+  const toggleCarGrid = (condition)=>{
 
-    setCarGridVisibility (!isCarGridVisible);
+    setCarGridVisibility (condition);
     // scrollCarGridIntoView ();
   }
 
