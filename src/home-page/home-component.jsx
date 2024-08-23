@@ -100,7 +100,7 @@ function HomePage() {
           aria-label={isCarGridVisible ? "Hide car grid" : "Show car grid"}
           className="px-6 py-3 text-lg font-semibold text-[#078E8E]  rounded shadow-md  "
         >
-          {isCarGridVisible ? "" : "See Our Cars"}
+          {isCarGridVisible ? "Go to HomePage" : "See Our Cars"}
         </button>
       </div>
     </div>
