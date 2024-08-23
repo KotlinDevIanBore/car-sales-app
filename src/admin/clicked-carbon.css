@@ -1,35 +1,44 @@
+
+.tabs-container{
+  width: 100%;
+  padding: 0 10px;
+ 
+}
+
 .tabs {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .tabs.horizontal {
-    flex-direction: row;
-  }
-  
-  .tabs li {
-    margin-right: 20px;
-  }
-  
-  .tabs li.active {
-    border-bottom: 2px solid #333;
-  }
-  
-  .tabs a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .tabs a:hover {
-    color: #666;
-  }
-  
-  .tab-content {
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-top: none;
-  }
+  list-style: none;
+  margin: 10px;
+  padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+}
+
+.tabs li {
+  flex: 1;
+  min-width: min-content; /* Prevent tabs from becoming too narrow */
+  white-space: nowrap; /* Prevent text wrapping within tabs */
+  text-align: center;
+}
+
+.tabs li.active {
+  border-bottom: 2px solid #333;
+}
+
+.tabs a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 5px;
+  display: block;
+}
+
+.tabs a:hover {
+  color: #666;
+}
+
+.tab-content {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-top: none;
+}

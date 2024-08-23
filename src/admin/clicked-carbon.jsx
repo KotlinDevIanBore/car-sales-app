@@ -23,25 +23,24 @@ const Tabs = () => {
   };
 
   return (
-    <div>
-      <ul className="tabs vertical">
-        
-        <li className={activeTab === 'tab1' ? 'active' : ''}>
-          <a href="#" onClick={() => handleTabChange('tab1')}>Most Clicked Car</a>
-        </li>
-        <li className={activeTab === 'tab2' ? 'active' : ''}>
-          <a href="#" onClick={() => handleTabChange('tab2')}>Most Searched Car</a>
-        </li>
-        <li className={activeTab === 'tab3' ? 'active' : ''}>
-          <a href="#" onClick={() => handleTabChange('tab3')}>Trends</a>
-        </li>
-        <li className={activeTab === 'tab4' ? 'active' : ''}>
-          <a href="#" onClick={() => handleTabChange('tab4')}>EditCars</a>
-        </li>
-        <li className={activeTab === 'tab5' ? 'active' : ''}>
-          <a href="#" onClick={() => handleTabChange('tab5')}>Add Car</a>
-        </li>
-      </ul>
+    <div className='tabs-container'>
+      <ul className="tabs">
+  <li className={activeTab === 'tab1' ? 'active' : ''}>
+    <a href="#" onClick={() => handleTabChange('tab1')}>Most Clicked Car</a>
+  </li>
+  <li className={activeTab === 'tab2' ? 'active' : ''}>
+    <a href="#" onClick={() => handleTabChange('tab2')}>Most Searched Car</a>
+  </li>
+  <li className={activeTab === 'tab3' ? 'active' : ''}>
+    <a href="#" onClick={() => handleTabChange('tab3')}>Trends</a>
+  </li>
+  <li className={activeTab === 'tab4' ? 'active' : ''}>
+    <a href="#" onClick={() => handleTabChange('tab4')}>EditCars</a>
+  </li>
+  <li className={activeTab === 'tab5' ? 'active' : ''}>
+    <a href="#" onClick={() => handleTabChange('tab5')}>Add Car</a>
+  </li>
+</ul>
 
       {ComponentDictionary[activeTab]()}
     </div>
