@@ -9,7 +9,7 @@ import { carGridContext } from "./car-grid-context";
 import { searchContext } from "../home-page/home_page_context";
 
 function CarGrid(props) {
-  const { carArray, SetCar, carGridRef, countClicks, handleCompareClick,DisplayCar } =
+  const { carArray, SetCar, carGridRef, countClicks, handleCompareClick,DisplayCar,scrollCarGridIntoView } =
     useContext(carGridContext);
 
   const [loading, setLoading] = useState(true);
@@ -31,6 +31,7 @@ function CarGrid(props) {
       } finally {
         setLoading(false);
       }
+      scrollCarGridIntoView();
     };
 
     loadCars();

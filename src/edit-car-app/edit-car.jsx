@@ -9,12 +9,13 @@ import styles from './edit-car.module.css';
 const EditCar = ()=>{
 
     const {carArray,SetCar}=useContext (carGridContext);
+    const {formData,setFormData,handleSubmit,edit,setEdit,handleDelete} = useContext(EditedCarContext);
     const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const [editId,setEditId] = useState(false);
   
-  const {formData,setFormData,handleSubmit,edit,setEdit,handleDelete} = useContext(EditedCarContext)
+  
 
 
 
@@ -67,11 +68,7 @@ function  handleChange (e,car){
    
   });
 
-  // setFormData((prevFormData) => ({
-  //   ...prevFormData,
-  //   ...car,
-  //   [name]: value
-  // }));
+  
 
 }
 
@@ -132,17 +129,7 @@ function  handleChange (e,car){
     <input type="any" name="description" defaultValue={car.description} onChange={(e) => {handleChange(e, car)}} className="block w-full p-2 border border-gray-300 rounded" />
   </label>
 
-  {/* <div className="flex gap-4">
-  <label className="block mb-4">
-    Feature Name
-    <input type="any" name="description" defaultValue={car.description} onChange={(e) => {handleChange(e, car)}} className="block w-full p-2 border border-gray-300 rounded" />
-  </label>
-  <label className="block mb-4 ">
-   Feature Description
-    <input type="any" name="description" defaultValue={car.description} onChange={(e) => {handleChange(e, car)}} className="block w-full p-2 border border-gray-300 rounded" />
-  </label>
-
-  </div> */}
+  
 
  <button type="button" className=" bg-red-500 py-2 px-4" onClick={ ()=>{handleDelete(car.id)}} >Delete Car</button>
 

@@ -95,7 +95,7 @@ function HomePage() {
         <button
         onClick={() => {
           toggleCarGrid(!isCarGridVisible);
-          // scrollCarGridIntoView();
+          scrollCarGridIntoView();
         }}
           aria-label={isCarGridVisible ? "Hide car grid" : "Show car grid"}
           className="px-6 py-3 text-lg font-semibold text-[#078E8E]  rounded shadow-md  "

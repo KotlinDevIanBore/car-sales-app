@@ -12,7 +12,7 @@ export const SearchProvider = ({ children }) => {
   const { SetCar } = useContext(carGridContext);
   const [storyIndex, setstoryIndex] = useState(0);
   const [intervalRunning, setIntervalRunning] = useState(false);
-  const { carGridRef } = useContext(carGridContext);
+  const { carGridRef,scrollCarGridIntoView } = useContext(carGridContext);
 
   const homepageRef = useRef();
 
@@ -40,9 +40,9 @@ export const SearchProvider = ({ children }) => {
     });
   }
 
-  function scrollCarGridIntoView() {
-    carGridRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+  // function scrollCarGridIntoView() {
+  //   carGridRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  // }
   async function handleDynamicButton (id){
 
     console.log (id);

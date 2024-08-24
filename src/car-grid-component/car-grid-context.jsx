@@ -14,12 +14,16 @@ export const CarGridContextProvider = ({ children }) => {
   const [comparisonArray,SetComparisonArray] = useState([]);
   
   const [isCarGridVisible, setCarGridVisibility] = useState(false);
+
+  function scrollCarGridIntoView() {
+    carGridRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
   
 
   const toggleCarGrid = (condition)=>{
 
     setCarGridVisibility (condition);
-    // scrollCarGridIntoView ();
+    scrollCarGridIntoView ();
   }
 
   function countClicks(carId) {
@@ -58,7 +62,7 @@ export const CarGridContextProvider = ({ children }) => {
 
   return (
     <carGridContext.Provider
-      value={{ carArray, SetCar, carGridRef, countClicks,handleCompareClick,comparisonArray,SetComparisonArray,DisplayCar,isCarGridVisible, setCarGridVisibility,toggleCarGrid }}
+      value={{ carArray, SetCar, carGridRef, scrollCarGridIntoView, countClicks,handleCompareClick,comparisonArray,SetComparisonArray,DisplayCar,isCarGridVisible, setCarGridVisibility,toggleCarGrid }}
     >
       {children}
     </carGridContext.Provider>
