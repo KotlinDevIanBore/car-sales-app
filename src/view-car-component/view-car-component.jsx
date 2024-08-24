@@ -3,6 +3,7 @@ import { useState} from "react";
 import "./view-car.css";
 import UIShellHeader from "../ui-shell-app/ui-shell-header";
 import { ViewCarContext } from "./view-car-context";
+import Footer from "../footer-app/footer";
 function DisplayCar() {
   const [imageIndex, setimageIndex] = useState(0);
   const {car} = useContext (ViewCarContext);
@@ -27,6 +28,8 @@ function DisplayCar() {
   }
   return (
     <div className="display-car-page">
+
+      <div className="display-car-container">
       <div className="ui-shell-header-container">
       <UIShellHeader/>
       </div>
@@ -81,6 +84,10 @@ function DisplayCar() {
        
 
       </div>
+      </div>
+     
+
+      <Footer/>
     </div>
   );
 }

@@ -34,7 +34,7 @@ function HomePage() {
 
   return (
     <div className={styles.home_component} ref={homepageRef}>
-      <UIShellHeader />
+      {/* <UIShellHeader /> */}
 
       <div className="home-page relative">
         <div
