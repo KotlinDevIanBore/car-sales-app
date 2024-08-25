@@ -2,6 +2,7 @@ import React, { useState, useEffect, memo, useContext } from "react";
 import fetchData from "../car-grid-component/car-grid-component-resource";
 import { carGridContext } from "../car-grid-component/car-grid-context";
 import { EditedCarContext } from "./edit-car-context";
+import SearchIcon from "../home-page/search_button";
 
 import styles from './edit-car.module.css';
 
@@ -76,6 +77,7 @@ function  handleChange (e,car){
     return  <div>
 
       <div>Edit Cars</div>
+      <SearchIcon/>
       <div className="overflow-y-auto h-[90vh]">
 
 {carArray.map((car)=>(
