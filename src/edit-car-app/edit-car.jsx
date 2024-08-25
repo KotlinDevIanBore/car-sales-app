@@ -3,6 +3,7 @@ import fetchData from "../car-grid-component/car-grid-component-resource";
 import { carGridContext } from "../car-grid-component/car-grid-context";
 import { EditedCarContext } from "./edit-car-context";
 import SearchIcon from "../home-page/search_button";
+import PenIcon from "../../icons.jsx/penicon";
 
 import styles from './edit-car.module.css';
 
@@ -87,13 +88,14 @@ function  handleChange (e,car){
         <p className= {styles.most_clicked_car_name}>
           {car.brand} {car.name}
         </p>
-        <button onClick={ ()=>{handleEditClick(car)} } className= {styles.car_clicks} > edit  </button>
+        <button onClick={ ()=>{handleEditClick(car)} } className= {styles.car_clicks} > <PenIcon/>  </button>
         <img className= {styles.car_image1}    src={car.image[0].URL} alt="" />
       </div>
     </div>
 
+
+
     {editId===car.id && edit && 
-    
     
     <form onSubmit={handleSubmit} className="flex flex-col w-full max-w-md mx-auto p-4">
   <label className="block mb-4">
