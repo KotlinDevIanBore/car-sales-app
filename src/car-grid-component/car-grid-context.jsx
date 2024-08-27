@@ -13,7 +13,7 @@ export const CarGridContextProvider = ({ children }) => {
   const carGridRef = useRef();
   const [comparisonArray,SetComparisonArray] = useState([]);
   const [limit,setLimit]= useState (8);
-  const [page,setPage]= useState (1);
+  const [offset,setOffset]= useState(1);
   
   const [isCarGridVisible, setCarGridVisibility] = useState(false);
 
@@ -62,24 +62,31 @@ export const CarGridContextProvider = ({ children }) => {
 
   }
 
-  function nextPage (){
+//   function nextPage (){
     
-    setPage ((prevpage)=>
+//     setOffset ((prevoffset)=>
 
-      prevpage + limit
-    )
+//       prevoffset + limit
+//     )
+// alert ('next page called')
 
+//   }
 
-  }
-  // function prevpage (){
-
-
-
-  // }
+function nextPage(condition) {
+  setOffset((prevoffset) => {
+    if (condition === '+') {
+      return prevoffset + limit;
+    } else if (condition === '-') {
+      return prevoffset - limit;
+    }
+  });
+ 
+}
+  
 
   return (
     <carGridContext.Provider
-      value={{ carArray, SetCar, carGridRef, scrollCarGridIntoView, countClicks,handleCompareClick,comparisonArray,SetComparisonArray,DisplayCar,isCarGridVisible, setCarGridVisibility,toggleCarGrid,limit,setLimit,page,setPage,nextPage }}
+      value={{ carArray, SetCar, carGridRef, scrollCarGridIntoView, countClicks,handleCompareClick,comparisonArray,SetComparisonArray,DisplayCar,isCarGridVisible, setCarGridVisibility,toggleCarGrid,limit,setLimit,offset,setOffset,nextPage }}
     >
       {children}
     </carGridContext.Provider>

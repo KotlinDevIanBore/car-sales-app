@@ -18,10 +18,12 @@ const fetcher = async (url) => {
 
 
 
-const fetchData = async (limit,page) => {
+const fetchData = async (limit,offset) => {
+
+  
 
   const apiUrl = `${API_URL}/api/cars`;
-const apiUrlv1 = `${API_URL}/api/v1/cars?page=${page}&limit= ${limit}`;
+const apiUrlv1 = `${API_URL}/api/v1/cars?offset=${offset}&limit= ${limit}`;
 
   
   try {

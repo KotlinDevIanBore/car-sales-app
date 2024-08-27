@@ -9,18 +9,18 @@ import { carGridContext } from "./car-grid-context";
 import { searchContext } from "../home-page/home_page_context";
 
 function CarGrid(props) {
-  const { carArray, SetCar, carGridRef, countClicks, handleCompareClick,DisplayCar,scrollCarGridIntoView,nextPage,limit,page } =
+  const { carArray, SetCar, carGridRef, countClicks, handleCompareClick,DisplayCar,scrollCarGridIntoView,nextPage,limit,offset } =
     useContext(carGridContext);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { homepageRef } = useContext(searchContext);
-  const [imageIndex1, setimageIndex1] = useState(0);
+  const [imageIndex1] = useState(0);
 
   useEffect(() => {
     const loadCars = async () => {
       try {
-        const fetchedCars = await fetchData(limit,page);
+        const fetchedCars = await fetchData(limit,offset);
         const carsWithIndex = fetchedCars.map((car) => ({
           ...car,
           imageIndex: 0,
@@ -35,7 +35,7 @@ function CarGrid(props) {
     };
 
     loadCars();
-  }, [page]);
+  }, [offset]);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error fetching data: {error.message}</div>;
@@ -144,14 +144,52 @@ function CarGrid(props) {
           ))}
         </div>
       </div>
-      <button  onClick={ ()=>{
-     nextPage()
-      } }>
-        Next Page
-      </button>
-      <button className={styles.home_button} onClick={scrollToHomepage}>
-        Home
-      </button>
+
+      <div style={{
+  display: 'flex',
+  justifyContent: 'center',
+  marginTop: '20px',
+  marginBottom: '20px'
+}}>
+  <button 
+    onClick={ ()=>{nextPage('-')} } 
+    style={{
+      padding: '10px 20px',
+      marginRight: '10px',
+      backgroundColor: '#364a72',
+      color: 'white',
+      border: 'none',
+      borderRadius: '5px',
+      cursor: 'pointer',
+      transition: 'background-color 0.3s ease',
+      fontFamily: 'Arial, sans-serif',
+      fontSize: '16px',
+      letterSpacing: '1px'
+    }}
+    onMouseOver={(e) => e.target.style.backgroundColor = '#4a63a0'}
+    onMouseOut={(e) => e.target.style.backgroundColor = '#364a72'}
+  >
+{'<'} </button>
+  <button 
+   onClick={ ()=>{nextPage('+')} } 
+    style={{
+      padding: '10px 20px',
+      backgroundColor: '#364a72',
+      color: 'white',
+      border: 'none',
+      borderRadius: '5px',
+      cursor: 'pointer',
+      transition: 'background-color 0.3s ease',
+      fontFamily: 'Arial, sans-serif',
+      fontSize: '16px',
+      letterSpacing: '1px'
+    }}
+    onMouseOver={(e) => e.target.style.backgroundColor = '#4a63a0'}
+    onMouseOut={(e) => e.target.style.backgroundColor = '#364a72'}
+  >
+    {'>'}
+  </button>
+</div>
 
     </>
   );
