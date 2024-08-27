@@ -1,5 +1,8 @@
 
 import { API_URL } from "../../api";
+
+
+
 const fetcher = async (url) => {
   try {
     const response = await fetch(url);
@@ -13,15 +16,16 @@ const fetcher = async (url) => {
   }
 };
 
-// const apiUrl = "http://localhost:3000/api/cars";
-//const apiURL = "https://car-sales-app-server.onrender.com/api/cars"
-const apiUrl = `${API_URL}/api/cars`;
 
-const fetchData = async () => {
+
+const fetchData = async (limit,page) => {
+
+  const apiUrl = `${API_URL}/api/cars`;
+const apiUrlv1 = `${API_URL}/api/v1/cars?page=${page}&limit= ${limit}`;
 
   
   try {
-    const CARS = await fetcher(apiUrl);
+    const CARS = await fetcher(apiUrlv1);
     return CARS;
   } catch (error) {
     console.error('Error fetching data:', error);

@@ -9,7 +9,7 @@ import { carGridContext } from "./car-grid-context";
 import { searchContext } from "../home-page/home_page_context";
 
 function CarGrid(props) {
-  const { carArray, SetCar, carGridRef, countClicks, handleCompareClick,DisplayCar,scrollCarGridIntoView } =
+  const { carArray, SetCar, carGridRef, countClicks, handleCompareClick,DisplayCar,scrollCarGridIntoView,nextPage,limit,page } =
     useContext(carGridContext);
 
   const [loading, setLoading] = useState(true);
@@ -20,7 +20,7 @@ function CarGrid(props) {
   useEffect(() => {
     const loadCars = async () => {
       try {
-        const fetchedCars = await fetchData();
+        const fetchedCars = await fetchData(limit,page);
         const carsWithIndex = fetchedCars.map((car) => ({
           ...car,
           imageIndex: 0,
@@ -35,7 +35,7 @@ function CarGrid(props) {
     };
 
     loadCars();
-  }, []);
+  }, [page]);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error fetching data: {error.message}</div>;
@@ -144,9 +144,15 @@ function CarGrid(props) {
           ))}
         </div>
       </div>
+      <button  onClick={ ()=>{
+     nextPage()
+      } }>
+        Next Page
+      </button>
       <button className={styles.home_button} onClick={scrollToHomepage}>
         Home
       </button>
+
     </>
   );
 }
