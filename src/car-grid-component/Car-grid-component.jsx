@@ -147,7 +147,7 @@ function CarGrid(props) {
 
       <div style={{
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'end',
   marginTop: '20px',
   marginBottom: '20px'
 }}>
@@ -156,8 +156,8 @@ function CarGrid(props) {
     style={{
       padding: '10px 20px',
       marginRight: '10px',
-      backgroundColor: '#364a72',
-      color: 'white',
+      // backgroundColor: '#364a72',
+      color: 'grey',
       border: 'none',
       borderRadius: '5px',
       cursor: 'pointer',
@@ -174,8 +174,8 @@ function CarGrid(props) {
    onClick={ ()=>{nextPage('+')} } 
     style={{
       padding: '10px 20px',
-      backgroundColor: '#364a72',
-      color: 'white',
+      // backgroundColor: '#364a72',
+      color: 'grey',
       border: 'none',
       borderRadius: '5px',
       cursor: 'pointer',
