@@ -11,11 +11,7 @@ function Footer({ copyright }) {
     { title: 'Connect', items: ['Newsletter Signup', 'Refer a Friend', 'Follow Us'] }
   ];
 
-  const socialIcons = [
-    { icon: faFacebookF, link: '#', name: 'Facebook' },
-    { icon: faTwitter, link: '#', name: 'Twitter' },
-    { icon: faInstagram, link: '#', name: 'Instagram' }
-  ];
+  
 
   return (
     <footer className="bg-black text-white py-10 px-4 md:px-10">
@@ -31,11 +27,7 @@ function Footer({ copyright }) {
                   ) : item === 'Follow Us' ? (
                     <div>
                       {item}:
-                      {socialIcons.map(({ icon, link, name }) => (
-                        <a key={name} href={link} className="ml-2 hover:text-gray-300" aria-label={name}>
-                          <FontAwesomeIcon icon={icon} />
-                        </a>
-                      ))}
+                     <SocialIcons/>
                     </div>
                   ) : (
                     <a href="#" className="hover:text-gray-300">{item}</a>
@@ -50,5 +42,25 @@ function Footer({ copyright }) {
     </footer>
   );
 }
+function SocialIcons (){
+  const socialIcons = [
+    { icon: faFacebookF, link: '#', name: 'Facebook' },
+    { icon: faTwitter, link: '#', name: 'Twitter' },
+    { icon: faInstagram, link: '#', name: 'Instagram' }
+  ];
+
+  return (
+    <>
+     {socialIcons.map(({ icon, link, name }) => (
+                        <a key={name} href={link} className="ml-2 hover:text-gray-300" aria-label={name}>
+                          <FontAwesomeIcon icon={icon} />
+                        </a>
+                      ))}
+    
+    </>
+  )
+}
+
+export {SocialIcons};
 
 export default Footer;

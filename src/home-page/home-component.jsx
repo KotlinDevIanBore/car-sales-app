@@ -4,6 +4,7 @@ import React, { useState, useContext } from "react";
 import { searchContext } from "./home_page_context";
 import { useInterval } from "react-use";
 import { carGridContext } from "../car-grid-component/car-grid-context";
+import { SocialIcons } from "../footer-app/footer";
 
 import UIShellHeader from "../ui-shell-app/ui-shell-header";
 
@@ -102,7 +103,15 @@ function HomePage() {
         >
           {isCarGridVisible ? "..." : "See Our Cars"}
         </button>
+
+       
+      </div >
+
+
+      <div className="absolute bottom-5 right-5">
+      <SocialIcons/>
       </div>
+      
     </div>
   );
 }
