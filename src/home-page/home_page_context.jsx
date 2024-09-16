@@ -12,7 +12,7 @@ export const SearchProvider = ({ children }) => {
   const { SetCar } = useContext(carGridContext);
   const [storyIndex, setstoryIndex] = useState(0);
   const [intervalRunning, setIntervalRunning] = useState(false);
-  const { carGridRef,scrollCarGridIntoView } = useContext(carGridContext);
+  const { carGridRef,scrollCarGridIntoView,toggleCarGrid } = useContext(carGridContext);
 
   const homepageRef = useRef();
 
@@ -24,6 +24,11 @@ export const SearchProvider = ({ children }) => {
   
 
   async function fetchSearchData (){
+
+    
+    // toggleCarGrid(true);
+
+    // await Promise.resolve();
 
     const data = await SendSearchRequest (text);
     SetCar(data.cars);

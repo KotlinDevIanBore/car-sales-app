@@ -24,6 +24,7 @@ export const CarGridContextProvider = ({ children }) => {
 
   const toggleCarGrid = (condition)=>{
 
+
     setCarGridVisibility (condition);
     scrollCarGridIntoView ();
   }

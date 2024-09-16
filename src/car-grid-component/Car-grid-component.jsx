@@ -9,7 +9,7 @@ import { carGridContext } from "./car-grid-context";
 import { searchContext } from "../home-page/home_page_context";
 
 function CarGrid(props) {
-  const { carArray, SetCar, carGridRef, countClicks, handleCompareClick,DisplayCar,scrollCarGridIntoView,nextPage,limit,offset } =
+  const { carArray, SetCar, carGridRef, countClicks, handleCompareClick,DisplayCar,scrollCarGridIntoView,nextPage,limit,offset,isCarGridVisible } =
     useContext(carGridContext);
 
   const [loading, setLoading] = useState(true);
@@ -59,7 +59,8 @@ function CarGrid(props) {
 
   return (
     <>
-      <div ref={carGridRef}>
+
+    {isCarGridVisible &&<div ref={carGridRef}>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
@@ -143,7 +144,8 @@ function CarGrid(props) {
             </div>
           ))}
         </div>
-      </div>
+      </div> }
+      
 
       <div style={{
   display: 'flex',
