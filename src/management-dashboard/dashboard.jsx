@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import LineApp from "../admin/analytics/graph";
 import { CarProvider } from "../admin/manage-car-context";
 import RenderMostClickedCars from "../admin/analytics/most-clicked-cars";
 import RenderMostSearchedCar from "../admin/analytics/most-searched-car";
+import RenderSalesData from "../admin/analytics/sales-data";
+import { getSalesData } from "../api";
+import { CarContext } from "../admin/manage-car-context";
+
+
+
 
 
 
@@ -35,7 +41,7 @@ const SideBar = (isOpen) => {
       <h2 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8">Dashboard</h2>
       <nav>
         <ul className="space-y-2 sm:space-y-4">
-          {["Home", "Add Car", "Reports", "Settings"].map((item) => (
+          {["Home", "Add Car", "Edit Car","Reports", "Settings"].map((item) => (
             <li key={item}>
               <a
                 href="#"
@@ -89,7 +95,7 @@ const Dashboard = () => {
                 {[
                   { title: "Clicks", bg: "bg-indigo-50", component: <LineApp /> , display : <RenderMostClickedCars/> },
                   { title: "Searches", bg: "bg-blue-50", component: <LineApp />, display : <RenderMostSearchedCar/> },
-                  { title: "Sales", bg: "bg-purple-50", component: <LineApp />, display : <RenderMostClickedCars/> },
+                  { title: "Sales", bg: "bg-purple-50", component: <LineApp />, display : <RenderSalesData/> },
                   { title: "Other Metrics", bg: "bg-teal-50", component: <LineApp /> , display : <RenderMostClickedCars/>},
                 ].map(({ title, bg, component,display }) => (
 

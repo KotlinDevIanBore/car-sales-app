@@ -1,6 +1,7 @@
 
 import React, { createContext, useState,useEffect, useContext } from "react";
 import { API_URL } from "../../api";
+import { getSalesData } from "../api";
 
 export const CarContext = createContext();
 
@@ -21,7 +22,8 @@ export const CarProvider = ({ children }) => {
 
   const [mostSearchedCar,setMostSearchedCar] = useState([]);
 
-  const [clickLogData,setclickLogData] = useState ([])
+  const [clickLogData,setclickLogData] = useState ([]);
+  const [salesData,setsalesData] = useState ([])
 
   const handleFormFileData = async (formData, uploadedFile) => {
     const formData1 = new FormData();
@@ -121,6 +123,23 @@ export const CarProvider = ({ children }) => {
     loadClickLogs()
   },[])
 
+  useEffect(() => {
+
+  
+    async function loadCars() {
+      try {
+const salesdata = await getSalesData ();
+console.log (`Your sales data is ${salesdata}`)
+        setsalesData (salesdata?salesdata:[])
+        
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  
+    loadCars();
+  }, []);
+
 
   
   
@@ -136,7 +155,9 @@ export const CarProvider = ({ children }) => {
         mostClickedCar,
         mostSearchedCar,
         clickLogData,
-        setclickLogData
+        setclickLogData,
+        salesData,
+        setsalesData
       }}
     >
       {children}
