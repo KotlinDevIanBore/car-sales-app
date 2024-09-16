@@ -85,3 +85,34 @@ else {
 }
 
 export {deleteCar};
+
+async function  getSalesData (){
+
+  const url =  `${API_URL}/api/sales`
+
+
+  try {
+
+    const response = await fetch (url , {
+      method: "GET"
+    })
+
+    if (!response.ok){
+
+      throw new Error(`HTTP error! Status: ${response.status}`);
+
+    }
+
+    const data = await response.json();
+
+    return data;
+
+  }
+  catch (error){
+
+    console.error('Error hitting the sales endpoint')
+    throw error;
+  }
+}
+
+export {getSalesData};
