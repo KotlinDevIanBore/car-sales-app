@@ -16,14 +16,17 @@ function LandingPage({}) {
         <div>
             <UIShellHeader />
             <HomePage />
+            <Suspense fallback={<div>Loading...</div>}>
+                    <LazyCarGrid />
+                </Suspense>
 
            
 
-            {isCarGridVisible && (
+            {/* {isCarGridVisible && (
                 <Suspense fallback={<div>Loading...</div>}>
                     <LazyCarGrid />
                 </Suspense>
-            )}
+            )} */}
 
             <Footer />
         </div>

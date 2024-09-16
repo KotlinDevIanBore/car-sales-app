@@ -1,9 +1,12 @@
 import React from "react";
 import { useContext } from "react";
 import { searchContext } from "./home_page_context";
+import { carGridContext } from "../car-grid-component/car-grid-context";
 
 
 const SearchIcon = () =>  {
+
+  const {toggleCarGrid}=useContext (carGridContext)
     const {
         text,
         setText,
@@ -13,8 +16,11 @@ const SearchIcon = () =>  {
 
       function handleClick(event) {
         event.preventDefault();
+        toggleCarGrid(true);
         fetchSearchData();
         scrollCarGridIntoView();
+        
+        alert('happened')
         
       }
 
@@ -40,6 +46,13 @@ const SearchIcon = () =>  {
   >
     Search
   </button>
+  {/* <button 
+    type="submit" 
+    className="h-4  md:h-10 sm:h-5 xs:h-6 bg-teal-400 text-white rounded-r px-2 md:px-3 sm:px-2 xs:px-1 py-0 md:py-1 sm:py-0 xs:py-0 hover:bg-teal-500"
+    onClick={toggleCarGrid}
+  >
+    test
+  </button> */}
 </div>
     
   </form>
