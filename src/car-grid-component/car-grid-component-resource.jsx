@@ -27,7 +27,9 @@ const apiUrlv1 = `${API_URL}/api/v1/cars?offset=${offset}&limit= ${limit}`;
 
   
   try {
-    const CARS = await fetcher(apiUrlv1);
+    // const CARS = await fetcher(apiUrlv1);
+    const CARS = await fetcher(apiUrl);
+
     return CARS;
   } catch (error) {
     console.error('Error fetching data:', error);
