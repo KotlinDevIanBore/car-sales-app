@@ -17,10 +17,10 @@ const RenderMostClickedCars = ()=>{
 
 
 
-return <div className="flexbox-container">
+return <div className="flexbox-container   ">
 {mostClickedCar.map((car) => (
-  <div className="flexbox" justify="center" align="middle">
-    <div className="flexbox-item item-1">
+  <div className="flexbox" justify="center"  align="middle">
+    <div className="flexbox-item item-1 ">
       <div style={{ width: "100%", height: "100%" }}>
         <p className="most-clicked-car-name">
           {car.brand} {car.name}

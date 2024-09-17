@@ -10,7 +10,7 @@ const RenderMostSearchedCar = ()=>{
 const {mostSearchedCar} = useContext(CarContext)
 
     return <div value="2">
-    <div className="flexbox-container">
+    <div className="flexbox-container ">
       {mostSearchedCar.map((car) => (
         
         <div className="flexbox" justify="center" align="middle">

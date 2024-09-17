@@ -17,7 +17,7 @@ const EditCar = ()=>{
 
   const [editId,setEditId] = useState(false);
   
-  
+  console.log (`car array in edit functionality is ${carArray}`)
 
 
 
@@ -96,6 +96,7 @@ function  handleChange (e,car){
 
 
     {editId===car.id && edit && 
+     
     
     <form onSubmit={handleSubmit} className="flex flex-col w-full max-w-md mx-auto p-4">
   <label className="block mb-4">
@@ -135,7 +136,7 @@ function  handleChange (e,car){
 
   
 
- <button type="button" className=" bg-red-500 py-2 px-4" onClick={ ()=>{handleDelete(car.id)}} >Delete Car</button>
+ <button type="button" className=" bg-red-500 my-3  py-2 px-4" onClick={ ()=>{handleDelete(car.id)}} >Delete Car</button>
 
   <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Save Changes</button>
 </form>

@@ -6,6 +6,9 @@ import RenderComparison from "./comparison-app/comparison-component.jsx";
 import LandingPage from "./landing-page/landing-page.jsx";
 import ManageCarApp from "./admin/manage-app.jsx";
 import Dashboard from "./management-dashboard/dashboard.jsx";
+import EditCar from "./edit-car-app/edit-car.jsx";
+import ManageCars from "./admin/manage-car-component.jsx";
+import DashboardRouter from "./management-dashboard/routes.jsx";
 
 function App(props) {
   const [car, GetCarfromGrid] = useState("error");
@@ -21,7 +24,13 @@ function App(props) {
   <Route path="/view-car" element={<DisplayCar car={car} />} />
   <Route path="/add-car" element={<ManageCarApp />} />
   <Route path="/compare-car" element={<RenderComparison />} />
-  <Route path = "/dashboard" element = {<Dashboard/>} />
+  <Route  path = "/dashboard" element = {<Dashboard/>} >
+
+  <Route path="edit-car" element={<EditCar/>}/>
+  <Route path="addcar" element={<ManageCars/>}/> 
+  
+  </Route>
+  
 
 </Routes>
 

@@ -25,7 +25,7 @@ return <div className="flexbox-container">
         <p className="most-clicked-car-name">
           {car.brand} {car.name}
         </p>
-        {/* <p className="car-clicks" >Clicks: {car.sales}</p> */}
+        <p className="car-clicks" >Sales: {car.sales}</p>
         <img className="car-image1" src={car.image[0].URL} alt="" />
       </div>
     </div>
