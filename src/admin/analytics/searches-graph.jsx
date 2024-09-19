@@ -4,7 +4,7 @@ import { Line } from 'react-chartjs-2';
 import Data from '../analytics/data';
 
 import { CarContext } from '../manage-car-context';
-import { useContext } from 'react';
+import { useContext ,useMemo,useEffect} from 'react';
 
 ChartJS.register(
   CategoryScale,
@@ -17,10 +17,23 @@ ChartJS.register(
   Filler
 );
 
-const SearchesGraph = () => {
+const SearchesGraph = ({carID}) => {
 
 
-  const {searchLogs}=useContext(CarContext)
+  const {searchLogs,setsearchLogId}=useContext(CarContext);
+
+
+  const carSearchLogs = useMemo(() => {
+    return searchLogs.filter(log => log.id === carID);
+  }, [searchLogs, carID]);
+
+
+console.log (carSearchLogs);
+ 
+  
+
+
+
   const options = {
     responsive: true,
     plugins: {
@@ -101,6 +114,9 @@ const SearchesGraph = () => {
       {
         label: 'Searches',
         data: searchLogs.map((item) => ({ x: item.date, y: item.value })),
+        // data: searchLogs.filter((item) => item.carID === carID).map((item) => ({ x: item.date, y: item.value })),
+        // data: searchLogs.filter((item) => item.id === carID).map((item) => ({ x: item.date, y: item.value })),
+        data: carSearchLogs.map((item) => ({ x: item.date, y: item.value })),
         borderColor: 'rgb(75, 192, 192)',
         backgroundColor: 'rgba(75, 192, 192, 0.5)',
         pointBackgroundColor: 'rgb(75, 192, 192)',
