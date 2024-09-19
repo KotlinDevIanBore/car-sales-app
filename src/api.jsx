@@ -117,14 +117,37 @@ async function  getSalesData (){
 
 export {getSalesData};
 
- async function getSearchLogs (){
+//  async function getSearchLogs (searchLogId){
+
+//   try {
+
+//     console.log (`search log id is ${searchLogId}`)
+
+//     const url = `${API_URL}/api/searchlogs?id=${searchLogId}`
+//     const response =  await fetch (url, {
+//       method: "GET"
+//     });
+
+//     const data = await  response.json();
+
+//     return data;
+
+//   }
+//   catch (error){
+
+//     console.error ('Error fetching get sales logs ',error)
+//   }
+
+// }
+
+export async function getSearchLogs (){
 
   try {
 
-    const url = `${API_URL}/api/searchlogs`
-    const response =  await fetch (url, {
-      method: "GET"
-    });
+
+    const url =  `${API_URL}/api/searchlogs`
+
+    const response =  await fetch(url);
 
     const data = await  response.json();
 
@@ -138,4 +161,3 @@ export {getSalesData};
 
 }
 
-export  {getSearchLogs}

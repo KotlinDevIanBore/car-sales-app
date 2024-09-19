@@ -24,6 +24,7 @@ export const CarProvider = ({ children }) => {
   const [salesData, setsalesData] = useState([]);
 
   const [searchLogs, setsearchLogs] = useState([]);
+  const [searchLogId, setsearchLogId] = useState([]);
 
   const handleFormFileData = async (formData, uploadedFile) => {
     const formData1 = new FormData();
@@ -85,7 +86,6 @@ export const CarProvider = ({ children }) => {
         const data = await response.json();
 
         setMostSearchedCar(data ? data.cars : []);
-        console.log(`most searched cars data is ${data.cars}`);
       } catch (error) {
         console.error(error);
       }
@@ -112,7 +112,6 @@ export const CarProvider = ({ children }) => {
     async function loadCars() {
       try {
         const salesdata = await getSalesData();
-        console.log(`Your sales data is ${salesdata}`);
         setsalesData(salesdata ? salesdata : []);
       } catch (error) {
         console.error(error);
@@ -122,11 +121,15 @@ export const CarProvider = ({ children }) => {
     loadCars();
   }, []);
 
+  
+
   useEffect(() => {
     async function loadCars() {
       try {
         const searchlogdata = await getSearchLogs();
-        console.log(`Your searchlog data is ${searchlogdata}`);
+
+        
+
 
         setsearchLogs(searchlogdata ? searchlogdata : []);
       } catch (error) {
@@ -153,6 +156,7 @@ export const CarProvider = ({ children }) => {
         setsalesData,
         searchLogs,
         setsearchLogs,
+        searchLogId, setsearchLogId
       }}
     >
       {children}

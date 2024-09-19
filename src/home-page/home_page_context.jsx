@@ -31,7 +31,7 @@ export const SearchProvider = ({ children }) => {
     // await Promise.resolve();
 
     const data = await SendSearchRequest (text);
-    SetCar(data.cars);
+    SetCar(data?.cars);
 
   }
 
