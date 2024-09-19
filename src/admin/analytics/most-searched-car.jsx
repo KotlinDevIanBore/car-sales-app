@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { CarContext } from "../manage-car-context";
+import SearchesGraph from "./searches-graph";
 import "./clicked_cars.css";
 
 
@@ -23,6 +24,7 @@ const {mostSearchedCar} = useContext(CarContext)
               <img className="car-image1" src={car.image[0].URL} alt="" />
             </div>
           </div>
+          <SearchesGraph/>
         </div>
       ))}
     </div>

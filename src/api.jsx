@@ -116,3 +116,26 @@ async function  getSalesData (){
 }
 
 export {getSalesData};
+
+ async function getSearchLogs (){
+
+  try {
+
+    const url = `${API_URL}/api/searchlogs`
+    const response =  await fetch (url, {
+      method: "GET"
+    });
+
+    const data = await  response.json();
+
+    return data;
+
+  }
+  catch (error){
+
+    console.error ('Error fetching get sales logs ',error)
+  }
+
+}
+
+export  {getSearchLogs}

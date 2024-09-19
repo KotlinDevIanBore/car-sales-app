@@ -1,7 +1,6 @@
-
-import React, { createContext, useState,useEffect, useContext } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 import { API_URL } from "../../api";
-import { getSalesData } from "../api";
+import { getSalesData, getSearchLogs } from "../api";
 
 export const CarContext = createContext();
 
@@ -12,53 +11,49 @@ export const CarProvider = ({ children }) => {
     price: "",
     availability: "",
     location: "",
-    cohort:""
+    cohort: "",
   });
 
   const [uploadedFile, setUploadedFile] = useState([]);
 
+  const [mostClickedCar, setMostClickedCar] = useState([]);
 
-  const [mostClickedCar,setMostClickedCar] = useState([]);
+  const [mostSearchedCar, setMostSearchedCar] = useState([]);
 
-  const [mostSearchedCar,setMostSearchedCar] = useState([]);
+  const [clickLogData, setclickLogData] = useState([]);
+  const [salesData, setsalesData] = useState([]);
 
-  const [clickLogData,setclickLogData] = useState ([]);
-  const [salesData,setsalesData] = useState ([])
+  const [searchLogs, setsearchLogs] = useState([]);
 
   const handleFormFileData = async (formData, uploadedFile) => {
     const formData1 = new FormData();
 
-   
     Object.keys(formData).forEach((key) => {
       formData1.append(key, formData[key]);
-    });                                                                                                                                                                                                    
+    });
 
-    
     uploadedFile.forEach((file) => {
-      formData1.append('uploadedCarFile', file); 
+      formData1.append("uploadedCarFile", file);
     });
 
     try {
-      
       const addCarURL = `${API_URL}/api/addCar`;
-
 
       const response = await fetch(addCarURL, {
         method: "POST",
-        body: formData1, 
+        body: formData1,
       });
 
       if (!response.ok) {
         throw new Error("Failed to add car");
       } else {
-        alert('Car Added Successfully');
+        alert("Car Added Successfully");
       }
 
       const data = await response.json();
       console.log("Success:", data);
 
-      setUploadedFile([])
-
+      setUploadedFile([]);
     } catch (error) {
       console.error("Error:", error);
     }
@@ -67,27 +62,23 @@ export const CarProvider = ({ children }) => {
   useEffect(() => {
     const mostClickedUrl = `${API_URL}/api/mostClicked`;
 
-  
     async function loadCars() {
       try {
         const response = await fetch(mostClickedUrl);
         const data = await response.json();
 
         setMostClickedCar(data ? data.cars : []);
-        
       } catch (error) {
         console.error(error);
       }
     }
-  
+
     loadCars();
   }, []);
 
   useEffect(() => {
     const mostSearchedUrl = `${API_URL}/api/searchedCars`;
 
-
-  
     async function loadCars() {
       try {
         const response = await fetch(mostSearchedUrl);
@@ -99,50 +90,52 @@ export const CarProvider = ({ children }) => {
         console.error(error);
       }
     }
-  
+
     loadCars();
   }, []);
 
-
-  useEffect(()=>{
-
-    async function loadClickLogs (){
-
-
+  useEffect(() => {
+    async function loadClickLogs() {
       const loadClicksURL = `${API_URL}/api/click-logs`;
-  
-  
-      const response = await fetch (loadClicksURL);
-  
+
+      const response = await fetch(loadClicksURL);
+
       const clickData = await response.json();
-  
-      setclickLogData(clickData?clickData.data:[])
-  
+
+      setclickLogData(clickData ? clickData.data : []);
     }
 
-    loadClickLogs()
-  },[])
+    loadClickLogs();
+  }, []);
 
   useEffect(() => {
-
-  
     async function loadCars() {
       try {
-const salesdata = await getSalesData ();
-console.log (`Your sales data is ${salesdata}`)
-        setsalesData (salesdata?salesdata:[])
-        
+        const salesdata = await getSalesData();
+        console.log(`Your sales data is ${salesdata}`);
+        setsalesData(salesdata ? salesdata : []);
       } catch (error) {
         console.error(error);
       }
     }
-  
+
     loadCars();
   }, []);
 
+  useEffect(() => {
+    async function loadCars() {
+      try {
+        const searchlogdata = await getSearchLogs();
+        console.log(`Your searchlog data is ${searchlogdata}`);
 
-  
-  
+        setsearchLogs(searchlogdata ? searchlogdata : []);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    loadCars();
+  }, []);
 
   return (
     <CarContext.Provider
@@ -157,7 +150,9 @@ console.log (`Your sales data is ${salesdata}`)
         clickLogData,
         setclickLogData,
         salesData,
-        setsalesData
+        setsalesData,
+        searchLogs,
+        setsearchLogs,
       }}
     >
       {children}
