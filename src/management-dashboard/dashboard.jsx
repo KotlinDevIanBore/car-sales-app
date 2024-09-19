@@ -4,6 +4,7 @@ import { CarProvider } from "../admin/manage-car-context";
 import RenderMostClickedCars from "../admin/analytics/most-clicked-cars";
 import RenderMostSearchedCar from "../admin/analytics/most-searched-car";
 import RenderSalesData from "../admin/analytics/sales-data";
+import SearchesGraph from "../admin/analytics/searches-graph";
 import { Link, Outlet } from "react-router-dom";
 
 //  <Outlet />
@@ -115,8 +116,9 @@ const Dashboard = () => {
                   {
                     title: "Searches",
                     bg: "bg-blue-50",
-                    path: <LineApp />,
-                    display: <RenderMostSearchedCar />,
+                    path: <SearchesGraph />,
+                    display: <RenderMostSearchedCar />
+                    ,
                   },
                   {
                     title: "Sales",
