@@ -20,7 +20,6 @@ const SearchIcon = () =>  {
         fetchSearchData();
         scrollCarGridIntoView();
         
-        alert('happened')
         
       }
 
